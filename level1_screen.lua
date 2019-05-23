@@ -1,7 +1,6 @@
 -----------------------------------------------------------------------------------------
---
 -- level1_screen.lua
--- Created by: Your Name
+-- Created by: Aleks K.
 -- Date: Month Day, Year
 -- Description: This is the level 1 screen of the game.
 -----------------------------------------------------------------------------------------
@@ -65,8 +64,6 @@ local function Movelogocar(event)
         Runtime:addEventListener("enterFrame", MovelogocarDown)
     end
 end
-
-
 
 -------------------------------------------------------------
 --Objects
