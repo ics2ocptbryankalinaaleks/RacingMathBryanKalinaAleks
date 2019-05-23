@@ -33,9 +33,9 @@ local scene = composer.newScene( sceneName )
 local bkg_image
 local logocar = display.newImage("Images/CompanyLogo.png", 0, 0)
 local scrollSpeed = 1.4
-local scrollSpeed2 = -1
+local scrollSpeed2 = -1.05
 local scrollSpeed3 = -1
-local scrollSpeed4 = -1
+local scrollSpeed4 = -1.1
 
 -----------------------------------------------------------------------------------------
 -- LOCAL SCENE FUNCTIONS
@@ -56,10 +56,12 @@ end
 local function Movelogocar(event)
     logocar.x = logocar.x + scrollSpeed
     logocar.y = logocar.y + scrollSpeed2
-    if (logocar.x >= 700) then
-        Runtime:removeEventListener("enterFrame", MovelogocarDown)
-        Runtime:addEventListener("enterFrame", MovelogocarRight)
-    elseif (logocar.x >= 675) then
+    if (logocar.x >= 720) then
+        Runtime:addEventListener("enterFrame", MovelogocarDown)
+        --Ask a question
+        Runtime:removeEventListener("enterFrame", MovelogocarRight)
+    elseif (logocar.x >= 657) then
+        logocar:rotate(90)
         Runtime:removeEventListener("enterFrame", Movelogocar)
         -- Ask another question
         Runtime:addEventListener("enterFrame", MovelogocarDown)
@@ -113,7 +115,10 @@ function scene:show( event )
     if ( phase == "will" ) then
 
         -- Called when the scene is still off screen (but is about to come on screen).
-    
+        logocar.x = display.contentWidth*0.65/8
+        logocar.y = display.contentHeight*6.2/8
+        logocar:rotate(-45)
+        logocar:scale(0.1, 0.1)
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
@@ -121,9 +126,7 @@ function scene:show( event )
         -- Called when the scene is now on screen.
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
-        logocar.x = display.contentWidth*0.6/8
-        logocar.y = display.contentHeight*6.2/8
-        logocar:scale(0.1, 0.1)
+
 
         -- Ask a question
 
