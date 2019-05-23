@@ -70,7 +70,7 @@ end
 -------------------------------------------------------------
 --Objects
 -------------------------------------------------------------
-
+-- ask about the scroll direction & parabolic path
 -----------------------------------------------------------------------------------------
 -- GLOBAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
@@ -95,6 +95,7 @@ function scene:create( event )
 
         -- Insert background image into the scene group in order to ONLY be associated with this scene
     sceneGroup:insert( bkg_image )    
+    sceneGroup:insert( logocar )
 
 end --function scene:create( event )
 
@@ -112,8 +113,8 @@ function scene:show( event )
     if ( phase == "will" ) then
 
         -- Called when the scene is still off screen (but is about to come on screen).
-        logocar.x = display.contentWidth*0.65/8
-        logocar.y = display.contentHeight*6.2/8
+        logocar.x = display.contentWidth*1/8
+        logocar.y = display.contentHeight*5.9/8
         logocar:rotate(-45)
         logocar:scale(0.1, 0.1)
     -----------------------------------------------------------------------------------------
