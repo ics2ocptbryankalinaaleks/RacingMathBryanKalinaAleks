@@ -28,30 +28,81 @@ local scene = composer.newScene( sceneName )
 -- LOCAL VARIABLES
 -----------------------------------------------------------------------------------------
 
--- The local variables for this scene
-local bkg_image
-local logocar = display.newImage("Images/CompanyLogo.png", 0, 0)
-local scrollSpeedLogo = 1
-local scrollSpeed1 = 1
-local scrollSpeed2 = 1
-local scrollSpeed3 = 1
+-- The local variables for this scene (buttons will be assigned in the show function)
+local bkgImage
+local level1Button
+local level2Button
+local level3Button
 
 -----------------------------------------------------------------------------------------
 -- LOCAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
 
-local function AskQuestion()
+local function Level1Transition( )       
+    composer.gotoScene( "credits_screen", {effect = "zoomInOut", time = 500})
+end 
 
-end
+local function Level2Transition( )       
+    composer.gotoScene( "credits_screen", {effect = "zoomInOut", time = 500})
+end 
 
-local function Movelogocar(event)
-
-end
+local function Level3Transition( )       
+    composer.gotoScene( "credits_screen", {effect = "zoomInOut", time = 500})
+end 
 
 -------------------------------------------------------------
 --Objects
 -------------------------------------------------------------
+-- Creating Math Button
+    level1Button = widget.newButton
+        {   
+            -- Set its position on the screen relative to the screen size
+            x = display.contentWidth/2,
+            y = display.contentHeight*3.8/8,
+            width = 200,
+            height = 200,
 
+            -- Insert the images here
+            defaultFile = "Images/fake math button.png",
+            overFile = "Images/fake math button.png",
+
+            -- When the button is released, call the Level1 screen transition function
+            onRelease = Level1Transition          
+        } 
+
+-- Creating art Button
+    level2Button = widget.newButton
+        {   
+            -- Set its position on the screen relative to the screen size
+            x = display.contentWidth/2,
+            y = display.contentHeight*3.8/8,
+            width = 200,
+            height = 200,
+
+            -- Insert the images here
+            defaultFile = "Images/fake art button.png",
+            overFile = "Images/fake art button.png",
+
+            -- When the button is released, call the Level1 screen transition function
+            onRelease = Level2Transition          
+        } 
+
+-- Creating science Button
+    level2Button = widget.newButton
+        {   
+            -- Set its position on the screen relative to the screen size
+            x = display.contentWidth/2,
+            y = display.contentHeight*3.8/8,
+            width = 200,
+            height = 200,
+
+            -- Insert the images here
+            defaultFile = "Images/fake science button.png",
+            overFile = "Images/fake science button.png",
+
+            -- When the button is released, call the Level1 screen transition function
+            onRelease = Level2Transition          
+        } 
 -----------------------------------------------------------------------------------------
 -- GLOBAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
@@ -105,10 +156,6 @@ function scene:show( event )
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
 
-
-        -- Ask a question
-
-        Runtime:addEventListener("enterFrame", Movelogocar)
 
     end
 end 
