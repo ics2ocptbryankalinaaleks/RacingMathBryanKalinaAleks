@@ -38,6 +38,7 @@ soundOn = true
 local bkg_image
 local playButton
 local creditsButton
+local levelsButton
 -----------------------------------------------------------------------------------------
 --LOCAL SOUNDS
 -----------------------------------------------------------------------------------------
@@ -46,6 +47,9 @@ local bkgSoundChannel
 -----------------------------------------------------------------------------------------
 -- LOCAL FUNCTIONS
 -----------------------------------------------------------------------------------------
+local function PlayButtonTransition( )
+    composer.gotoScene( "level_select", {effect = "fromBottom", time = 1000})
+end  
 
 -- Creating Transition Function to Credits Page
 local function CreditsTransition( )       
@@ -54,10 +58,6 @@ end
 
 -----------------------------------------------------------------------------------------
 
--- Creating Transition to Level1 Screen
-local function Level1ScreenTransition( )
-    composer.gotoScene( "level1_screen", {effect = "fromBottom", time = 1000})
-end    
 
 -- INSERT LOCAL FUNCTION DEFINITION THAT GOES TO INSTRUCTIONS SCREEN 
 
@@ -65,6 +65,7 @@ end
 local function InstructionsTransition( )       
     composer.gotoScene( "instructions_screen", {effect = "zoomOutInFadeRotate", time = 500})
 end
+
 -----------------------------------------------------------------------------------------
 -- GLOBAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
@@ -111,7 +112,7 @@ function scene:create( event )
             overFile = "Images/PlayButtonPressed.png",
 
             -- When the button is released, call the Level1 screen transition function
-            onRelease = Level1ScreenTransition          
+            onRelease = PlayButtonTransition         
         } 
 
     -----------------------------------------------------------------------------------------
