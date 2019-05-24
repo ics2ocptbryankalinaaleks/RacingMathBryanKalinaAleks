@@ -33,11 +33,18 @@ display.setStatusBar(display.HiddenStatusBar)
 -- The local variables for this scene
 local bkg_image
 local logocar = display.newImage("Images/CompanyLogo.png", 0, 0)
+local car1 = display.newImage("Images/BlueCar.png", 0, 0)
+local car2 = display.newImage("Images/GreenCar.png", 0, 0)
+local car3 = display.newImage("Images/OrangeCar.png", 0, 0)
 local scrollSpeedLogo = 1
-local scrollSpeed1 = 1
-local scrollSpeed2 = 1
-local scrollSpeed3 = 1
-
+local scrollSpeedCar1 = 1
+local scrollSpeedCar2 = 1
+local scrollSpeedCar3 = 1
+-----------------------------------------------------------------------------------------
+--LOCAL SOUNDS
+-----------------------------------------------------------------------------------------
+local bkgSound = audio.loadStream("Sounds/bkgsMainMenu.mp3")
+local bkgSoundChannel
 -----------------------------------------------------------------------------------------
 -- LOCAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
