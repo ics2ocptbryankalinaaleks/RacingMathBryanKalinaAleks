@@ -39,15 +39,15 @@ local level3Button
 -----------------------------------------------------------------------------------------
 
 local function Level1Transition( )       
-    composer.gotoScene( "credits_screen", {effect = "zoomInOut", time = 500})
+    composer.gotoScene( "level1_screen", {effect = "zoomInOut", time = 500})
 end 
 
 local function Level2Transition( )       
-    composer.gotoScene( "credits_screen", {effect = "zoomInOut", time = 500})
+    composer.gotoScene( "level2_screen", {effect = "zoomInOut", time = 500})
 end 
 
 local function Level3Transition( )       
-    composer.gotoScene( "credits_screen", {effect = "zoomInOut", time = 500})
+    composer.gotoScene( "level3_screen", {effect = "zoomInOut", time = 500})
 end 
 
 -------------------------------------------------------------
@@ -143,11 +143,7 @@ function scene:show( event )
 
     if ( phase == "will" ) then
 
-        -- Called when the scene is still off screen (but is about to come on screen).
-        logocar.x = display.contentWidth*1/8
-        logocar.y = display.contentHeight*5.9/8
-        logocar:rotate(-45)
-        logocar:scale(0.1, 0.1)
+
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
@@ -178,9 +174,7 @@ function scene:hide( event )
 
     elseif ( phase == "did" ) then
         -- Called immediately after scene goes off screen.
-        Runtime:removeEventListener("enterFrame", Movelogocar)
-        Runtime:removeEventListener("enterFrame", MovelogocarDown)
-        Runtime:removeEventListener("enterFrame", Stop)
+
     end
 
 end --function scene:hide( event )
