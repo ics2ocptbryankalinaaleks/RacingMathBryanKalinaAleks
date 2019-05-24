@@ -9,6 +9,7 @@
 -- INITIALIZATIONS
 -----------------------------------------------------------------------------------------
 
+
 -- Use Composer Libraries
 local composer = require( "composer" )
 local widget = require( "widget" )
@@ -44,22 +45,33 @@ local function AskQuestion()
 
 end
 
-local function MovelogocarDown(event)
-    logocar.x = logocar.x - scrollSpeed3
-    logocar.y = logocar.y - scrollSpeed4
+local function MovelogocarRight(event)
+    --print ("***MovelogocarRight")
+    logocar.x = logocar.x + scrollSpeed
 end
 
-local function MovelogocarRight(event)
-    logocar.x = logocar.x + scrollSpeed
+local function MovelogocarDown(event)
+    --print ("***MovelogocarDown")
+    logocar.x = logocar.x - scrollSpeed3
+    logocar.y = logocar.y - scrollSpeed4
+
+    if (logocar.x >= 900) then
+        logocar:rotate(-45)
+        Runtime:removeEventListener("enterFrame", MovelogocarDown)
+        --Ask a question
+        Runtime:addEventListener("enterFrame", MovelogocarRight)
+    end
 end
+
+
+
 local function Movelogocar(event)
+    --print ("***Movelogocar")
     logocar.x = logocar.x + scrollSpeed
     logocar.y = logocar.y + scrollSpeed2
-    if (logocar.x >= 720) then
-        Runtime:addEventListener("enterFrame", MovelogocarDown)
-        --Ask a question
-        Runtime:removeEventListener("enterFrame", MovelogocarRight)
-    elseif (logocar.x >= 657) then
+
+    
+    if (logocar.x >= 657) then
         logocar:rotate(90)
         Runtime:removeEventListener("enterFrame", Movelogocar)
         -- Ask another question
@@ -70,7 +82,7 @@ end
 -------------------------------------------------------------
 --Objects
 -------------------------------------------------------------
-
+-- ask about the scroll direction & parabolic path
 -----------------------------------------------------------------------------------------
 -- GLOBAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
@@ -90,11 +102,9 @@ function scene:create( event )
     bkg_image.width = display.contentWidth
     bkg_image.height = display.contentHeight
 
-    -- Send the background image to the back layer so all other objects can be on top
-    bkg_image:toBack()
-
-        -- Insert background image into the scene group in order to ONLY be associated with this scene
+    -- Insert background image into the scene group in order to ONLY be associated with this scene
     sceneGroup:insert( bkg_image )    
+    sceneGroup:insert( logocar )
 
 end --function scene:create( event )
 
@@ -112,8 +122,8 @@ function scene:show( event )
     if ( phase == "will" ) then
 
         -- Called when the scene is still off screen (but is about to come on screen).
-        logocar.x = display.contentWidth*0.65/8
-        logocar.y = display.contentHeight*6.2/8
+        logocar.x = display.contentWidth*1/8
+        logocar.y = display.contentHeight*5.9/8
         logocar:rotate(-45)
         logocar:scale(0.1, 0.1)
     -----------------------------------------------------------------------------------------
