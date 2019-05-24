@@ -488,7 +488,7 @@ function scene:create( event )
     bkg.y = 0
 
 -- create the car
-    companyLogo = display.newImageRect("Images/companyLogo.png", 200, 100)
+    companyLogo = display.newImageRect("Images/CompanyLogo.png", 200, 100)
     
     -- anchor the car
     companyLogo.anchorX = 0
