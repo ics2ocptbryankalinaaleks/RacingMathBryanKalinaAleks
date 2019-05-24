@@ -57,10 +57,10 @@ end
     level1Button = widget.newButton
         {   
             -- Set its position on the screen relative to the screen size
-            x = display.contentWidth/3.5,
-            y = display.contentHeight*3.8/8,
-            width = 200,
-            height = 200,
+            x = 150,
+            y = 150,
+            width = 250,
+            height = 250,
 
             -- Insert the images here
             defaultFile = "Images/MathButtonUnpressed.png",
@@ -74,10 +74,10 @@ end
     level2Button = widget.newButton
         {   
             -- Set its position on the screen relative to the screen size
-            x = display.contentWidth/2,
-            y = display.contentHeight*3.8/8,
-            width = 200,
-            height = 200,
+            x = 850,
+            y = 150,
+            width = 250,
+            height = 250,
 
             -- Insert the images here
             defaultFile = "Images/ArtButtonUnpressed.png",
@@ -91,17 +91,17 @@ end
     level3Button = widget.newButton
         {   
             -- Set its position on the screen relative to the screen size
-            x = display.contentWidth/.5,
-            y = display.contentHeight*3.8/8,
-            width = 200,
-            height = 200,
+            x = 150,
+            y = 600,
+            width = 250,
+            height = 250,
 
             -- Insert the images here
             defaultFile = "Images/ScienceButtonUnpressed.png",
             overFile = "Images/ScienceButtonPressed.png",
 
             -- When the button is released, call the Level1 screen transition function
-            onRelease = Level2Transition          
+            onRelease = Level3Transition          
         } 
 -----------------------------------------------------------------------------------------
 -- GLOBAL SCENE FUNCTIONS
