@@ -65,7 +65,7 @@ function scene:create( event )
     -----------------------------------------------------------------------------------------
 
     -- Insert the background image
-    bkg_image = display.newImageRect("Images/Level1Screen.png", display.contentWidth, display.contentHeight)
+    bkg_image = display.newImageRect("Images/Level2ScreenKalinaD.F..png", display.contentWidth, display.contentHeight)
     bkg_image.x = display.contentCenterX
     bkg_image.y = display.contentCenterY
     bkg_image.width = display.contentWidth
@@ -76,7 +76,6 @@ function scene:create( event )
 
         -- Insert background image into the scene group in order to ONLY be associated with this scene
     sceneGroup:insert( bkg_image )    
-    sceneGroup:insert( logocar )
 
 end --function scene:create( event )
 
@@ -96,7 +95,6 @@ function scene:show( event )
         -- Called when the scene is still off screen (but is about to come on screen).
         logocar.x = display.contentWidth*1/8
         logocar.y = display.contentHeight*5.9/8
-        logocar:rotate(-45)
         logocar:scale(0.1, 0.1)
     -----------------------------------------------------------------------------------------
 

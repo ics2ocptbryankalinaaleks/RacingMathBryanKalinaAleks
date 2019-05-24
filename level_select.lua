@@ -57,7 +57,7 @@ end
     level1Button = widget.newButton
         {   
             -- Set its position on the screen relative to the screen size
-            x = display.contentWidth/2,
+            x = display.contentWidth/3.5,
             y = display.contentHeight*3.8/8,
             width = 200,
             height = 200,
@@ -91,7 +91,7 @@ end
     level3Button = widget.newButton
         {   
             -- Set its position on the screen relative to the screen size
-            x = display.contentWidth/2,
+            x = display.contentWidth/.5,
             y = display.contentHeight*3.8/8,
             width = 200,
             height = 200,
