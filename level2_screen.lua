@@ -43,7 +43,7 @@ local scrollSpeedCar3 = 1
 -----------------------------------------------------------------------------------------
 --LOCAL SOUNDS
 -----------------------------------------------------------------------------------------
-local bkgSound = audio.loadStream("Sounds/bkgsMainMenu.mp3")
+local bkgSound = audio.loadStream("Sounds/bkgslevel2.mp3")
 local bkgSoundChannel
 -----------------------------------------------------------------------------------------
 -- LOCAL SCENE FUNCTIONS
