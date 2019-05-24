@@ -88,7 +88,7 @@ end
         } 
 
 -- Creating science Button
-    level2Button = widget.newButton
+    level3Button = widget.newButton
         {   
             -- Set its position on the screen relative to the screen size
             x = display.contentWidth/2,
@@ -126,7 +126,10 @@ function scene:create( event )
     bkg_image:toBack()
 
         -- Insert background image into the scene group in order to ONLY be associated with this scene
-    sceneGroup:insert( bkg_image )    
+    sceneGroup:insert( bkg_image )
+    sceneGroup:insert(level1Button)
+    sceneGroup:insert(level2Button)
+    sceneGroup:insert(level3Button)
 
 end --function scene:create( event )
 
