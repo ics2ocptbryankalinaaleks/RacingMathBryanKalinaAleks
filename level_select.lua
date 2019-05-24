@@ -36,7 +36,7 @@ local level3Button
 -----------------------------------------------------------------------------------------
 --LOCAL SOUNDS
 -----------------------------------------------------------------------------------------
-local bkgSound = audio.loadStream("Sounds/bkgsMainMenu.mp3")
+local bkgSound = audio.loadStream("Sounds/bkgs.mp3")
 local bkgSoundChannel
 -----------------------------------------------------------------------------------------
 -- LOCAL SCENE FUNCTIONS
