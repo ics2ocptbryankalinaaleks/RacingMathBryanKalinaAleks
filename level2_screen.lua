@@ -120,7 +120,7 @@ function scene:show( event )
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
-
+        bkgSoundChannel = audio.play( bkgSound, {channel=1, loops=-1})
         -- Called when the scene is now on screen.
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
@@ -150,6 +150,7 @@ function scene:hide( event )
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
+        audio.stop(bkgSoundChannel)
         -- Called immediately after scene goes off screen.
         Runtime:removeEventListener("enterFrame", Movelogocar)
         Runtime:removeEventListener("enterFrame", MovelogocarDown)
