@@ -31,7 +31,7 @@ local scene = composer.newScene( sceneName )
 
 -- The local variables for this scene
 local bkg_image
-local bkgSound = audio.loadStream("Sounds/bkglevel3.mp3")
+local bkgSound = audio.loadStream("Sounds/bkgslevel3.mp3")
 local bkgSoundChannel
 local logocar = display.newImage("Images/CompanyLogo.png", 0, 0)
 local scrollSpeed = 1.4
