@@ -33,6 +33,7 @@ local bkgImage
 local level1Button
 local level2Button
 local level3Button
+local backButton
 -----------------------------------------------------------------------------------------
 --LOCAL SOUNDS
 -----------------------------------------------------------------------------------------
@@ -41,6 +42,9 @@ local bkgSoundChannel
 -----------------------------------------------------------------------------------------
 -- LOCAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
+local function BackTransition( )
+    composer.gotoScene( "main_menu", {effect = "zoomInOut", time = 500})
+end
 
 local function Level1Transition( )       
     composer.gotoScene( "level1_screen", {effect = "zoomInOut", time = 500})
@@ -107,6 +111,23 @@ end
             -- When the button is released, call the Level1 screen transition function
             onRelease = Level3Transition          
         } 
+
+-- creating back button
+    BackButton = widget.newButton
+        {   
+            -- Set its position on the screen relative to the screen size
+            x = 850,
+            y = 600,
+            width = 250,
+            height = 250,
+
+            -- Insert the images here
+            defaultFile = "Images/BackButtonUnpressed.png",
+            overFile = "Images/BackButtonPressed.png",
+
+            -- When the button is released, call the Level1 screen transition function
+            onRelease = BackTransition          
+        } 
 -----------------------------------------------------------------------------------------
 -- GLOBAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
@@ -134,6 +155,7 @@ function scene:create( event )
     sceneGroup:insert(level1Button)
     sceneGroup:insert(level2Button)
     sceneGroup:insert(level3Button)
+    sceneGroup:insert(backButton)
 
 end --function scene:create( event )
 
