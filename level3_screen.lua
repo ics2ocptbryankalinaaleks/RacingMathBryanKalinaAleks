@@ -31,6 +31,8 @@ local scene = composer.newScene( sceneName )
 
 -- The local variables for this scene
 local bkg_image
+local bkgSound = audio.loadStream("Sounds/bkglevel3.mp3")
+local bkgSoundChannel
 local logocar = display.newImage("Images/CompanyLogo.png", 0, 0)
 local scrollSpeed = 1.4
 local scrollSpeed2 = -1.05
@@ -134,7 +136,7 @@ function scene:show( event )
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
 
-
+        bkgSoundChannel = audio.play( bkgSound, {channel=1, loops=-1})
         -- Ask a question
 
         Runtime:addEventListener("enterFrame", Movelogocar)
