@@ -24,6 +24,8 @@ sceneName = "level2_screen"
 -- Creating Scene Object
 local scene = composer.newScene( sceneName )
 
+setStatusBar(display.HiddenStatusBar)
+
 -----------------------------------------------------------------------------------------
 -- LOCAL VARIABLES
 -----------------------------------------------------------------------------------------
