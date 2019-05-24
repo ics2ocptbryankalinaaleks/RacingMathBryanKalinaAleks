@@ -63,8 +63,8 @@ end
             height = 200,
 
             -- Insert the images here
-            defaultFile = "Images/fake math button.png",
-            overFile = "Images/fake math button.png",
+            defaultFile = "Images/MathButtonUnpressed.png",
+            overFile = "Images/MathButtonPressed.png",
 
             -- When the button is released, call the Level1 screen transition function
             onRelease = Level1Transition          
@@ -80,8 +80,8 @@ end
             height = 200,
 
             -- Insert the images here
-            defaultFile = "Images/fake art button.png",
-            overFile = "Images/fake art button.png",
+            defaultFile = "Images/ArtButtonUnpressed.png",
+            overFile = "Images/ArtButtonPressed.png",
 
             -- When the button is released, call the Level1 screen transition function
             onRelease = Level2Transition          
@@ -97,8 +97,8 @@ end
             height = 200,
 
             -- Insert the images here
-            defaultFile = "Images/fake science button.png",
-            overFile = "Images/fake science button.png",
+            defaultFile = "Images/ScienceButtonUnpressed.png",
+            overFile = "Images/ScienceButtonPressed.png",
 
             -- When the button is released, call the Level1 screen transition function
             onRelease = Level2Transition          
