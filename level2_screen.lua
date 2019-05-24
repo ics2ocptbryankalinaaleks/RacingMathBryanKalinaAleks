@@ -24,7 +24,7 @@ sceneName = "level2_screen"
 -- Creating Scene Object
 local scene = composer.newScene( sceneName )
 
-setStatusBar(display.HiddenStatusBar)
+display.setStatusBar(display.HiddenStatusBar)
 
 -----------------------------------------------------------------------------------------
 -- LOCAL VARIABLES
@@ -47,6 +47,18 @@ local function AskQuestion()
 end
 
 local function Movelogocar(event)
+
+end
+
+local function MoveCar1(event)
+
+end
+
+local function MoveCar2(event)
+
+end
+
+local function MoveCar3(event)
 
 end
 
