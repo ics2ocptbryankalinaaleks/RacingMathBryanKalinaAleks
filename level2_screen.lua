@@ -383,7 +383,7 @@ local function AskQuestion()
         question9Answer3 = display.newText("", 0, 0, Arial, textSize)
         question9Answer3:setTextColor(1, 51/255, 1)
 
-    elseif (questionNumber == 10) then
+    elseif (questionNumber == 10) then 
         -- set the question text
         question10Text = display.newText("", 0, 0, Arial, textSize)
 
