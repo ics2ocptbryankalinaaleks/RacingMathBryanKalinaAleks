@@ -277,7 +277,7 @@ local function AskQuestion()
 
     elseif (questionNumber == 3) then
         -- set the question text
-        question3Text = display.newText("", 0, 0, Arial, textSize)
+        question3Text = display.newText("Which color is the opposite of orange?", 0, 0, Arial, textSize)
 
         -- set the correct answer text, text color, and position
         question3CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
