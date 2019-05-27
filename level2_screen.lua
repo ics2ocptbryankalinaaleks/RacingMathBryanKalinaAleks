@@ -33,14 +33,162 @@ display.setStatusBar(display.HiddenStatusBar)
 
 -- The local variables for this scene
 local bkg_image
+local questionNumber
+
+-- cars
 local logocar = display.newImage("Images/CompanyLogo.png", 0, 0)
 local car1 = display.newImage("Images/BlueCar.png", 0, 0)
 local car2 = display.newImage("Images/GreenCar.png", 0, 0)
 local car3 = display.newImage("Images/OrangeCar.png", 0, 0)
+
+-- scrollspeeds
 local scrollSpeedLogo = 1
 local scrollSpeedCar1 = 1
-local scrollSpeedCar2 = 1
-local scrollSpeedCar3 = 1
+local scrollSpeedCar2 = 1.5
+local scrollSpeedCar3 = 2
+
+-- QUESTIONS
+
+-- question1
+local question1Text
+local question1CorrectAnswer
+local question1Answer1
+local question1Answer2
+local question1Answer3
+
+-- question2
+local question2Text
+local question2CorrectAnswer
+local question2Answer1
+local question2Answer2
+local question2Answer3
+
+-- question3
+local question3Text
+local question3CorrectAnswer
+local question3Answer1
+local question3Answer2
+local question3Answer3
+
+-- question4
+local question4Text
+local question4CorrectAnswer
+local question4Answer1
+local question4Answer2
+local question4Answer3
+
+-- question5
+local question5Text
+local question5CorrectAnswer
+local question5Answer1
+local question5Answer2
+local question5Answer3
+
+-- question6
+local question6Text
+local question6CorrectAnswer
+local question6Answer1
+local question6Answer2
+local question6Answer3
+
+-- question7
+local question7Text
+local question7CorrectAnswer
+local question7Answer1
+local question7Answer2
+local question7Answer3
+
+-- question8
+local question8Text
+local question8CorrectAnswer
+local question8Answer1
+local question8Answer2
+local question8Answer3
+
+-- question9
+local question9Text
+local question9CorrectAnswer
+local question9Answer1
+local question9Answer2
+local question9Answer3
+
+-- question10
+local question10Text
+local question10CorrectAnswer
+local question10Answer1
+local question10Answer2
+local question10Answer3
+
+-- question11
+local question11Text
+local question11CorrectAnswer
+local question11Answer1
+local question11Answer2
+local question11Answer3
+
+-- question12
+local question12Text
+local question12CorrectAnswer
+local question12Answer1
+local question12Answer2
+local question12Answer3
+
+-- question13
+local question13Text
+local question13CorrectAnswer
+local question13Answer1
+local question13Answer2
+local question13Answer3
+
+-- question14
+local question14Text
+local question14CorrectAnswer
+local question14Answer1
+local question14Answer2
+local question14Answer3
+
+-- question15
+local question15Text
+local question15CorrectAnswer
+local question15Answer1
+local question15Answer2
+local question15Answer3
+
+-- question16
+local question16Text
+local question16CorrectAnswer
+local question16Answer1
+local question16Answer2
+local question16Answer3
+
+-- question17
+local question17Text
+local question17CorrectAnswer
+local question17Answer1
+local question17Answer2
+local question17Answer3
+
+-- question18
+local question18Text
+local question18CorrectAnswer
+local question18Answer1
+local question18Answer2
+local question18Answer3
+
+-- question19
+local question19Text
+local question19CorrectAnswer
+local question19Answer1
+local question19Answer2
+local question19Answer3
+
+-- question20
+local question20Text
+local question20CorrectAnswer
+local question20Answer1
+local question20Answer2
+local question20Answer3
+
 -----------------------------------------------------------------------------------------
 --LOCAL SOUNDS
 -----------------------------------------------------------------------------------------
@@ -51,7 +199,12 @@ local bkgSoundChannel
 -----------------------------------------------------------------------------------------
 
 local function AskQuestion()
+    questionNumber = math.random(1, 20)
 
+    if (questionNumber == 1) then
+        display.newText
+
+    end
 end
 
 local function Movelogocar(event)
