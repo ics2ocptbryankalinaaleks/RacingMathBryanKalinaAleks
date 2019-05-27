@@ -35,29 +35,38 @@ local scrollSpeed = 1.4
 local scrollSpeed2 = -1.05
 local scrollSpeed3 = -1
 local scrollSpeed4 = -1.1
+local questionsAnswered = 0
 
 -----------------------------------------------------------------------------------------
--- LOCAL SCENE FUNCTIONS
+-- LOCAL & GLOBAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
 
 local function AskQuestion()
-
+    -- set all scroll speeds to 0 to stop the car
+    scrollSpeed = 0
+    scrollSpeed2 = 0
+    scrollSpeed3 = 0
+    scrollSpeed4 = 0
+    composer.showOverlay( "level1_question", { isModal = true, effect = "fade", time = 100})
+    questionsAnswered = questionsAnswered + 1
 end
 
 local function MovelogocarRight(event)
-    --print ("***MovelogocarRight")
+    --print ("***MovelogocarRight: logocar.x = " .. logocar.x)
     logocar.x = logocar.x + scrollSpeed
 end
 
 local function MovelogocarDown(event)
-    --print ("***MovelogocarDown")
+    --print ("***MovelogocarDown: logocar.x = " .. logocar.x)
     logocar.x = logocar.x - scrollSpeed3
     logocar.y = logocar.y - scrollSpeed4
+
 
     if (logocar.x >= 900) then
         logocar:rotate(-45)
         Runtime:removeEventListener("enterFrame", MovelogocarDown)
         --Ask a question
+        AskQuestion()
         Runtime:addEventListener("enterFrame", MovelogocarRight)
     end
 end
@@ -65,23 +74,41 @@ end
 
 
 local function Movelogocar(event)
-    --print ("***Movelogocar")
+    --print ("***Movelogocar: logocar.x = " .. logocar.x)
     logocar.x = logocar.x + scrollSpeed
     logocar.y = logocar.y + scrollSpeed2
+    
 
     
     if (logocar.x >= 657) then
         logocar:rotate(90)
         Runtime:removeEventListener("enterFrame", Movelogocar)
         -- Ask another question
+        AskQuestion()
         Runtime:addEventListener("enterFrame", MovelogocarDown)
     end
 end
 
+
+------------------------------s-------------------------------
+-- GLOBAL SCENE FUNCTIONS
 -------------------------------------------------------------
---Objects
--------------------------------------------------------------
--- ask about the scroll direction & parabolic path
+  
+function ResumeGame()
+    -- reset the speed
+    scrollSpeed = 1.4
+    scrollSpeed2 = -1.05
+    scrollSpeed3 = -1
+    scrollSpeed4 = -1.1
+
+    questionsAnswered = questionsAnswered + 1
+    
+    if (questionsAnswered == 2) then
+        -- after getting 2 questions right, go to the you win screen
+        composer.gotoScene( "level2_screen" )
+    end
+end
+
 -----------------------------------------------------------------------------------------
 -- GLOBAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
@@ -161,7 +188,6 @@ function scene:hide( event )
         -- Called immediately after scene goes off screen.
         Runtime:removeEventListener("enterFrame", Movelogocar)
         Runtime:removeEventListener("enterFrame", MovelogocarDown)
-        Runtime:removeEventListener("enterFrame", Stop)
     end
 
 end --function scene:hide( event )
