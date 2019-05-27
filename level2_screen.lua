@@ -207,14 +207,401 @@ local function AskQuestion()
         -- set the question text
         question1Text = display.newText("Click on the Primary Color", 0, 0, Arial, textSize)
 
-        -- set the correct answer text, and text color
+        -- set the correct answer text, text color, and position
         question1CorrectAnswer = display.newText("RED", 0, 0, Arial, textSize)
         question1CorrectAnswer:setTextColor(1, 0, 0)
 
-        -- 
+        -- set the first wrong answer text, text color, and position
         question1Answer1 = display.newText("GREEN", 0, 0, Arial, textSize)
+        question1Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
         question1Answer2 = display.newText("PURPLE", 0, 0, Arial, textSize)
+        question1Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
         question1Answer3 = display.newText("PINK", 0, 0, Arial, textSize)
+        question1Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 2) then
+        -- set the question text
+        question2Text = display.newText("", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question2CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+        question2CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question2Answer1 = display.newText("", 0, 0, Arial, textSize)
+        question2Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question2Answer2 = display.newText("", 0, 0, Arial, textSize)
+        question2Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
+        question2Answer3 = display.newText("", 0, 0, Arial, textSize)
+        question2Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 3) then
+        -- set the question text
+        question3Text = display.newText("", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question3CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+        question3CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question3Answer1 = display.newText("", 0, 0, Arial, textSize)
+        question3Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question3Answer2 = display.newText("", 0, 0, Arial, textSize)
+        question3Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
+        question3Answer3 = display.newText("", 0, 0, Arial, textSize)
+        question3Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 4 then
+        -- set the question text
+        question4Text = display.newText("", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question4CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+        question4CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question4Answer1 = display.newText("", 0, 0, Arial, textSize)
+        question4Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question4Answer2 = display.newText("", 0, 0, Arial, textSize)
+        question4Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
+        question4Answer3 = display.newText("", 0, 0, Arial, textSize)
+        question4Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 5) then
+        -- set the question text
+        question5Text = display.newText("", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question5CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+        question5CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question5Answer1 = display.newText("", 0, 0, Arial, textSize)
+        question5Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question5Answer2 = display.newText("", 0, 0, Arial, textSize)
+        question5Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
+        question5Answer3 = display.newText("", 0, 0, Arial, textSize)
+        question5Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 6) then
+        -- set the question text
+        question6Text = display.newText("", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question6CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+        question6CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question6Answer1 = display.newText("", 0, 0, Arial, textSize)
+        question6Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question6Answer2 = display.newText("", 0, 0, Arial, textSize)
+        question6Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
+        question6Answer3 = display.newText("", 0, 0, Arial, textSize)
+        question6Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 7) then
+        -- set the question text
+        question7Text = display.newText("", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question7CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+        question7CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question7Answer1 = display.newText("", 0, 0, Arial, textSize)
+        question7Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question7Answer2 = display.newText("", 0, 0, Arial, textSize)
+        question7Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
+        question7Answer3 = display.newText("", 0, 0, Arial, textSize)
+        question7Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 8) then
+        -- set the question text
+        question8Text = display.newText("", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question8CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+        question8CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question8Answer1 = display.newText("", 0, 0, Arial, textSize)
+        question8Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question8Answer2 = display.newText("", 0, 0, Arial, textSize)
+        question8Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
+        question8Answer3 = display.newText("", 0, 0, Arial, textSize)
+        question8Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 9) then
+        -- set the question text
+        question9Text = display.newText("", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question9CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+        question9CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question9Answer1 = display.newText("", 0, 0, Arial, textSize)
+        question9Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question9Answer2 = display.newText("", 0, 0, Arial, textSize)
+        question9Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
+        question9Answer3 = display.newText("", 0, 0, Arial, textSize)
+        question9Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 10) then
+        -- set the question text
+        question10Text = display.newText("", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question10CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+        question10CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question10Answer1 = display.newText("", 0, 0, Arial, textSize)
+        question10Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question10Answer2 = display.newText("", 0, 0, Arial, textSize)
+        question10Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, 2text color, and position
+        question10Answer3 = display.newText("", 0, 0, Arial, textSize)
+        question10Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 11) then
+        -- set the question text
+        question11Text = display.newText("Click on the Primary Color", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question11CorrectAnswer = display.newText("RED", 0, 0, Arial, textSize)
+        question11CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question11Answer1 = display.newText("GREEN", 0, 0, Arial, textSize)
+        question11Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question11Answer2 = display.newText("PURPLE", 0, 0, Arial, textSize)
+        question11Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
+        question11Answer3 = display.newText("PINK", 0, 0, Arial, textSize)
+        question11Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 12) then
+        -- set the question text
+        question12Text = display.newText("", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question12CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+        question12CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question12Answer1 = display.newText("", 0, 0, Arial, textSize)
+        question12Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question12Answer2 = display.newText("", 0, 0, Arial, textSize)
+        question12Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
+        question12Answer3 = display.newText("", 0, 0, Arial, textSize)
+        question12Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 13) then
+        -- set the question text
+        question13Text = display.newText("", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question13CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+        question13CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question13Answer1 = display.newText("", 0, 0, Arial, textSize)
+        question13Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question13Answer2 = display.newText("", 0, 0, Arial, textSize)
+        question13Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
+        question13Answer3 = display.newText("", 0, 0, Arial, textSize)
+        question13Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 14) then
+        -- set the question text
+        question14Text = display.newText("", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question14CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+        question14CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question14Answer1 = display.newText("", 0, 0, Arial, textSize)
+        question14Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question14Answer2 = display.newText("", 0, 0, Arial, textSize)
+        question14Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
+        question14Answer3 = display.newText("", 0, 0, Arial, textSize)
+        question14Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 15) then
+        -- set the question text
+        question15Text = display.newText("", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question15CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+        question15CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question15Answer1 = display.newText("", 0, 0, Arial, textSize)
+        question15Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question15Answer2 = display.newText("", 0, 0, Arial, textSize)
+        question15Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
+        question15Answer3 = display.newText("", 0, 0, Arial, textSize)
+        question15Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 16) then
+        -- set the question text
+        question16Text = display.newText("", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question16CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+        question16CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question16Answer1 = display.newText("", 0, 0, Arial, textSize)
+        question16Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question16Answer2 = display.newText("", 0, 0, Arial, textSize)
+        question16Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
+        question16Answer3 = display.newText("", 0, 0, Arial, textSize)
+        question16Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 17) then
+        -- set the question text
+        question17Text = display.newText("", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question17CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+        question17CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question17Answer1 = display.newText("", 0, 0, Arial, textSize)
+        question17Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question17Answer2 = display.newText("", 0, 0, Arial, textSize)
+        question17Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
+        question17Answer3 = display.newText("", 0, 0, Arial, textSize)
+        question17Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 18) then
+        -- set the question text
+        question18Text = display.newText("", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question18CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+        question18CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question18Answer1 = display.newText("", 0, 0, Arial, textSize)
+        question18Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question18Answer2 = display.newText("", 0, 0, Arial, textSize)
+        question18Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
+        question18Answer3 = display.newText("", 0, 0, Arial, textSize)
+        question18Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 19) then
+        -- set the question text
+        question19Text = display.newText("", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question19CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+        question19CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question19Answer1 = display.newText("", 0, 0, Arial, textSize)
+        question19Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question19Answer2 = display.newText("", 0, 0, Arial, textSize)
+        question19Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
+        question19Answer3 = display.newText("", 0, 0, Arial, textSize)
+        question19Answer3:setTextColor(1, 51/255, 1)
+
+    elseif (questionNumber == 20) then
+        -- set the question text
+        question20Text = display.newText("", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, text color, and position
+        question20CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+        question20CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- set the first wrong answer text, text color, and position
+        question20Answer1 = display.newText("", 0, 0, Arial, textSize)
+        question20Answer1:setTextColor(0, 1, 0)
+
+        -- set the second wrong answer text, text color, and position
+        question20Answer2 = display.newText("", 0, 0, Arial, textSize)
+        question20Answer2:setTextColor(127/255, 0, 1)
+
+        -- set the third wrong answer text, text color, and position
+        question20Answer3 = display.newText("", 0, 0, Arial, textSize)
+        question20Answer3:setTextColor(1, 51/255, 1)
 
     end
 end
