@@ -4,7 +4,7 @@
 -- Date: Month Day, Year
 -- Description: This is the level 1 screen of the game.
 -----------------------------------------------------------------------------------------
-
+display.setStatusBar(display.HiddenStatusBar)
 -----------------------------------------------------------------------------------------
 -- INITIALIZATIONS
 -----------------------------------------------------------------------------------------
@@ -54,12 +54,15 @@ end
 local function MovelogocarRight(event)
     --print ("***MovelogocarRight: logocar.x = " .. logocar.x)
     logocar.x = logocar.x + scrollSpeed
+    logocar:rotate(10)
+
 end
 
 local function MovelogocarDown(event)
     --print ("***MovelogocarDown: logocar.x = " .. logocar.x)
     logocar.x = logocar.x - scrollSpeed3
     logocar.y = logocar.y - scrollSpeed4
+    logocar:rotate(-10)
 
 
     if (logocar.x >= 900) then
@@ -77,7 +80,7 @@ local function Movelogocar(event)
     --print ("***Movelogocar: logocar.x = " .. logocar.x)
     logocar.x = logocar.x + scrollSpeed
     logocar.y = logocar.y + scrollSpeed2
-    
+    logocar:rotate(10)
 
     
     if (logocar.x >= 657) then

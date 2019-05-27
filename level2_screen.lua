@@ -263,7 +263,7 @@ local function AskQuestion()
         question3Answer3 = display.newText("", 0, 0, Arial, textSize)
         question3Answer3:setTextColor(1, 51/255, 1)
 
-    elseif (questionNumber == 4 then
+    elseif (questionNumber == 4) then
         -- set the question text
         question4Text = display.newText("", 0, 0, Arial, textSize)
 
