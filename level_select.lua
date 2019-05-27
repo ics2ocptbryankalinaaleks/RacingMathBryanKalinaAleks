@@ -113,7 +113,7 @@ end
         } 
 
 -- creating back button
-    BackButton = widget.newButton
+    backButton = widget.newButton
         {   
             -- Set its position on the screen relative to the screen size
             x = 850,
