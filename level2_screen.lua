@@ -268,7 +268,7 @@ local function AskQuestion()
         question2Answer2Second:setTextColor(127/255, 0, 1)
 
         -- set the third wrong answer text, text color, and position
-        question2Answer3First = display.newText("", 0, 0, Arial, textSize)
+        question2Answer3First = display.newText("", 0, 0, Arial, textSize) 
         question2Answer3First:setTextColor(1, 51/255, 1)
         question2Answer3Plus = display.newText("", 0, 0, Arial, textSize)
         question2Answer3Plus:setTextColor(1, 51/255, 1)
