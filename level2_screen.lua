@@ -50,10 +50,18 @@ local scrollSpeedCar3 = 2
 
 -- question1
 local question1Text
-local question1CorrectAnswer
-local question1Answer1
-local question1Answer2
-local question1Answer3
+local question1CorrectAnswerFirst
+local question1CorrectAnswerPlus
+local question1CorrectAnswerSecond
+local question1Answer1First
+local question1Answer1Plus
+local question1Answer1Second
+local question1Answer2First
+local question1Answer2Plus
+local question1Answer2Second
+local question1Answer3First
+local question1Answer3Plus
+local question1Answer3Second
 
 -- question2
 local question2Text
@@ -78,10 +86,18 @@ local question4Answer3
 
 -- question5
 local question5Text
-local question5CorrectAnswer
-local question5Answer1
-local question5Answer2
-local question5Answer3
+local question5CorrectAnswerFirst
+local question5CorrectAnswerPlus
+local question5CorrectAnswerSecond
+local question5Answer1First
+local question5Answer1Plus
+local question5Answer1Second
+local question5Answer2First
+local question5Answer2Plus
+local question5Answer2Second
+local question5Answer3First
+local question5Answer3Plus
+local question5Answer3Second
 
 -- question6
 local question6Text
@@ -225,23 +241,39 @@ local function AskQuestion()
 
     elseif (questionNumber == 2) then
         -- set the question text
-        question2Text = display.newText("", 0, 0, Arial, textSize)
+        question2Text = display.newText("Which mixture will make brown?", 0, 0, Arial, textSize)
 
         -- set the correct answer text, text color, and position
-        question2CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
-        question2CorrectAnswer:setTextColor(1, 0, 0)
+        question2CorrectAnswerFirst = display.newText("RED", 0, 0, Arial, textSize)
+        question2CorrectAnswerFirst:setTextColor(1, 0, 0)
+        question2CorrectAnswerPlus = display.newText(" + ", 0, 0, Arial, textSize)
+        question2CorrectAnswerPlus:setTextColor(1, 1, 1)
+        question2CorrectAnswerSecond = display.newText("BROWN", 0, 0, Arial, textSize)
+        question2CorrectAnswerSecond:setTextColor(102/255, 51/255, 0)
 
         -- set the first wrong answer text, text color, and position
-        question2Answer1 = display.newText("", 0, 0, Arial, textSize)
-        question2Answer1:setTextColor(0, 1, 0)
+        question2Answer1First = display.newText("", 0, 0, Arial, textSize)
+        question2Answer1First:setTextColor(0, 1, 0)
+        question2Answer1Plus = display.newText("", 0, 0, Arial, textSize)
+        question2Answer1Plus:setTextColor(0, 1, 0)
+        question2Answer1Second = display.newText("", 0, 0, Arial, textSize)
+        question2Answer1Second:setTextColor(0, 1, 0)
 
         -- set the second wrong answer text, text color, and position
-        question2Answer2 = display.newText("", 0, 0, Arial, textSize)
-        question2Answer2:setTextColor(127/255, 0, 1)
+        question2Answer2First = display.newText("", 0, 0, Arial, textSize)
+        question2Answer2First:setTextColor(127/255, 0, 1)
+        question2Answer2Plus = display.newText("", 0, 0, Arial, textSize)
+        question2Answer2Plus:setTextColor(127/255, 0, 1)
+        question2Answer2Second = display.newText("", 0, 0, Arial, textSize)
+        question2Answer2Second:setTextColor(127/255, 0, 1)
 
         -- set the third wrong answer text, text color, and position
-        question2Answer3 = display.newText("", 0, 0, Arial, textSize)
-        question2Answer3:setTextColor(1, 51/255, 1)
+        question2Answer3First = display.newText("", 0, 0, Arial, textSize)
+        question2Answer3First:setTextColor(1, 51/255, 1)
+        question2Answer3Plus = display.newText("", 0, 0, Arial, textSize)
+        question2Answer3Plus:setTextColor(1, 51/255, 1)
+        question2Answer3Second = display.newText("", 0, 0, Arial, textSize)
+        question2Answer3Second:setTextColor(1, 51/255, 1)
 
     elseif (questionNumber == 3) then
         -- set the question text
