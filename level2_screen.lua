@@ -252,28 +252,28 @@ local function AskQuestion()
         question2CorrectAnswerSecond:setTextColor(102/255, 51/255, 0)
 
         -- set the first wrong answer text, text color, and position
-        question2Answer1First = display.newText("", 0, 0, Arial, textSize)
-        question2Answer1First:setTextColor(0, 1, 0)
-        question2Answer1Plus = display.newText("", 0, 0, Arial, textSize)
-        question2Answer1Plus:setTextColor(0, 1, 0)
-        question2Answer1Second = display.newText("", 0, 0, Arial, textSize)
+        question2Answer1First = display.newText("PINK", 0, 0, Arial, textSize)
+        question2Answer1First:setTextColor(1, 51/255, 1)
+        question2Answer1Plus = display.newText(" + ", 0, 0, Arial, textSize)
+        question2Answer1Plus:setTextColor(1, 1, 1)
+        question2Answer1Second = display.newText("BLUE", 0, 0, Arial, textSize)
         question2Answer1Second:setTextColor(0, 1, 0)
 
         -- set the second wrong answer text, text color, and position
-        question2Answer2First = display.newText("", 0, 0, Arial, textSize)
-        question2Answer2First:setTextColor(127/255, 0, 1)
-        question2Answer2Plus = display.newText("", 0, 0, Arial, textSize)
-        question2Answer2Plus:setTextColor(127/255, 0, 1)
-        question2Answer2Second = display.newText("", 0, 0, Arial, textSize)
+        question2Answer2First = display.newText("ORANGE", 0, 0, Arial, textSize)
+        question2Answer2First:setTextColor(1, 128/255, 0)
+        question2Answer2Plus = display.newText(" + ", 0, 0, Arial, textSize)
+        question2Answer2Plus:setTextColor(1, 1, 1)
+        question2Answer2Second = display.newText("PURPLE", 0, 0, Arial, textSize)
         question2Answer2Second:setTextColor(127/255, 0, 1)
 
         -- set the third wrong answer text, text color, and position
-        question2Answer3First = display.newText("", 0, 0, Arial, textSize) 
-        question2Answer3First:setTextColor(1, 51/255, 1)
-        question2Answer3Plus = display.newText("", 0, 0, Arial, textSize)
-        question2Answer3Plus:setTextColor(1, 51/255, 1)
-        question2Answer3Second = display.newText("", 0, 0, Arial, textSize)
-        question2Answer3Second:setTextColor(1, 51/255, 1)
+        question2Answer3First = display.newText("YELLOW", 0, 0, Arial, textSize) 
+        question2Answer3First:setTextColor(1, 1, 0)
+        question2Answer3Plus = display.newText(" + ", 0, 0, Arial, textSize)
+        question2Answer3Plus:setTextColor(1, 1, 1)
+        question2Answer3Second = display.newText("GREEN", 0, 0, Arial, textSize)
+        question2Answer3Second:setTextColor(0, 1, 0)
 
     elseif (questionNumber == 3) then
         -- set the question text
