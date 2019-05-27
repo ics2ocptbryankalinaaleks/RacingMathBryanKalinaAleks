@@ -25,8 +25,6 @@ sceneName = "level2_screen"
 -- Creating Scene Object
 local scene = composer.newScene( sceneName )
 
-display.setStatusBar(display.HiddenStatusBar)
-
 -----------------------------------------------------------------------------------------
 -- LOCAL VARIABLES
 -----------------------------------------------------------------------------------------
@@ -34,6 +32,7 @@ display.setStatusBar(display.HiddenStatusBar)
 -- The local variables for this scene
 local bkg_image
 local questionNumber
+local textSize = 50
 
 -- cars
 local logocar = display.newImage("Images/CompanyLogo.png", 0, 0)
@@ -198,11 +197,24 @@ local bkgSoundChannel
 -- LOCAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
 
+-- ask a question
 local function AskQuestion()
+    -- vhoose out of the possoble 20 questions
     questionNumber = math.random(1, 20)
 
+    -- first question
     if (questionNumber == 1) then
-        display.newText
+        -- set the question text
+        question1Text = display.newText("Click on the Primary Color", 0, 0, Arial, textSize)
+
+        -- set the correct answer text, and text color
+        question1CorrectAnswer = display.newText("RED", 0, 0, Arial, textSize)
+        question1CorrectAnswer:setTextColor(1, 0, 0)
+
+        -- 
+        question1Answer1 = display.newText("GREEN", 0, 0, Arial, textSize)
+        question1Answer2 = display.newText("PURPLE", 0, 0, Arial, textSize)
+        question1Answer3 = display.newText("PINK", 0, 0, Arial, textSize)
 
     end
 end
