@@ -1,12 +1,13 @@
 -----------------------------------------------------------------------------------------
 --
--- credits_screen.lua
--- Created by: Your Name
+-- instructions_screen.lua
+-- Created by: Kalina Dunne Farrell
 -- Special thanks to Wal Wal for helping in the design of this framework.
--- Date: Month Day, Year
--- Description: This is the credits page, displaying a back button to the main menu.
+-- Date: May 19, 2019
+-- Description: This is the instructions page, displaying a back button to the main menu.
 -----------------------------------------------------------------------------------------
-
+-- hide the status bar
+display.setStatusBar(display.HiddenStatusBar)
 -----------------------------------------------------------------------------------------
 -- INITIALIZATIONS
 -----------------------------------------------------------------------------------------
