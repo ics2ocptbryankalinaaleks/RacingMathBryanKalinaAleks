@@ -571,11 +571,11 @@ local function AskQuestion10()
     question10Answer3 = display.newText("", 0, 0, Arial, textSize)
     question10Answer3:setTextColor(1, 51/255, 1)
 
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
+    sceneGroup:insert(question10Text)
+    sceneGroup:insert(question10CorrectAnswer)
+    sceneGroup:insert(question10Answer1)
+    sceneGroup:insert(question10Answer2)
+    sceneGroup:insert(question10Answer3)
 end
 
 local function AskQuestion11()
