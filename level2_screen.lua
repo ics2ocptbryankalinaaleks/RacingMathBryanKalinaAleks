@@ -317,7 +317,7 @@ local function AskQuestion()
 
         local function AskQuestion4()
             -- set the question text
-            question4Text = display.newText("Which option is a shade, not a colour?", 0, 0, Arial, textSize)
+            question4Text = display.newText("Which color is the opposite of purple?", 0, 0, Arial, textSize)
 
             -- set the correct answer text, text color, and position
             question4CorrectAnswer = display.newText("BLACK", 0, 0, Arial, textSize)
@@ -612,20 +612,36 @@ local function AskQuestion()
             question16Text = display.newText("", 0, 0, Arial, textSize)
 
             -- set the correct answer text, text color, and position
-            question16CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+            question16CorrectAnswerFirst = display.newText("WHITE", 0, 0, Arial, textSize)
+            question16CorrectAnswerFirst:setTextColor(1, 0, 0)
+            question16CorrectAnswerPlus = display.newText(" + ", 0, 0, Arial, textSize)
+            question16CorrectAnswerPlus:setTextColor(0, 0, 0)
+            question16CorrectAnswer = display.newText("RED", 0, 0, Arial, textSize)
             question16CorrectAnswer:setTextColor(1, 0, 0)
 
             -- set the first wrong answer text, text color, and position
-            question16Answer1 = display.newText("", 0, 0, Arial, textSize)
-            question16Answer1:setTextColor(0, 1, 0)
+            question16Answer1First = display.newText("RED", 0, 0, Arial, textSize)
+            question16Answer1First:setTextColor(1, 0, 0)
+            question16Answer1Plus = display.newText(" + ", 0, 0, Arial, textSize)
+            question16Answer1Plus:setTextColor(0, 0, 0)
+            question16Answer1Second = display.newText("BLUE", 0, 0, Arial, textSize)
+            question16Answer1Second:setTextColor(0, 0, 1)
 
             -- set the second wrong answer text, text color, and position
-            question16Answer2 = display.newText("", 0, 0, Arial, textSize)
-            question16Answer2:setTextColor(127/255, 0, 1)
+            question16Answer2First = display.newText("ORANGE", 0, 0, Arial, textSize)
+            question16Answer2First:setTextColor(127/255, 0, 1)
+            question16Answer2Plus = display.newText(" + ", 0, 0, Arial, textSize)
+            question16Answer2Plus:setTextColor(0, 0, 0)
+            question16Answer2Second = display.newText("GREEN", 0, 0, Arial, textSize)
+            question16Answer2Second:setTextColor(127/255, 0, 1)
 
             -- set the third wrong answer text, text color, and position
-            question16Answer3 = display.newText("", 0, 0, Arial, textSize)
-            question16Answer3:setTextColor(1, 51/255, 1)
+            question16Answer3First = display.newText("YELLOW", 0, 0, Arial, textSize)
+            question16Answer3First:setTextColor(1, 51/255, 1)
+            question16Answer3Plus = display.newText(" + ", 0, 0, Arial, textSize)
+            question16Answer3Plus:setTextColor(0, 0, 0)
+            question16Answer3Second = display.newText("PURPLE", 0, 0, Arial, textSize)
+            question16Answer3Second:setTextColor(1, 51/255, 1)
         end
 
     elseif (questionNumber == 17) then
