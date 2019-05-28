@@ -31,21 +31,157 @@ local scene = composer.newScene( sceneName )
 -----------------------------------------------------------------------------------------
 
 -- The local variables for this scene
+local question1Text
+local question1CorrectAnswer
+local question1Answer1
+local question1Answer2
+local question1Answer3 
+
+local question2Text
+local question2CorrectAnswerFirst
+local question2CorrectAnswerPlus
+local question2CorrectAnswerSecond
+local question2Answer1First
+local question2Answer1Plus
+local question2Answer1Second
+local question2Answer2First
+local question2Answer2Plus
+local question2Answer2Second
+local question2Answer3First
+local question2Answer3Plus
+local question2Answer3Second
+
+
 local questionText
+local questionCorrectAnswer
+local questionAnswer1
+local questionAnswer2
+local questionAnswer3 
 
-local firstNumber
-local secondNumber
-local thirdNumber
+local questionText
+local questionCorrectAnswer
+local questionAnswer1
+local questionAnswer2
+local questionAnswer3 
 
-local answer
-local wrongAnswer1
-local wrongAnswer2
-local wrongAnswer3
+local questionText
+local questionCorrectAnswerFirst
+local questionCorrectAnswerPlus
+local questionCorrectAnswerSecond
+local questionAnswer1First
+local questionAnswer1Plus
+local questionAnswer1Second
+local questionAnswer2First
+local questionAnswer2Plus
+local questionAnswer2Second
+local questionAnswer3First
+local questionAnswer3Plus
+local questionAnswer3Second
 
-local answerText 
-local wrongAnswerText1
-local wrongAnswerText2
-local wrongAnswerText3
+
+local questionText
+local questionCorrectAnswer
+local questionAnswer1
+local questionAnswer2
+local questionAnswer3 
+
+local questionText
+local questionCorrectAnswer
+local questionAnswer1
+local questionAnswer2
+local questionAnswer3 
+
+local questionText
+local questionCorrectAnswer
+local questionAnswer1
+local questionAnswer2
+local questionAnswer3 
+
+local questionText
+local questionCorrectAnswer
+local questionAnswer1
+local questionAnswer2
+local questionAnswer3 
+
+local question1Text
+local question1CorrectAnswer
+local question1Answer1
+local question1Answer2
+local question1Answer3 
+
+local question1Text
+local question1CorrectAnswer
+local question1Answer1
+local question1Answer2
+local question1Answer3 
+
+local question1Text
+local question1CorrectAnswer
+local question1Answer1
+local question1Answer2
+local question1Answer3 
+
+local question1Text
+local question1CorrectAnswer
+local question1Answer1
+local question1Answer2
+local question1Answer3 
+
+local question1Text
+local question1CorrectAnswer
+local question1Answer1
+local question1Answer2
+local question1Answer3 
+
+local question1Text
+local question1CorrectAnswer
+local question1Answer1
+local question1Answer2
+local question1Answer3 
+
+local question1Text
+local question1CorrectAnswerFirst
+local question1CorrectAnswerPlus
+local question1CorrectAnswerSecond
+local question1Answer1First
+local questionAnswer1Plus
+local questionAnswer1Second
+local question1AnswerFirst
+local questionAnswer2Plus
+local questionAnswer2Second
+local question1Answer3First
+local questionAnswer3Plus
+local questionAnswer3Second
+
+
+local question1Text
+local question1CorrectAnswer
+local question1Answer1
+local question1Answer2
+local question1Answer3 
+
+local question1Text
+local question1CorrectAnswer
+local question1Answer1
+local question1Answer2
+local question1Answer3 
+
+local question1Text
+local question1CorrectAnswer
+local question1Answer1
+local question1Answer2
+local question1Answer3 
+
+local questionText
+local questionCorrectAnswer
+local questionAnswer1
+local questionAnswer2
+local questionAnswer3 
+
+--questions
+
+-- 
+local question
 
 local answerPosition = 1
 local bkg
