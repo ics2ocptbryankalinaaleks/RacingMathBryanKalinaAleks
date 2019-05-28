@@ -8,7 +8,8 @@
 --with piant a trivia question will come up. they will have a limided time to click on the answer
 -----------------------------------------------------------------------------------------
 
------------------------------------------------------------------------------------------
+--------------------------------
+---------------------------------------------------------
 -- INITIALIZATIONS
 -----------------------------------------------------------------------------------------
 
@@ -38,7 +39,7 @@ local firstNumber
 local secondNumber
 local thirdNumber
 
-local answer
+answer
 local wrongAnswer1
 local wrongAnswer2
 local wrongAnswer3
@@ -57,7 +58,7 @@ local X2 = display.contentWidth*4/7
 local Y1 = display.contentHeight*1/2
 local Y2 = display.contentHeight*5.5/7
 
-local userAnswer
+userAnswer
 local textTouched = false
 
 -----------------------------------------------------------------------------------------

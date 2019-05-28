@@ -37,7 +37,7 @@ local scrollSpeed3 = -1
 local scrollSpeed4 = -1.1
 local questionsAnswered = 0
 local wrongAnswers = 0
-local lives = 4
+local lives = 3
 
 -----------------------------------------------------------------------------------------
 -- LOCAL & GLOBAL SCENE FUNCTIONS
@@ -51,6 +51,9 @@ local function AskQuestion()
     scrollSpeed4 = 0
     composer.showOverlay( "level1_question", { isModal = true, effect = "fade", time = 100})
     questionsAnswered = questionsAnswered + 1
+    if (useranswer ~= answer) then
+        lives = lives - 1
+    end
 end
 
 local function MovelogocarRight(event)
