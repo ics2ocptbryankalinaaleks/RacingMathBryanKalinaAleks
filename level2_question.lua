@@ -359,11 +359,11 @@ local function AskQuestion3()
     question3Answer3 = display.newText("GREEN", 0, 0, Arial, textSize)
     question3Answer3:setTextColor(0, 1, 0)
 
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
+    sceneGroup:insert(question3Text)
+    sceneGroup:insert(question3CorrectAnswer)
+    sceneGroup:insert(question3Answer1)
+    sceneGroup:insert(question3Answer2)
+    sceneGroup:insert(question3Answer3)
 end
 
 local function AskQuestion4()
