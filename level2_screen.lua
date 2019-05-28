@@ -35,16 +35,16 @@ local questionNumber
 local textSize = 50
 
 -- cars
-local logocar = display.newImage("Images/CompanyLogo.png", 0, 0)
-local car1 = display.newImage("Images/BlueCar.png", 0, 0)
-local car2 = display.newImage("Images/GreenCar.png", 0, 0)
-local car3 = display.newImage("Images/OrangeCar.png", 0, 0)
+local logoCar
+local car1
+local car2
+local car3
 
 -- scrollspeeds
 local scrollSpeedLogo = 1
-local scrollSpeedCar1 = 1
-local scrollSpeedCar2 = 1.5
-local scrollSpeedCar3 = 2
+local scrollSpeedCar1 = 1.4
+local scrollSpeedCar2 = 1.2
+local scrollSpeedCar3 = 1
 
 -----------------------------------------------------------------------------------------
 --LOCAL SOUNDS
@@ -54,27 +54,68 @@ local bkgSoundChannel
 -----------------------------------------------------------------------------------------
 -- LOCAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
+local function AskQuestion()
+    composer.gotoScene("level2_question")
+end
 
+local function MoveLogoCar(event)
+    logoCar.x = logoCar.x + scrollSpeedLogo
 
-local function Movelogocar(event)
+    if (logoCar.x == 500) then
+        AskQuestion()
+    end
 
 end
 
 local function MoveCar1(event)
+    car1.x = car1.x + scrollSpeedCar1
 
 end
 
 local function MoveCar2(event)
+    car2.x = car2.x + scrollSpeedCar2
 
 end
 
 local function MoveCar3(event)
+    car3.x = car3.x + scrollSpeedCar3
 
 end
 
+local function MoveCars()
+    Runtime:addEventListener("enterFrame", MoveLogoCar)
+    Runtime:addEventListener("enterFrame", MoveCar1)
+    Runtime:addEventListener("enterFrame", MoveCar2)
+    Runtime:addEventListener("enterFrame", MoveCar3)
+end
 -------------------------------------------------------------
 --Objects
 -------------------------------------------------------------
+-- cars (put in rder of largest to smlalest so you can see them all)
+
+--third car (orange car) (largest car)
+    car3 = display.newImage("Images/OrangeCar.png", 0, 0)
+    car3.x = 900
+    car3.y = 270
+    car3:rotate(4)
+
+-- second car (green car)
+    car2 = display.newImage("Images/GreenCar.png", 0, 0)
+    car2.x = display.contentWidth*-0.5/5
+    car2.y = display.contentHeight/1.74
+    car2:rotate(-33)
+
+--first car (blue car)
+    car1 = display.newImage("Images/BlueCar.png", 0, 0)
+    car1.x = display.contentWidth/2
+    car1.y = display.contentHeight*4.3/8
+    car1:rotate(20)
+
+-- logo car (user's car) (smallest car)
+    logoCar = display.newImage("Images/CompanyLogo.png", 0, 0)
+    logoCar.x = display.contentWidth*1/8
+    logoCar.y = display.contentHeight*5.9/8
+    logoCar:scale(0.1, 0.1)
 
 -----------------------------------------------------------------------------------------
 -- GLOBAL SCENE FUNCTIONS
@@ -117,9 +158,9 @@ function scene:show( event )
     if ( phase == "will" ) then
 
         -- Called when the scene is still off screen (but is about to come on screen).
-        logocar.x = display.contentWidth*1/8
-        logocar.y = display.contentHeight*5.9/8
-        logocar:scale(0.1, 0.1)
+        --[[logoCar.x = display.contentWidth*1/8
+        logoCar.y = display.contentHeight*5.9/8
+        logoCar:scale(0.1, 0.1)]]--
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
@@ -128,10 +169,11 @@ function scene:show( event )
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
 
+        -- start the cars
+        MoveCars()
+
 
         -- Ask a question
-
-        Runtime:addEventListener("enterFrame", Movelogocar)
 
     end
 end 
@@ -155,9 +197,7 @@ function scene:hide( event )
     elseif ( phase == "did" ) then
         audio.stop(bkgSoundChannel)
         -- Called immediately after scene goes off screen.
-        Runtime:removeEventListener("enterFrame", Movelogocar)
-        Runtime:removeEventListener("enterFrame", MovelogocarDown)
-        Runtime:removeEventListener("enterFrame", Stop)
+        Runtime:removeEventListener("enterFrame", MovelogoCar)
     end
 
 end --function scene:hide( event )

@@ -1,4 +1,5 @@
 -----------------------------------------------------------------------------------------
+--
 -- main_menu.lua
 -- Created by: Your Name
 -- Date: Month Day, Year
@@ -42,13 +43,13 @@ local levelsButton
 -----------------------------------------------------------------------------------------
 --LOCAL SOUNDS
 -----------------------------------------------------------------------------------------
-bkgSound = audio.loadStream("Sounds/bkgs.mp3")
-bkgSoundChannel
+local bkgSoundChannel
+local bkgSound = audio.loadStream("Sounds/bkgs.mp3")
 -----------------------------------------------------------------------------------------
 -- LOCAL FUNCTIONS
 -----------------------------------------------------------------------------------------
 local function PlayButtonTransition( )
-    --composer.gotoScene( "level_select", {effect = "fromBottom", time = 1000})
+    composer.gotoScene( "level_select", {effect = "fromBottom", time = 1000})
 end  
 
 -- Creating Transition Function to Credits Page
