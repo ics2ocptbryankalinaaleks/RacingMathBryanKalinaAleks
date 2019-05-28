@@ -261,7 +261,7 @@ local function AskQuestion()
             question2CorrectAnswerFirst = display.newText("RED", 0, 0, Arial, textSize)
             question2CorrectAnswerFirst:setTextColor(1, 0, 0)
             question2CorrectAnswerPlus = display.newText(" + ", 0, 0, Arial, textSize)
-            question2CorrectAnswerPlus:setTextColor((0, 0, 0)
+            question2CorrectAnswerPlus:setTextColor(0, 0, 0)
             question2CorrectAnswerSecond = display.newText("BROWN", 0, 0, Arial, textSize)
             question2CorrectAnswerSecond:setTextColor(102/255, 51/255, 0)
 

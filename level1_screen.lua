@@ -36,6 +36,8 @@ local scrollSpeed2 = -1.05
 local scrollSpeed3 = -1
 local scrollSpeed4 = -1.1
 local questionsAnswered = 0
+local wrongAnswers = 0
+local lives = 4
 
 -----------------------------------------------------------------------------------------
 -- LOCAL & GLOBAL SCENE FUNCTIONS
