@@ -67,7 +67,7 @@ local textTouched = false
 function BackToLevel1() 
     composer.hideOverlay("crossFade", 400 )
   
-    ResumeGame()
+    composer.gotoScene( "level2_screen" )
 end 
 
 -----------------------------------------------------------------------------------------
