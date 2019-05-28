@@ -598,11 +598,11 @@ local function AskQuestion11()
     question11Answer3 = display.newText("PINK", 0, 0, Arial, textSize)
     question11Answer3:setTextColor(1, 51/255, 1)
 
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
+    sceneGroup:insert(question11Text)
+    sceneGroup:insert(question11CorrectAnswer)
+    sceneGroup:insert(question11Answer1)
+    sceneGroup:insert(question11Answer2)
+    sceneGroup:insert(question11Answer3)
 end
 
 local function AskQuestion12()
