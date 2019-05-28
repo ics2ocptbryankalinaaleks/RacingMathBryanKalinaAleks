@@ -331,7 +331,7 @@ local function AskQuestion6()
     sceneGroup:insert()
     sceneGroup:insert()
 end
-
+ 
 local function AskQuestion7()
     -- set the question text
     question7Text = display.newText("", 0, 0, Arial, textSize)
