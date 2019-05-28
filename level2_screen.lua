@@ -220,37 +220,38 @@ local bkgSoundChannel
 -----------------------------------------------------------------------------------------
 -- LOCAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
+-- first question 
+local function AskQuestion1()
+    -- set the question text
+    question1Text = display.newText("Click on the Primary Color", 0, 0, Arial, textSize)
+
+    -- set the correct answer text, text color, and position
+    question1CorrectAnswer = display.newText("RED", 0, 0, Arial, textSize)
+    question1CorrectAnswer:setTextColor(1, 0, 0)
+
+    -- set the first wrong answer text, text color, and position
+    question1Answer1 = display.newText("GREEN", 0, 0, Arial, textSize)
+    question1Answer1:setTextColor(0, 1, 0)
+
+    -- set the second wrong answer text, text color, and position
+    question1Answer2 = display.newText("PURPLE", 0, 0, Arial, textSize)
+    question1Answer2:setTextColor(127/255, 0, 1)
+
+    -- set the third wrong answer text, text color, and position
+    question1Answer3 = display.newText("PINK", 0, 0, Arial, textSize)
+    question1Answer3:setTextColor(1, 51/255, 1)
+end
 
 -- ask a question
 local function AskQuestion()
-    -- vhoose out of the possoble 20 questions
+    -- choose out of the possoble 20 questions
     questionNumber = math.random(1, 20)
 
-    -- first question
+    -- based on the questionNumber, call the function that will create that question. They are seperate because there was too
+    --many lines of code in a single function if theye ere all together - there was an error because of it
     if (questionNumber == 1) then
+        AskQuestion1
 
-        local function AskQuestion1()
-            -- set the question text
-            question1Text = display.newText("Click on the Primary Color", 0, 0, Arial, textSize)
-
-            -- set the correct answer text, text color, and position
-            question1CorrectAnswer = display.newText("RED", 0, 0, Arial, textSize)
-            question1CorrectAnswer:setTextColor(1, 0, 0)
-
-            -- set the first wrong answer text, text color, and position
-            question1Answer1 = display.newText("GREEN", 0, 0, Arial, textSize)
-            question1Answer1:setTextColor(0, 1, 0)
-
-            -- set the second wrong answer text, text color, and position
-            question1Answer2 = display.newText("PURPLE", 0, 0, Arial, textSize)
-            question1Answer2:setTextColor(127/255, 0, 1)
-
-            -- set the third wrong answer text, text color, and position
-            question1Answer3 = display.newText("PINK", 0, 0, Arial, textSize)
-            question1Answer3:setTextColor(1, 51/255, 1)
-        end
-
-    -- second question
     elseif (questionNumber == 2) then
 
         local function AskQuestion2()
