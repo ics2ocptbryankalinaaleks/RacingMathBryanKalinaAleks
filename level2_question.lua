@@ -77,7 +77,7 @@ local function TouchListenerAnswer(touch)
     
     if (touch.phase == "ended") then
 
-        BackToLevel1()
+        BackToLevel2()
     end 
 end
 
@@ -87,7 +87,7 @@ local function TouchListenerWrongAnswer(touch)
     
     if (touch.phase == "ended") then
         
-        BackToLevel1()  
+        BackToLevel2()  
     end 
 end
 
@@ -97,7 +97,7 @@ local function TouchListenerWrongAnswer2(touch)
     
     if (touch.phase == "ended") then
 
-        BackToLevel1()
+        BackToLevel2()
         
     end 
 end
@@ -107,7 +107,7 @@ local function TouchListenerWrongAnswer3(touch)
     
     if (touch.phase == "ended") then
 
-        BackToLevel1()
+        BackToLevel2()
         
     end 
 end
@@ -727,7 +727,7 @@ local function AskQuestion20()
 end
 
 -- ask a question
-local function AskQuestion()
+function AskQuestion()
     -- choose out of the possoble 20 questions
     questionNumber = math.random(1, 20)
 
