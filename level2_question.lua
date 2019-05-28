@@ -169,23 +169,15 @@ local question19Answer1
 local question19Answer2
 local question19Answer3
 
-local question2Text
-local question2CorrectAnswer
-local question2Answer1
-local question2Answer2
-local question2Answer3 
+local question20Text
+local question20CorrectAnswer
+local question20Answer1
+local question20Answer2
+local question20Answer3 
 
 -- 
-local question
-
-local answerPosition = 1
 local bkg
 local cover
-
-local X1 = display.contentWidth*2/7
-local X2 = display.contentWidth*4/7
-local Y1 = display.contentHeight*1/2
-local Y2 = display.contentHeight*5.5/7
 
 local userAnswer
 local textTouched = false
