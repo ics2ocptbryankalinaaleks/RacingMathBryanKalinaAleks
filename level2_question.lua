@@ -6,7 +6,8 @@
 --If character goes off a certain araea they go back to the start. When a user interactes
 --with piant a trivia question will come up. they will have a limided time to click on the answer
 -----------------------------------------------------------------------------------------
-
+-- hide the status bar
+display.setStatusBar(display.HiddenStatusBar)
 -----------------------------------------------------------------------------------------
 -- INITIALIZATIONS
 -----------------------------------------------------------------------------------------
@@ -237,7 +238,7 @@ end
 
 
 --adding the event listeners 
-local function AddTextListeners ( )
+--[[local function AddTextListeners ( )
     answerText:addEventListener( "touch", TouchListenerAnswer )
     wrongText1:addEventListener( "touch", TouchListenerWrongAnswer)
     wrongText2:addEventListener( "touch", TouchListenerWrongAnswer2)
@@ -251,7 +252,7 @@ local function RemoveTextListeners()
     wrongText1:removeEventListener( "touch", TouchListenerWrongAnswer)
     wrongText2:removeEventListener( "touch", TouchListenerWrongAnswer2)
     wrongText3:removeEventListener( "touch", TouchListenerWrongAnswer3)
-end
+end]]--
 
 -- first question 
 local function AskQuestion1()
@@ -297,7 +298,7 @@ local function AskQuestion2()
     question2Answer1First = display.newText("PINK", 0, 0, Arial, textSize)
     question2Answer1First:setTextColor(1, 51/255, 1)
     question2Answer1Plus = display.newText(" + ", 0, 0, Arial, textSize)
-    question2Answer1Plus:setTextColo(0, 0, 0)
+    question2Answer1Plus:setTextColor(0, 0, 0)
     question2Answer1Second = display.newText("BLUE", 0, 0, Arial, textSize)
     question2Answer1Second:setTextColor(0, 1, 0)
 
@@ -775,11 +776,11 @@ local function AskQuestion17()
     question17Answer3 = display.newText("", 0, 0, Arial, textSize)
     question17Answer3:setTextColor(1, 51/255, 1)
 
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
+    sceneGroup:insert(question17Text)
+    sceneGroup:insert(question17CorrectAnswer)
+    sceneGroup:insert(question17Answer1)
+    sceneGroup:insert(question17Answer2)
+    sceneGroup:insert(question17Answer3)
 end
 
 local function AskQuestion18()
@@ -802,11 +803,11 @@ local function AskQuestion18()
     question18Answer3 = display.newText("", 0, 0, Arial, textSize)
     question18Answer3:setTextColor(1, 51/255, 1)
 
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
+    sceneGroup:insert(question18Text)
+    sceneGroup:insert(question18CorrectAnswer)
+    sceneGroup:insert(question18Answer1)
+    sceneGroup:insert(question18Answer2)
+    sceneGroup:insert(question18Answer3)
 end
 
 local function AskQuestion19()
@@ -829,11 +830,11 @@ local function AskQuestion19()
     question19Answer3 = display.newText("", 0, 0, Arial, textSize)
     question19Answer3:setTextColor(1, 51/255, 1)
 
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
+    sceneGroup:insert(question19Text)
+    sceneGroup:insert(question19CorrectAnswer)
+    sceneGroup:insert(question19Answer1)
+    sceneGroup:insert(question19Answer2)
+    sceneGroup:insert(question19Answer3)
 end
 
 local function AskQuestion20()
@@ -856,11 +857,11 @@ local function AskQuestion20()
     question20Answer3 = display.newText("", 0, 0, Arial, textSize)
     question20Answer3:setTextColor(1, 51/255, 1)
 
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
-    sceneGroup:insert()
+    sceneGroup:insert(question20Text)
+    sceneGroup:insert(question20CorrectAnswer)
+    sceneGroup:insert(question20Answer1)
+    sceneGroup:insert(question20Answer2)
+    sceneGroup:insert(question20Answer3)
 end
 
 -- ask a question
@@ -941,7 +942,8 @@ end
 function scene:create( event )
 
     -- Creating a group that associates objects with the scene
-    local sceneGroup = self.view  
+    local sceneGroup = self.view
+    local phase = event.phase
 
     -----------------------------------------------------------------------------------------
     --covering the other scene with a rectangle so it looks faded and stops touch from going through
@@ -964,10 +966,6 @@ function scene:create( event )
     sceneGroup:insert(bkg)
     sceneGroup:insert(cover)
     sceneGroup:insert(questionText)
-    sceneGroup:insert(answerText)
-    sceneGroup:insert(wrongText1)
-    sceneGroup:insert(wrongText2)
-    sceneGroup:insert(wrongText3)
 
 end --function scene:create( event )
 
@@ -991,9 +989,8 @@ function scene:show( event )
         -- Called when the scene is now on screen.
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
-        DisplayQuestion()
-        PositionAnswers()
-        AddTextListeners()
+        AskQuestion()
+        --AddTextListeners()
     end
 
 end --function scene:show( event )
@@ -1018,7 +1015,7 @@ function scene:hide( event )
 
     elseif ( phase == "did" ) then
         -- Called immediately after scene goes off screen.
-        RemoveTextListeners()
+        --RemoveTextListeners()
     end
 
 end --function scene:hide( event )
@@ -1030,6 +1027,7 @@ function scene:destroy( event )
 
     -- Creating a group that associates objects with the scene
     local sceneGroup = self.view
+    local phase = event.phase
 
     -----------------------------------------------------------------------------------------
 
