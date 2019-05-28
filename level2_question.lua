@@ -150,13 +150,13 @@ local function AskQuestion1()
     -- set the third wrong answer text, text color, and position
     question1Answer3 = display.newText("PINK", 0, 0, Arial, textSize)
     question1Answer3:setTextColor(1, 51/255, 1)
-end
 
-sceneGroup:insert(question1Text)
-sceneGroup:insert(question1CorrectAnswer)
-sceneGroup:insert(question1Answer1)
-sceneGroup:insert(question1Answer2)
-sceneGroup:insert(question1Answer3)
+    sceneGroup:insert(question1Text)
+    sceneGroup:insert(question1CorrectAnswer)
+    sceneGroup:insert(question1Answer1)
+    sceneGroup:insert(question1Answer2)
+    sceneGroup:insert(question1Answer3)
+end
 
 local function AskQuestion2()
     -- set the question text
@@ -193,6 +193,19 @@ local function AskQuestion2()
     question2Answer3Plus:setTextColor(0, 0, 0)
     question2Answer3Second = display.newText("GREEN", 0, 0, Arial, textSize)
     question2Answer3Second:setTextColor(0, 1, 0)
+
+    sceneGroup:insert(question2CorrectAnswerFirst)
+    sceneGroup:insert(question2CorrectAnswerPlus)
+    sceneGroup:insert(question2CorrectAnswerSecond)
+    sceneGroup:insert(question2Answer1First)
+    sceneGroup:insert(question2Answer1Plus)
+    sceneGroup:insert(question2Answer1Second)
+    sceneGroup:insert(question2Answer2First)
+    sceneGroup:insert(question2Answer2Plus)
+    sceneGroup:insert(question2Answer2Second)
+    sceneGroup:insert(question2Answer3First)
+    sceneGroup:insert(question2Answer3Plus)
+    sceneGroup:insert(question2Answer3Second)
 end
 
 local function AskQuestion3()
@@ -214,6 +227,12 @@ local function AskQuestion3()
     -- set the third wrong answer text, text color, and position
     question3Answer3 = display.newText("GREEN", 0, 0, Arial, textSize)
     question3Answer3:setTextColor(0, 1, 0)
+
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
 end
 
 local function AskQuestion4()
@@ -235,6 +254,12 @@ local function AskQuestion4()
     -- set the third wrong answer text, text color, and position
     question4Answer3 = display.newText("PINK", 0, 0, Arial, textSize)
     question4Answer3:setTextColor(1, 51/255, 1)
+
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
 end
 
 local function AskQuestion5()
@@ -272,6 +297,12 @@ local function AskQuestion5()
     question5Answer3Plus:setTextColor(0, 0, 0)
     question5Answer3Second = display.newText("", 0, 0, Arial, textSize)
     question5Answer3Second:setTextColor(1, 51/255, 1)
+
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
 end
 
 local function AskQuestion6()
@@ -293,6 +324,12 @@ local function AskQuestion6()
     -- set the third wrong answer text, text color, and position
     question6Answer3 = display.newText("", 0, 0, Arial, textSize)
     question6Answer3:setTextColor(1, 51/255, 1)
+
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
 end
 
 local function AskQuestion7()
@@ -314,6 +351,12 @@ local function AskQuestion7()
     -- set the third wrong answer text, text color, and position
     question7Answer3 = display.newText("", 0, 0, Arial, textSize)
     question7Answer3:setTextColor(1, 51/255, 1)
+
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
 end
 
 local function AskQuestion8()
@@ -335,6 +378,12 @@ local function AskQuestion8()
     -- set the third wrong answer text, text color, and position
     question8Answer3 = display.newText("", 0, 0, Arial, textSize)
     question8Answer3:setTextColor(1, 51/255, 1)
+
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
 end
 
 local function AskQuestion9()
@@ -356,6 +405,12 @@ local function AskQuestion9()
     -- set the third wrong answer text, text color, and position
     question9Answer3 = display.newText("", 0, 0, Arial, textSize)
     question9Answer3:setTextColor(1, 51/255, 1)
+
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
 end
 
 local function AskQuestion10()
@@ -377,6 +432,12 @@ local function AskQuestion10()
     -- set the third wrong answer text, 2text color, and position
     question10Answer3 = display.newText("", 0, 0, Arial, textSize)
     question10Answer3:setTextColor(1, 51/255, 1)
+
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
 end
 
 local function AskQuestion11()
@@ -398,6 +459,12 @@ local function AskQuestion11()
     -- set the third wrong answer text, text color, and position
     question11Answer3 = display.newText("PINK", 0, 0, Arial, textSize)
     question11Answer3:setTextColor(1, 51/255, 1)
+
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
 end
 
 local function AskQuestion12()
@@ -419,6 +486,12 @@ local function AskQuestion12()
     -- set the third wrong answer text, text color, and position
     question12Answer3 = display.newText("", 0, 0, Arial, textSize)
     question12Answer3:setTextColor(1, 51/255, 1)
+
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
 end
 
 local function AskQuestion13()
@@ -440,6 +513,12 @@ local function AskQuestion13()
     -- set the third wrong answer text, text color, and position
     question13Answer3 = display.newText("", 0, 0, Arial, textSize)
     question13Answer3:setTextColor(1, 51/255, 1)
+
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
 end
 
 local function AskQuestion14()
@@ -461,6 +540,12 @@ local function AskQuestion14()
     -- set the third wrong answer text, text color, and position
     question14Answer3 = display.newText("", 0, 0, Arial, textSize)
     question14Answer3:setTextColor(1, 51/255, 1)
+
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
 end
 
 local function AskQuestion15()
@@ -482,6 +567,12 @@ local function AskQuestion15()
     -- set the third wrong answer text, text color, and position
     question15Answer3 = display.newText("", 0, 0, Arial, textSize)
     question15Answer3:setTextColor(1, 51/255, 1)
+
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
 end
 
 local function AskQuestion16()
@@ -519,6 +610,12 @@ local function AskQuestion16()
     question16Answer3Plus:setTextColor(0, 0, 0)
     question16Answer3Second = display.newText("PURPLE", 0, 0, Arial, textSize)
     question16Answer3Second:setTextColor(1, 51/255, 1)
+
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
 end
 
 local function AskQuestion17()
@@ -540,6 +637,12 @@ local function AskQuestion17()
     -- set the third wrong answer text, text color, and position
     question17Answer3 = display.newText("", 0, 0, Arial, textSize)
     question17Answer3:setTextColor(1, 51/255, 1)
+
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
 end
 
 local function AskQuestion18()
@@ -561,6 +664,12 @@ local function AskQuestion18()
     -- set the third wrong answer text, text color, and position
     question18Answer3 = display.newText("", 0, 0, Arial, textSize)
     question18Answer3:setTextColor(1, 51/255, 1)
+
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
 end
 
 local function AskQuestion19()
@@ -582,6 +691,12 @@ local function AskQuestion19()
     -- set the third wrong answer text, text color, and position
     question19Answer3 = display.newText("", 0, 0, Arial, textSize)
     question19Answer3:setTextColor(1, 51/255, 1)
+
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
 end
 
 local function AskQuestion20()
@@ -603,6 +718,12 @@ local function AskQuestion20()
     -- set the third wrong answer text, text color, and position
     question20Answer3 = display.newText("", 0, 0, Arial, textSize)
     question20Answer3:setTextColor(1, 51/255, 1)
+
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
+    sceneGroup:insert()
 end
 
 -- ask a question
