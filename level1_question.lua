@@ -39,7 +39,7 @@ local firstNumber
 local secondNumber
 local thirdNumber
 
-answer
+local answer
 local wrongAnswer1
 local wrongAnswer2
 local wrongAnswer3
@@ -53,12 +53,17 @@ local answerPosition = 1
 local bkg
 local cover
 
+local heart1
+local heart2
+local heart3
+local numLives = 2
+
 local X1 = display.contentWidth*2/7
 local X2 = display.contentWidth*4/7
 local Y1 = display.contentHeight*1/2
 local Y2 = display.contentHeight*5.5/7
 
-userAnswer
+local userAnswer
 local textTouched = false
 
 -----------------------------------------------------------------------------------------
@@ -66,16 +71,15 @@ local textTouched = false
 -----------------------------------------------------------------------------------------
 
 --making transition to next scene
-function BackToLevel1() 
+local function BackToLevel1() 
     composer.hideOverlay("crossFade", 400 )
   
-    ResumeGame()
+    ResumeLevel1()
 end 
 
 -----------------------------------------------------------------------------------------
 --checking to see if the user pressed the right answer and bring them back to level 1
 local function TouchListenerAnswer(touch)
-    userAnswer = answerText.text
     
     if (touch.phase == "ended") then
 
@@ -85,9 +89,9 @@ end
 
 --checking to see if the user pressed the right answer and bring them back to level 1
 local function TouchListenerWrongAnswer(touch)
-    userAnswer = wrongText1.text
     
     if (touch.phase == "ended") then
+        lives = lives - 1
         
         BackToLevel1()  
     end 
@@ -95,9 +99,9 @@ end
 
 --checking to see if the user pressed the right answer and bring them back to level 1
 local function TouchListenerWrongAnswer2(touch)
-    userAnswer = wrongText2.text
     
     if (touch.phase == "ended") then
+        lives = lives - 1
 
         BackToLevel1()
         
@@ -105,9 +109,9 @@ local function TouchListenerWrongAnswer2(touch)
 end
 
 local function TouchListenerWrongAnswer3(touch)
-    userAnswer = wrongText3.text
     
     if (touch.phase == "ended") then
+        lives = lives - 1
 
         BackToLevel1()
         

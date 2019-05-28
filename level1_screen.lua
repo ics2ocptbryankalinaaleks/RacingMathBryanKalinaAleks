@@ -25,6 +25,12 @@ sceneName = "level1_screen"
 local scene = composer.newScene( sceneName )
 
 -----------------------------------------------------------------------------------------
+-- GLOBAL VARIABLES
+-----------------------------------------------------------------------------------------
+
+lives = 3
+
+-----------------------------------------------------------------------------------------
 -- LOCAL VARIABLES
 -----------------------------------------------------------------------------------------
 
@@ -37,7 +43,7 @@ local scrollSpeed3 = -1
 local scrollSpeed4 = -1.1
 local questionsAnswered = 0
 local wrongAnswers = 0
-local lives = 3
+
 
 -----------------------------------------------------------------------------------------
 -- LOCAL & GLOBAL SCENE FUNCTIONS
@@ -97,17 +103,47 @@ local function Movelogocar(event)
     end
 end
 
+local function UpdateHearts()
+    if (numLives == 3) then
+        -- update hearts
+        heart1.isVisible = true
+        heart2.isVisible = true   
+        heart3.isVisible = true
+        timer.performWithDelay(200, ReplaceCharacter) 
 
+    elseif (numLives == 2) then
+        -- update hearts
+        heart1.isVisible = true
+        heart2.isVisible = true
+        heart3.isVisible = false
+        timer.performWithDelay(200, YouLoseTransition)
+    elseif (numLives == 1) then
+        -- update hearts
+        heart1.isVisible = true
+        heart2.isVisible = false
+        heart3.isVisible = false
+        timer.performWithDelay(200, ReplaceCharacter) 
+
+    elseif (numLives == 0) then
+        -- update hearts
+        heart1.isVisible = false
+        heart2.isVisible = false
+        heart3.isVisible = false
+       timer.performWithDelay(200, YouLoseTransition)
+    end
+end
 -------------------------------------------------------------
 -- GLOBAL SCENE FUNCTIONS
 -------------------------------------------------------------
   
-function ResumeGame()
+function ResumeLevel1()
     -- reset the speed
     scrollSpeed = 1.4
     scrollSpeed2 = -1.05
     scrollSpeed3 = -1
     scrollSpeed4 = -1.1
+
+    UpdateHearts()
     
     if (questionsAnswered == 2) then
         -- after getting 2 questions right, go to the you win screen
@@ -165,7 +201,7 @@ function scene:show( event )
         -- Called when the scene is now on screen.
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
-
+        lives = 3
 
         -- Ask a question
 
