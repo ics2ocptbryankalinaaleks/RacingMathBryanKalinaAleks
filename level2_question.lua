@@ -255,7 +255,7 @@ local function RemoveTextListeners()
 end]]--
 
 -- first question 
-local function AskQuestion1()
+local function AskQuestion1(sceneGroup)
     -- set the question text
     question1Text = display.newText("Click on the Primary Color", 0, 0, Arial, textSize)
 
@@ -282,7 +282,7 @@ local function AskQuestion1()
     sceneGroup:insert(question1Answer3)
 end
 
-local function AskQuestion2()
+local function AskQuestion2(sceneGroup)
     -- set the question text
     question2Text = display.newText("Which mixture will make brown?", 0, 0, Arial, textSize)
 
@@ -332,7 +332,7 @@ local function AskQuestion2()
     sceneGroup:insert(question2Answer3Second)
 end
 
-local function AskQuestion3()
+local function AskQuestion3(sceneGroup)
     -- set the question text
     question3Text = display.newText("Which color is the opposite of orange?", 0, 0, Arial, textSize)
 
@@ -359,7 +359,7 @@ local function AskQuestion3()
     sceneGroup:insert(question3Answer3)
 end
 
-local function AskQuestion4()
+local function AskQuestion4(sceneGroup)
     -- set the question text
     question4Text = display.newText("Which color is the opposite of purple?", 0, 0, Arial, textSize)
 
@@ -386,7 +386,7 @@ local function AskQuestion4()
     sceneGroup:insert(question4Answer3)
 end
 
-local function AskQuestion5()
+local function AskQuestion5(sceneGroup)
     -- set the question text
     question5Text = display.newText("Which mixture will create green?", 0, 0, Arial, textSize)
 
@@ -436,7 +436,7 @@ local function AskQuestion5()
     sceneGroup:insert(question5Answer3Second)
 end
 
-local function AskQuestion6()
+local function AskQuestion6(sceneGroup)
     -- set the question text
     question6Text = display.newText("", 0, 0, Arial, textSize)
 
@@ -463,7 +463,7 @@ local function AskQuestion6()
     sceneGroup:insert(Question6Answer)
 end
  
-local function AskQuestion7()
+local function AskQuestion7(sceneGroup)
     -- set the question text
     question7Text = display.newText("", 0, 0, Arial, textSize)
 
@@ -490,7 +490,7 @@ local function AskQuestion7()
     sceneGroup:insert(question73)
 end
 
-local function AskQuestion8()
+local function AskQuestion8(sceneGroup)
     -- set the question text
     question8Text = display.newText("", 0, 0, Arial, textSize)
 
@@ -517,7 +517,7 @@ local function AskQuestion8()
     sceneGroup:insert(question18Answer3)
 end
 
-local function AskQuestion9()
+local function AskQuestion9(sceneGroup)
     -- set the question text
     question9Text = display.newText("", 0, 0, Arial, textSize)
 
@@ -544,7 +544,7 @@ local function AskQuestion9()
     sceneGroup:insert(question9Answer3)
 end
 
-local function AskQuestion10()
+local function AskQuestion10(sceneGroup)
     -- set the question text
     question10Text = display.newText("", 0, 0, Arial, textSize)
 
@@ -571,7 +571,7 @@ local function AskQuestion10()
     sceneGroup:insert(question10Answer3)
 end
 
-local function AskQuestion11()
+local function AskQuestion11(sceneGroup)
     -- set the question text
     question11Text = display.newText("Click on the Primary Color", 0, 0, Arial, textSize)
 
@@ -598,7 +598,7 @@ local function AskQuestion11()
     sceneGroup:insert(question11Answer3)
 end
 
-local function AskQuestion12()
+local function AskQuestion12(sceneGroup)
     -- set the question text
     question12Text = display.newText("", 0, 0, Arial, textSize)
 
@@ -625,7 +625,7 @@ local function AskQuestion12()
     sceneGroup:insert()
 end
 
-local function AskQuestion13()
+local function AskQuestion13(sceneGroup)
     -- set the question text
     question13Text = display.newText("", 0, 0, Arial, textSize)
 
@@ -652,7 +652,7 @@ local function AskQuestion13()
     sceneGroup:insert()
 end
 
-local function AskQuestion14()
+local function AskQuestion14(sceneGroup)
     -- set the question text
     question14Text = display.newText("", 0, 0, Arial, textSize)
 
@@ -679,7 +679,7 @@ local function AskQuestion14()
     sceneGroup:insert()
 end
 
-local function AskQuestion15()
+local function AskQuestion15(sceneGroup)
     -- set the question text
     question15Text = display.newText("", 0, 0, Arial, textSize)
 
@@ -706,7 +706,7 @@ local function AskQuestion15()
     sceneGroup:insert()
 end
 
-local function AskQuestion16()
+local function AskQuestion16(sceneGroup)
     -- set the question text
     question16Text = display.newText("", 0, 0, Arial, textSize)
 
@@ -756,7 +756,7 @@ local function AskQuestion16()
     sceneGroup:insert(question16Answer3Second)
 end
 
-local function AskQuestion17()
+local function AskQuestion17(sceneGroup)
     -- set the question text
     question17Text = display.newText("", 0, 0, Arial, textSize)
 
@@ -783,7 +783,7 @@ local function AskQuestion17()
     sceneGroup:insert(question17Answer3)
 end
 
-local function AskQuestion18()
+local function AskQuestion18(sceneGroup)
     -- set the question text
     question18Text = display.newText("", 0, 0, Arial, textSize)
 
@@ -810,7 +810,7 @@ local function AskQuestion18()
     sceneGroup:insert(question18Answer3)
 end
 
-local function AskQuestion19()
+local function AskQuestion19(sceneGroup)
     -- set the question text
     question19Text = display.newText("", 0, 0, Arial, textSize)
 
@@ -837,7 +837,7 @@ local function AskQuestion19()
     sceneGroup:insert(question19Answer3)
 end
 
-local function AskQuestion20()
+local function AskQuestion20(sceneGroup)
     -- set the question text
     question20Text = display.newText("", 0, 0, Arial, textSize)
 
@@ -865,71 +865,71 @@ local function AskQuestion20()
 end
 
 -- ask a question
-function AskQuestion()
+function AskQuestion(sceneGroup)
     -- choose out of the possoble 20 questions
-    questionNumber = math.random(1, 20)
+    questionNumber = 1 --math.random(1, 20)
 
     -- based on the questionNumber, call the function that will create that question. They are seperate because there was too
     --many lines of code in a single function if theye ere all together - there was an error because of it
     if (questionNumber == 1) then
-        AskQuestion1()
+        AskQuestion1(sceneGroup)
 
     elseif (questionNumber == 2) then
-        AskQuestion2()
+        AskQuestion2(sceneGroup)
 
     elseif (questionNumber == 3) then
-        AskQuestion3()
+        AskQuestion3(sceneGroup)
 
     elseif (questionNumber == 4) then
-        AskQuestion4()
+        AskQuestion4(sceneGroup)
 
     elseif (questionNumber == 5) then
-        AskQuestion5()
+        AskQuestion5(sceneGroup)
 
     elseif (questionNumber == 6) then
-        AskQuestion6()
+        AskQuestion6(sceneGroup)
 
     elseif (questionNumber == 7) then
-        AskQuestion7()
+        AskQuestion7(sceneGroup)
 
     elseif (questionNumber == 8) then
-        AskQuestion8()
+        AskQuestion8(sceneGroup)
 
     elseif (questionNumber == 9) then
-        AskQuestion9()
+        AskQuestion9(sceneGroup)
 
     elseif (questionNumber == 10) then
-        AskQuestion10()
+        AskQuestion10(sceneGroup)
 
     elseif (questionNumber == 11) then
-        AskQuestion11()
+        AskQuestion11(sceneGroup)
 
     elseif (questionNumber == 12) then
-        AskQuestion12()
+        AskQuestion12(sceneGroup)
 
     elseif (questionNumber == 13) then
-        AskQuestion13()
+        AskQuestion13(sceneGroup)
 
     elseif (questionNumber == 14) then
-        AskQuestion14()
+        AskQuestion14(sceneGroup)
 
     elseif (questionNumber == 15) then
-        AskQuestion15()
+        AskQuestion15(sceneGroup)
 
     elseif (questionNumber == 16) then
-        AskQuestion16()
+        AskQuestion16(sceneGroup)
 
     elseif (questionNumber == 17) then
-        AskQuestion17()
+        AskQuestion17(sceneGroup)
 
     elseif (questionNumber == 18) then
-        AskQuestion18()
+        AskQuestion18(sceneGroup)
 
     elseif (questionNumber == 19) then
-        AskQuestion19()
+        AskQuestion19(sceneGroup)
 
     elseif (questionNumber == 20) then
-        AskQuestion20()
+        AskQuestion20(sceneGroup)
 
     end
 end
@@ -989,7 +989,7 @@ function scene:show( event )
         -- Called when the scene is now on screen.
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
-        AskQuestion()
+        AskQuestion( sceneGroup )
         --AddTextListeners()
     end
 
