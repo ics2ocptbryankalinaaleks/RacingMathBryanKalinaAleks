@@ -404,7 +404,7 @@ local function AskQuestion5(sceneGroup)
     -- set the question text
     question5Text = display.newText("Which mixture will create green?", 0, 0, Arial, textSize)
 
-    -- set the correct answer text, text color, and position
+    -- set the correct answer text, text color, and position (3rd)
     question5CorrectAnswerFirst = display.newText("YELLOW", 0, 0, Arial, textSize)
     question5CorrectAnswerFirst:setTextColor(1, 0, 0)
     question5CorrectAnswerPlus = display.newText(" + ", 0, 0, Arial, textSize)
@@ -413,27 +413,27 @@ local function AskQuestion5(sceneGroup)
     question5CorrectAnswerSecond:setTextColor(1, 0, 0)
 
     -- set the first wrong answer text, text color, and position
-    question5Answer1First = display.newText("", 0, 0, Arial, textSize)
+    question5Answer1First = display.newText("RED", 0, 0, Arial, textSize)
     question5Answer1First:setTextColor(0, 1, 0)
     question5Answer1Plus = display.newText(" + ", 0, 0, Arial, textSize)
     question5Answer1Plus:setTextColor(0, 0, 0)
-    question5Answer1Second = display.newText("", 0, 0, Arial, textSize)
+    question5Answer1Second = display.newText("PURPLE", 0, 0, Arial, textSize)
     question5Answer1Second:setTextColor(0, 1, 0)
 
     -- set the second wrong answer text, text color, and position
-    question5Answer2First = display.newText("", 0, 0, Arial, textSize)
+    question5Answer2First = display.newText("BLUE", 0, 0, Arial, textSize)
     question5Answer2First:setTextColor(127/255, 0, 1)
     question5Answer2Plus = display.newText(" + ", 0, 0, Arial, textSize)
     question5Answer2Plus:setTextColor(0, 0, 0)
-    question5Answer2Second = display.newText("", 0, 0, Arial, textSize)
+    question5Answer2Second = display.newText("RED", 0, 0, Arial, textSize)
     question5Answer2Second:setTextColor(127/255, 0, 1)
 
     -- set the third wrong answer text, text color, and position
-    question5Answer3First = display.newText("", 0, 0, Arial, textSize)
+    question5Answer3First = display.newText("RED", 0, 0, Arial, textSize)
     question5Answer3First:setTextColor(1, 51/255, 1)
     question5Answer3Plus = display.newText(" + ", 0, 0, Arial, textSize)
     question5Answer3Plus:setTextColor(0, 0, 0)
-    question5Answer3Second = display.newText("", 0, 0, Arial, textSize)
+    question5Answer3Second = display.newText("YELLOW", 0, 0, Arial, textSize)
     question5Answer3Second:setTextColor(1, 51/255, 1)
 
     sceneGroup:insert(question5CorrectAnswerFirst)
