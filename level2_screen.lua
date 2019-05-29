@@ -142,7 +142,11 @@ function scene:create( event )
     bkg_image:toBack()
 
         -- Insert background image into the scene group in order to ONLY be associated with this scene
-    sceneGroup:insert( bkg_image )    
+    sceneGroup:insert( bkg_image )
+    sceneGroup:insert(logoCar)
+    sceneGroup:insert(car1)
+    sceneGroup:insert(car2)
+    sceneGroup:insert(car3)
 
 end --function scene:create( event )
 
