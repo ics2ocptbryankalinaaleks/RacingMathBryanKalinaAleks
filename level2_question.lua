@@ -562,22 +562,22 @@ end
 
 local function AskQuestion8(sceneGroup)
     -- set the question text
-    question8Text = display.newText("", 0, 0, Arial, textSize)
+    question8Text = display.newText("Which colour is a secondary colour?", 0, 0, Arial, textSize)
 
     -- set the correct answer text, text color, and position
-    question8CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+    question8CorrectAnswer = display.newText("GREEN", 0, 0, Arial, textSize)
     question8CorrectAnswer:setTextColor(1, 0, 0)
 
     -- set the first wrong answer text, text color, and position
-    question8Answer1 = display.newText("", 0, 0, Arial, textSize)
+    question8Answer1 = display.newText("YELLOW", 0, 0, Arial, textSize)
     question8Answer1:setTextColor(0, 1, 0)
 
     -- set the second wrong answer text, text color, and position
-    question8Answer2 = display.newText("", 0, 0, Arial, textSize)
+    question8Answer2 = display.newText("BLUE", 0, 0, Arial, textSize)
     question8Answer2:setTextColor(127/255, 0, 1)
 
     -- set the third wrong answer text, text color, and position
-    question8Answer3 = display.newText("", 0, 0, Arial, textSize)
+    question8Answer3 = display.newText("RED", 0, 0, Arial, textSize)
     question8Answer3:setTextColor(1, 51/255, 1)
 
     sceneGroup:insert(question8Text)
