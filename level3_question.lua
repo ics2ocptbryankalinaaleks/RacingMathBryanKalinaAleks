@@ -32,6 +32,8 @@ local scene = composer.newScene( sceneName )
 -----------------------------------------------------------------------------------------
 
 -- The local variables for this scene
+local userAnswer
+local textTouched = false
 local question1Text
 local question1CorrectAnswer
 local question1Answer1

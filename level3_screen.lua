@@ -26,6 +26,11 @@ sceneName = "level3_screen"
 -- Creating Scene Object
 local scene = composer.newScene( sceneName )
 
+-----------------------------------------------------------------------------------------
+-- GLOBAL VARIABLES
+-----------------------------------------------------------------------------------------
+
+lives = 3
 
 -----------------------------------------------------------------------------------------
 -- LOCAL VARIABLES
@@ -35,6 +40,8 @@ local scene = composer.newScene( sceneName )
 local bkg_image
 local questionNumber
 local textSize = 50
+local questionsAnswered = 0
+local wrongAnswers = 0
 
 -- cars
 local logoCar
@@ -57,7 +64,16 @@ local bkgSoundChannel
 -- LOCAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
 local function AskQuestion()
-    composer.gotoScene("level2_question")
+    -- set all scroll speeds to 0 to stop the car
+    scrollSpeedLogo = 0
+    scrollSpeedCar1 = 0
+    scrollSpeedCar2 = 0
+    scrollSpeedCar3 = 0
+    composer.showOverlay( "level2_question", { isModal = true, effect = "fade", time = 100})
+    questionsAnswered = questionsAnswered + 1
+    if (useranswer ~= answer) then
+        lives = lives - 1
+    end
 end
 
 local function MoveLogoCar(event)
