@@ -564,7 +564,7 @@ local function AskQuestion8(sceneGroup)
     -- set the question text
     question8Text = display.newText("Which colour is a secondary colour?", 0, 0, Arial, textSize)
 
-    -- set the correct answer text, text color, and position
+    -- set the correct answer text, text color, and position (3rd)
     question8CorrectAnswer = display.newText("GREEN", 0, 0, Arial, textSize)
     question8CorrectAnswer:setTextColor(1, 0, 0)
 
@@ -591,7 +591,7 @@ local function AskQuestion9(sceneGroup)
     -- set the question text
     question9Text = display.newText("Which colour is a secondary colour?", 0, 0, Arial, textSize)
 
-    -- set the correct answer text, text color, and position
+    -- set the correct answer text, text color, and position (2nd)
     question9CorrectAnswer = display.newText("PURPLE", 0, 0, Arial, textSize)
     question9CorrectAnswer:setTextColor(1, 0, 0)
 
@@ -616,22 +616,22 @@ end
 
 local function AskQuestion10(sceneGroup)
     -- set the question text
-    question10Text = display.newText("", 0, 0, Arial, textSize)
+    question10Text = display.newText("Which colour is a secondary colour?", 0, 0, Arial, textSize)
 
-    -- set the correct answer text, text color, and position
-    question10CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+    -- set the correct answer text, text color, and position (4th)
+    question10CorrectAnswer = display.newText("ORANGE", 0, 0, Arial, textSize)
     question10CorrectAnswer:setTextColor(1, 0, 0)
 
     -- set the first wrong answer text, text color, and position
-    question10Answer1 = display.newText("", 0, 0, Arial, textSize)
+    question10Answer1 = display.newText("BLUE", 0, 0, Arial, textSize)
     question10Answer1:setTextColor(0, 1, 0)
 
     -- set the second wrong answer text, text color, and position
-    question10Answer2 = display.newText("", 0, 0, Arial, textSize)
+    question10Answer2 = display.newText("RED", 0, 0, Arial, textSize)
     question10Answer2:setTextColor(127/255, 0, 1)
 
     -- set the third wrong answer text, 2text color, and position
-    question10Answer3 = display.newText("", 0, 0, Arial, textSize)
+    question10Answer3 = display.newText("YELLOW", 0, 0, Arial, textSize)
     question10Answer3:setTextColor(1, 51/255, 1)
 
     sceneGroup:insert(question10Text)
@@ -645,7 +645,7 @@ local function AskQuestion11(sceneGroup)
     -- set the question text
     question11Text = display.newText("Click on the Primary Color", 0, 0, Arial, textSize)
 
-    -- set the correct answer text, text color, and position
+    -- set the correct answer text, text color, and position (3rd)
     question11CorrectAnswer = display.newText("RED", 0, 0, Arial, textSize)
     question11CorrectAnswer:setTextColor(1, 0, 0)
 
