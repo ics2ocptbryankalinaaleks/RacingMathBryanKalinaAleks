@@ -589,22 +589,22 @@ end
 
 local function AskQuestion9(sceneGroup)
     -- set the question text
-    question9Text = display.newText("", 0, 0, Arial, textSize)
+    question9Text = display.newText("Which colour is a secondary colour?", 0, 0, Arial, textSize)
 
     -- set the correct answer text, text color, and position
-    question9CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+    question9CorrectAnswer = display.newText("PURPLE", 0, 0, Arial, textSize)
     question9CorrectAnswer:setTextColor(1, 0, 0)
 
     -- set the first wrong answer text, text color, and position
-    question9Answer1 = display.newText("", 0, 0, Arial, textSize)
+    question9Answer1 = display.newText("BLUE", 0, 0, Arial, textSize)
     question9Answer1:setTextColor(0, 1, 0)
 
     -- set the second wrong answer text, text color, and position
-    question9Answer2 = display.newText("", 0, 0, Arial, textSize)
+    question9Answer2 = display.newText("YELLOW", 0, 0, Arial, textSize)
     question9Answer2:setTextColor(127/255, 0, 1)
 
     -- set the third wrong answer text, text color, and position
-    question9Answer3 = display.newText("", 0, 0, Arial, textSize)
+    question9Answer3 = display.newText("RED", 0, 0, Arial, textSize)
     question9Answer3:setTextColor(1, 51/255, 1)
 
     sceneGroup:insert(question9Text)
