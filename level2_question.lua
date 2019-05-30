@@ -138,18 +138,26 @@ local function AskQuestion1()
     -- set the correct answer text, text color, and position
     question1CorrectAnswer = display.newText("RED", 0, 0, Arial, textSize)
     question1CorrectAnswer:setTextColor(1, 0, 0)
+    question1CorrectAnswer.x = 
+    question1CorrectAnswer.y = 
 
     -- set the first wrong answer text, text color, and position
     question1Answer1 = display.newText("GREEN", 0, 0, Arial, textSize)
     question1Answer1:setTextColor(0, 1, 0)
+    question1Answer1.x = 
+    question1Answer1.y = 
 
     -- set the second wrong answer text, text color, and position
     question1Answer2 = display.newText("PURPLE", 0, 0, Arial, textSize)
     question1Answer2:setTextColor(127/255, 0, 1)
+    question1Answer2.x = 
+    question1Answer2.y = 
 
     -- set the third wrong answer text, text color, and position
     question1Answer3 = display.newText("PINK", 0, 0, Arial, textSize)
     question1Answer3:setTextColor(1, 51/255, 1)
+    question1Answer3.x = 
+    question1Answer3.y = 
 
     sceneGroup:insert(question1Text)
     sceneGroup:insert(question1CorrectAnswer)
@@ -163,49 +171,25 @@ local function AskQuestion2()
     question2Text = display.newText("Which mixture will make brown?", 0, 0, Arial, textSize)
 
     -- set the correct answer text, text color, and position
-    question2CorrectAnswerFirst = display.newText("RED", 0, 0, Arial, textSize)
-    question2CorrectAnswerFirst:setTextColor(1, 0, 0)
-    question2CorrectAnswerPlus = display.newText(" + ", 0, 0, Arial, textSize)
-    question2CorrectAnswerPlus:setTextColor(0, 0, 0)
-    question2CorrectAnswerSecond = display.newText("BROWN", 0, 0, Arial, textSize)
-    question2CorrectAnswerSecond:setTextColor(102/255, 51/255, 0)
+    question2CorrectAnswer = display.newText("RED + GREEN", 0, 0, Arial, textSize)
+    question2CorrectAnswer:setTextColor(1, 0, 0)
 
     -- set the first wrong answer text, text color, and position
-    question2Answer1First = display.newText("PINK", 0, 0, Arial, textSize)
-    question2Answer1First:setTextColor(1, 51/255, 1)
-    question2Answer1Plus = display.newText(" + ", 0, 0, Arial, textSize)
-    question2Answer1Plus:setTextColo(0, 0, 0)
-    question2Answer1Second = display.newText("BLUE", 0, 0, Arial, textSize)
-    question2Answer1Second:setTextColor(0, 1, 0)
+    question2Answer1t = display.newText("PINK + BLUE", 0, 0, Arial, textSize)
+    question2Answer1:setTextColor(1, 51/255, 1)
 
     -- set the second wrong answer text, text color, and position
-    question2Answer2First = display.newText("ORANGE", 0, 0, Arial, textSize)
-    question2Answer2First:setTextColor(1, 128/255, 0)
-    question2Answer2Plus = display.newText(" + ", 0, 0, Arial, textSize)
-    question2Answer2Plus:setTextColor(0, 0, 0)
-    question2Answer2Second = display.newText("PURPLE", 0, 0, Arial, textSize)
-    question2Answer2Second:setTextColor(127/255, 0, 1)
+    question2Answer2 = display.newText("ORANGE + PURPLE", 0, 0, Arial, textSize)
+    question2Answer2:setTextColor(1, 128/255, 0)
 
     -- set the third wrong answer text, text color, and position
-    question2Answer3First = display.newText("YELLOW", 0, 0, Arial, textSize) 
-    question2Answer3First:setTextColor(1, 1, 0)
-    question2Answer3Plus = display.newText(" + ", 0, 0, Arial, textSize)
-    question2Answer3Plus:setTextColor(0, 0, 0)
-    question2Answer3Second = display.newText("GREEN", 0, 0, Arial, textSize)
-    question2Answer3Second:setTextColor(0, 1, 0)
+    question2Answer3 = display.newText("YELLOW + GREEN", 0, 0, Arial, textSize) 
+    question2Answer3:setTextColor(1, 1, 0)
 
-    sceneGroup:insert(question2CorrectAnswerFirst)
-    sceneGroup:insert(question2CorrectAnswerPlus)
-    sceneGroup:insert(question2CorrectAnswerSecond)
-    sceneGroup:insert(question2Answer1First)
-    sceneGroup:insert(question2Answer1Plus)
-    sceneGroup:insert(question2Answer1Second)
-    sceneGroup:insert(question2Answer2First)
-    sceneGroup:insert(question2Answer2Plus)
-    sceneGroup:insert(question2Answer2Second)
-    sceneGroup:insert(question2Answer3First)
-    sceneGroup:insert(question2Answer3Plus)
-    sceneGroup:insert(question2Answer3Second)
+    sceneGroup:insert(question2CorrectAnswer)
+    sceneGroup:insert(question2Answer1)
+    sceneGroup:insert(question2Answer2)
+    sceneGroup:insert(question2Answer3)
 end
 
 local function AskQuestion3()
