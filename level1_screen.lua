@@ -27,20 +27,6 @@ local scene = composer.newScene( sceneName )
 -----------------------------------------------------------------------------------------
 -- GLOBAL VARIABLES
 -----------------------------------------------------------------------------------------
-heart1 = display.newImageRect("Images/heart.png", 80, 80)
-heart1.x = 976
-heart1.y = 50
-heart1.isVisible = true
-
-heart2 = display.newImageRect("Images/heart.png", 80, 80)
-heart2.x = 896
-heart2.y = 50
-heart2.isVisible = true
-
-heart3 = display.newImageRect("Images/heart.png", 80, 80)
-heart3.x = 816
-heart3.y = 50
-heart3.isVisible = true
 
 lives = 3
 
@@ -55,13 +41,19 @@ local bkgSoundChannel
 
 -- The local variables for this scene
 local bkg_image
-local logocar = display.newImage("Images/CompanyLogo.png", 0, 0)
+local logocar
+
 local scrollSpeed = 1.4
 local scrollSpeed2 = -1.05
 local scrollSpeed3 = -1
 local scrollSpeed4 = -1.1
+
 local questionsAnswered = 0
 local wrongAnswers = 0
+
+local heart1
+local heart2
+local heart3
 
 
 -----------------------------------------------------------------------------------------
@@ -76,6 +68,7 @@ local function AskQuestion()
     scrollSpeed4 = 0
     composer.showOverlay( "level1_question", { isModal = true, effect = "fade", time = 100})
     questionsAnswered = questionsAnswered + 1
+    
     if (useranswer ~= answer) then
         lives = lives - 1
     end
@@ -98,9 +91,13 @@ local function MovelogocarDown(event)
     if (logocar.x >= 900) then
         logocar:rotate(-45)
         Runtime:removeEventListener("enterFrame", MovelogocarDown)
+        print ("***Removed MovelogocarDown event listener")
+
         --Ask a question
         AskQuestion()
         Runtime:addEventListener("enterFrame", MovelogocarRight)
+        print ("***Called MovelogocarRight event listener")
+
     end
 end
 
@@ -116,9 +113,13 @@ local function Movelogocar(event)
     if (logocar.x >= 657) then
         logocar:rotate(90)
         Runtime:removeEventListener("enterFrame", Movelogocar)
+        print ("***Removed Movelogocar event listener")
+
         -- Ask another question
         AskQuestion()
         Runtime:addEventListener("enterFrame", MovelogocarDown)
+        print ("***Called MovelogocarDown event listener")
+
     end
 end
 
@@ -167,7 +168,7 @@ function ResumeLevel1()
     
     if (questionsAnswered == 2) then
         -- after getting 2 questions right, go to the you win screen
-        composer.gotoScene( "level2_screen" )
+        composer.gotoScene( "level_select" )
     end
 
 end
@@ -191,9 +192,33 @@ function scene:create( event )
     bkg_image.width = display.contentWidth
     bkg_image.height = display.contentHeight
 
+    logocar = display.newImage("Images/CompanyLogo.png", 0, 0)        
+    logocar.x = display.contentWidth*1/8
+    logocar.y = display.contentHeight*5.5/8
+    logocar:rotate(-45)
+    logocar:scale(0.1, 0.1)
+
+    heart1 = display.newImageRect("Images/heart.png", 80, 80)
+    heart1.x = 976
+    heart1.y = 50
+    heart1.isVisible = true
+    
+    heart2 = display.newImageRect("Images/heart.png", 80, 80)
+    heart2.x = 896
+    heart2.y = 50
+    heart2.isVisible = true
+    
+    heart3 = display.newImageRect("Images/heart.png", 80, 80)
+    heart3.x = 816
+    heart3.y = 50
+    heart3.isVisible = true
+
     -- Insert background image into the scene group in order to ONLY be associated with this scene
     sceneGroup:insert( bkg_image )    
     sceneGroup:insert( logocar )
+    sceneGroup:insert( heart1 )
+    sceneGroup:insert( heart2 )
+    sceneGroup:insert( heart3 )
 
 end --function scene:create( event )
 
@@ -211,10 +236,6 @@ function scene:show( event )
     if ( phase == "will" ) then
 
         -- Called when the scene is still off screen (but is about to come on screen).
-        logocar.x = display.contentWidth*1/8
-        logocar.y = display.contentHeight*5.5/8
-        logocar:rotate(-45)
-        logocar:scale(0.1, 0.1)
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
@@ -223,11 +244,16 @@ function scene:show( event )
         -- Called when the scene is now on screen.
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
-        lives = 3
+        logocar.x = display.contentWidth*1/8
+        logocar.y = display.contentHeight*5.5/8
 
+        -- reset the questions answered
+        questionsAnswered = 0
+        
         -- Ask a question
-
+        UpdateHearts()
         Runtime:addEventListener("enterFrame", Movelogocar)
+        print ("***Called Movelogocar event listener")
 
     end
 end 
@@ -253,7 +279,12 @@ function scene:hide( event )
 
         -- Called immediately after scene goes off screen.
         Runtime:removeEventListener("enterFrame", Movelogocar)
+        print ("***Hide: Removed Movelogocar event listener")
+
         Runtime:removeEventListener("enterFrame", MovelogocarDown)
+        print ("***Hide: Removed MovelogocarDown event listener")
+        Runtime:removeEventListener("enterFrame", MovelogocarRight)
+        print ("***Hide: Removed MovelogocarRight event listener")
     end
 
 end --function scene:hide( event )

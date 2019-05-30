@@ -39,24 +39,22 @@ local firstNumber
 local secondNumber
 local thirdNumber
 
+-- number answers
 local answer
 local wrongAnswer1
 local wrongAnswer2
 local wrongAnswer3
 
+
+-- text answers
 local answerText 
-local wrongAnswerText1
-local wrongAnswerText2
-local wrongAnswerText3
+local wrongText1
+local wrongText2
+local wrongText3
 
 local answerPosition = 1
 local bkg
 local cover
-
-local heart1
-local heart2
-local heart3
-local numLives = 2
 
 local X1 = display.contentWidth*2/7
 local X2 = display.contentWidth*4/7

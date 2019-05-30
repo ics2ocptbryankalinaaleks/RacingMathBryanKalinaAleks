@@ -45,6 +45,7 @@ local levelsButton
 -----------------------------------------------------------------------------------------
 local bkgSoundChannel
 local bkgSound = audio.loadStream("Sounds/bkgs.mp3")
+
 -----------------------------------------------------------------------------------------
 -- LOCAL FUNCTIONS
 -----------------------------------------------------------------------------------------
@@ -183,6 +184,7 @@ function scene:show( event )
     -- Example: start timers, begin animation, play audio, etc.
     elseif ( phase == "did" ) then       
         bkgSoundChannel = audio.play( bkgSound, {channel=1, loops=-1})
+        lives = 3
 
     end
 
@@ -211,7 +213,7 @@ function scene:hide( event )
 
     elseif ( phase == "did" ) then
         -- Called immediately after scene goes off screen.
-        audio.stop(bkgSoundChannel)
+        audio.stop(1)
     end
 
 end -- function scene:hide( event )
