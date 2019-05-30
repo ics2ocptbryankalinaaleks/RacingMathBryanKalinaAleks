@@ -31,11 +31,6 @@ local scene = composer.newScene( sceneName )
 lives = 3
 
 -----------------------------------------------------------------------------------------
---LOCAL SOUNDS
------------------------------------------------------------------------------------------
-local bkgSound = audio.loadStream("Sounds/bkgslevel2.mp3")
-local bkgSoundChannel
------------------------------------------------------------------------------------------
 -- LOCAL VARIABLES
 -----------------------------------------------------------------------------------------
 
@@ -124,28 +119,27 @@ local function Movelogocar(event)
 end
 
 local function UpdateHearts()
-    if (lives == 3) then
+    if (numLives == 3) then
         -- update hearts
         heart1.isVisible = true
         heart2.isVisible = true   
         heart3.isVisible = true
         timer.performWithDelay(200, ReplaceCharacter) 
 
-    elseif (lives == 2) then
+    elseif (numLives == 2) then
         -- update hearts
         heart1.isVisible = true
         heart2.isVisible = true
         heart3.isVisible = false
         timer.performWithDelay(200, YouLoseTransition)
-    elseif (lives == 1) then
+    elseif (numLives == 1) then
         -- update hearts
         heart1.isVisible = true
         heart2.isVisible = false
-
         heart3.isVisible = false
         timer.performWithDelay(200, ReplaceCharacter) 
 
-    elseif (lives == 0) then
+    elseif (numLives == 0) then
         -- update hearts
         heart1.isVisible = false
         heart2.isVisible = false
@@ -170,7 +164,6 @@ function ResumeLevel1()
         -- after getting 2 questions right, go to the you win screen
         composer.gotoScene( "level_select" )
     end
-
 end
 
 -----------------------------------------------------------------------------------------
@@ -236,10 +229,10 @@ function scene:show( event )
     if ( phase == "will" ) then
 
         -- Called when the scene is still off screen (but is about to come on screen).
+
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
-        bkgSoundChannel = audio.play( bkgSound, {channel=1, loops=-1})
 
         -- Called when the scene is now on screen.
         -- Insert code here to make the scene come alive.
@@ -275,8 +268,6 @@ function scene:hide( event )
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
-        audio.stop(bkgSoundChannel)
-
         -- Called immediately after scene goes off screen.
         Runtime:removeEventListener("enterFrame", Movelogocar)
         print ("***Hide: Removed Movelogocar event listener")

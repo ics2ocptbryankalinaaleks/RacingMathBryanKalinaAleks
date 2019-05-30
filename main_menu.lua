@@ -43,8 +43,8 @@ local levelsButton
 -----------------------------------------------------------------------------------------
 --LOCAL SOUNDS
 -----------------------------------------------------------------------------------------
-local bkgSoundChannel
 local bkgSound = audio.loadStream("Sounds/bkgs.mp3")
+local bkgSoundChannel
 
 -----------------------------------------------------------------------------------------
 -- LOCAL FUNCTIONS
@@ -159,7 +159,11 @@ function scene:create( event )
     sceneGroup:insert( creditsButton )
     sceneGroup:insert( instructionsButton )
 
+
+
 end -- function scene:create( event )   
+
+
 
 -----------------------------------------------------------------------------------------
 

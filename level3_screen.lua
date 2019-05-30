@@ -27,33 +27,157 @@ sceneName = "level3_screen"
 local scene = composer.newScene( sceneName )
 
 -----------------------------------------------------------------------------------------
--- GLOBAL VARIABLES
------------------------------------------------------------------------------------------
-
-lives = 3
-
------------------------------------------------------------------------------------------
 -- LOCAL VARIABLES
 -----------------------------------------------------------------------------------------
 
 -- The local variables for this scene
 local bkg_image
-local questionNumber
-local textSize = 50
-local questionsAnswered = 0
-local wrongAnswers = 0
 
--- cars
-local logoCar
-local car1
-local car2
-local car3
+local logocar = display.newImage("Images/CompanyLogo.png", 0, 0)
+local scrollSpeed = 1.4
+local scrollSpeed2 = -1.05
+local scrollSpeed3 = -1
+local scrollSpeed4 = -1.1
 
--- scrollspeeds
-local scrollSpeedLogo = 1
-local scrollSpeedCar1 = 1.4
-local scrollSpeedCar2 = 1.2
-local scrollSpeedCar3 = 1
+-- question1
+local question1Text
+local question1CorrectAnswer
+local question1Answer1
+local question1Answer2
+local question1Answer3
+
+-- question2
+local question2Text
+local question2CorrectAnswer
+local question2Answer1
+local question2Answer2
+local question2Answer3
+
+-- question3
+local question3Text
+local question3CorrectAnswer
+local question3Answer1
+local question3Answer2
+local question3Answer3
+
+-- question4
+local question4Text
+local question4CorrectAnswer
+local question4Answer1
+local question4Answer2
+local question4Answer3
+
+-- question5
+local question5Text
+local question5CorrectAnswer
+local question5Answer1
+local question5Answer2
+local question5Answer3
+
+-- question6
+local question6Text
+local question6CorrectAnswer
+local question6Answer1
+local question6Answer2
+local question6Answer3
+
+-- question7
+local question7Text
+local question7CorrectAnswer
+local question7Answer1
+local question7Answer2
+local question7Answer3
+
+-- question8
+local question8Text
+local question8CorrectAnswer
+local question8Answer1
+local question8Answer2
+local question8Answer3
+
+-- question9
+local question9Text
+local question9CorrectAnswer
+local question9Answer1
+local question9Answer2
+local question9Answer3
+
+-- question10
+local question10Text
+local question10CorrectAnswer
+local question10Answer1
+local question10Answer2
+local question10Answer3
+
+-- question11
+local question11Text
+local question11CorrectAnswer
+local question11Answer1
+local question11Answer2
+local question11Answer3
+
+-- question12
+local question12Text
+local question12CorrectAnswer
+local question12Answer1
+local question12Answer2
+local question12Answer3
+
+-- question13
+local question13Text
+local question13CorrectAnswer
+local question13Answer1
+local question13Answer2
+local question13Answer3
+
+-- question14
+local question14Text
+local question14CorrectAnswer
+local question14Answer1
+local question14Answer2
+local question14Answer3
+
+-- question15
+local question15Text
+local question15CorrectAnswer
+local question15Answer1
+local question15Answer2
+local question15Answer3
+
+-- question16
+local question16Text
+local question16CorrectAnswer
+local question16Answer1
+local question16Answer2
+local question16Answer3
+
+-- question17
+local question17Text
+local question17CorrectAnswer
+local question17Answer1
+local question17Answer2
+local question17Answer3
+
+-- question18
+local question18Text
+local question18CorrectAnswer
+local question18Answer1
+local question18Answer2
+local question18Answer3
+
+-- question19
+local question19Text
+local question19CorrectAnswer
+local question19Answer1
+local question19Answer2
+local question19Answer3
+
+-- question20
+local question20Text
+local question20CorrectAnswer
+local question20Answer1
+local question20Answer2
+local question20Answer3
 
 -----------------------------------------------------------------------------------------
 --LOCAL SOUNDS
@@ -63,85 +187,46 @@ local bkgSoundChannel
 -----------------------------------------------------------------------------------------
 -- LOCAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
-local function AskQuestion()
-    -- set all scroll speeds to 0 to stop the car
-    scrollSpeedLogo = 0
-    scrollSpeedCar1 = 0
-    scrollSpeedCar2 = 0
-    scrollSpeedCar3 = 0
-    composer.showOverlay( "level2_question", { isModal = true, effect = "fade", time = 100})
-    questionsAnswered = questionsAnswered + 1
-    if (useranswer ~= answer) then
-        lives = lives - 1
+
+
+local function MovelogocarRight(event)
+    --print ("***MovelogocarRight")
+    logocar.x = logocar.x + scrollSpeed
+end
+
+local function MovelogocarDown(event)
+    --print ("***MovelogocarDown")
+    logocar.x = logocar.x - scrollSpeed3
+    logocar.y = logocar.y - scrollSpeed4
+
+    if (logocar.x >= 900) then
+        logocar:rotate(-45)
+        Runtime:removeEventListener("enterFrame", MovelogocarDown)
+        --Ask a question
+        Runtime:addEventListener("enterFrame", MovelogocarRight)
     end
 end
 
-local function MoveLogoCar(event)
-    logoCar.x = logoCar.x + scrollSpeedLogo
 
-    if (logoCar.x == 500) then
-        AskQuestion()
+
+local function Movelogocar(event)
+    --print ("***Movelogocar")
+    logocar.x = logocar.x + scrollSpeed
+    logocar.y = logocar.y + scrollSpeed2
+
+    
+    if (logocar.x >= 657) then
+        logocar:rotate(90)
+        Runtime:removeEventListener("enterFrame", Movelogocar)
+        -- Ask another question
+        Runtime:addEventListener("enterFrame", MovelogocarDown)
     end
-
-    if (logoCar.x >= 400) then
-            composer.gotoScene("you_win")
-                scrollSpeedLogo = 0
-                scrollSpeedCar1 = 0
-                scrollSpeedCar2 = 0
-                scrollSpeedCar3 = 0
-    end
 end
 
-local function MoveCar1(event)
-    car1.x = car1.x + scrollSpeedCar1
-
-end
-
-local function MoveCar2(event)
-    car2.x = car2.x + scrollSpeedCar2
-
-end
-
-local function MoveCar3(event)
-    car3.x = car3.x + scrollSpeedCar3
-
-end
-
-local function MoveCars()
-    Runtime:addEventListener("enterFrame", MoveLogoCar)
-    Runtime:addEventListener("enterFrame", MoveCar1)
-    Runtime:addEventListener("enterFrame", MoveCar2)
-    Runtime:addEventListener("enterFrame", MoveCar3)
-end
 -------------------------------------------------------------
 --Objects
 -------------------------------------------------------------
--- cars (put in rder of largest to smlalest so you can see them all)
-
---third car (orange car) (largest car)
-    car3 = display.newImage("Images/OrangeCar.png", 0, 0)
-    car3.x = 900
-    car3.y = 270
-    car3:rotate(4)
-
--- second car (green car)
-    car2 = display.newImage("Images/GreenCar.png", 0, 0)
-    car2.x = display.contentWidth*-0.5/5
-    car2.y = display.contentHeight/1.74
-    car2:rotate(-33)
-
---first car (blue car)
-    car1 = display.newImage("Images/BlueCar.png", 0, 0)
-    car1.x = display.contentWidth/2
-    car1.y = display.contentHeight*4.3/8
-    car1:rotate(20)
-
--- logo car (user's car) (smallest car)
-    logoCar = display.newImage("Images/CompanyLogo.png", 0, 0)
-    logoCar.x = display.contentWidth*1/8
-    logoCar.y = display.contentHeight*5.9/8
-    logoCar:scale(0.1, 0.1)
-
+-- ask about the scroll direction & parabolic path
 -----------------------------------------------------------------------------------------
 -- GLOBAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
@@ -161,16 +246,10 @@ function scene:create( event )
     bkg_image.width = display.contentWidth
     bkg_image.height = display.contentHeight
 
-    -- Send the background image to the back layer so all other objects can be on top
-    bkg_image:toBack()
-
-        -- Insert background image into the scene group in order to ONLY be associated with this scene
+    -- Insert background image into the scene group in order to ONLY be associated with this scene
     sceneGroup:insert( bkg_image )    
-    sceneGroup:insert(car3)
-    sceneGroup:insert(car2)
-    sceneGroup:insert(car1)
-    sceneGroup:insert(logoCar)
-    
+    sceneGroup:insert( logocar )
+
 end --function scene:create( event )
 
 -----------------------------------------------------------------------------------------
@@ -187,22 +266,22 @@ function scene:show( event )
     if ( phase == "will" ) then
 
         -- Called when the scene is still off screen (but is about to come on screen).
-        --[[logoCar.x = display.contentWidth*1/8
-        logoCar.y = display.contentHeight*5.9/8
-        logoCar:scale(0.1, 0.1)]]--
+        logocar.x = display.contentWidth*1/8
+        logocar.y = display.contentHeight*5.9/8
+        logocar:rotate(-45)
+        logocar:scale(0.1, 0.1)
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
-        bkgSoundChannel = audio.play( bkgSound, {channel=1, loops=-1})
+
         -- Called when the scene is now on screen.
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
 
-        -- start the cars
-        MoveCars()
-
-
+        bkgSoundChannel = audio.play( bkgSound, {channel=1, loops=-1})
         -- Ask a question
+
+        Runtime:addEventListener("enterFrame", Movelogocar)
 
     end
 end 
@@ -224,9 +303,10 @@ function scene:hide( event )
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
-        audio.stop(bkgSoundChannel)
         -- Called immediately after scene goes off screen.
-        Runtime:removeEventListener("enterFrame", MovelogoCar)
+        Runtime:removeEventListener("enterFrame", Movelogocar)
+        Runtime:removeEventListener("enterFrame", MovelogocarDown)
+        Runtime:removeEventListener("enterFrame", Stop)
     end
 
 end --function scene:hide( event )
