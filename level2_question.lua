@@ -482,6 +482,7 @@ local function TouchListenerWrongAnswer(touch)
     userAnswer = wrongAnswer1.text
     
     if (touch.phase == "ended") then
+        lives = lives - 1
         
         BackToLevel2()  
     end 
@@ -492,6 +493,7 @@ local function TouchListenerWrongAnswer2(touch)
     userAnswer = wrongAnswer2.text
     
     if (touch.phase == "ended") then
+        lives = lives - 1
 
         BackToLevel2()
         
@@ -502,6 +504,7 @@ local function TouchListenerWrongAnswer3(touch)
     userAnswer = wrongAnswer3.text
     
     if (touch.phase == "ended") then
+        lives = lives - 1
 
         BackToLevel2()
         
@@ -860,18 +863,26 @@ local function AskQuestion8(sceneGroup)
     -- set the correct answer text, text color, and position (3rd)
     question8CorrectAnswer = display.newText("GREEN", 0, 0, Arial, textSize)
     question8CorrectAnswer:setTextColor(0, 1, 0)
+    question8CorrectAnswer.x = answerPosition3X
+    question8CorrectAnswer.y = answerPosition3Y
 
     -- set the first wrong answer text, text color, and position
     question8Answer1 = display.newText("YELLOW", 0, 0, Arial, textSize)
     question8Answer1:setTextColor(1, 1, 0)
+    question8Answer1.x = answerPosition1X
+    question8Answer1.y = answerPosition1Y
 
     -- set the second wrong answer text, text color, and position
     question8Answer2 = display.newText("BLUE", 0, 0, Arial, textSize)
     question8Answer2:setTextColor(0, 1, 0)
+    question8Answer2.x = answerPosition2X
+    question8Answer2.y = answerPosition2Y
 
     -- set the third wrong answer text, text color, and position
     question8Answer3 = display.newText("RED", 0, 0, Arial, textSize)
     question8Answer3:setTextColor(1, 0, 0)
+    question8Answer3.x = answerPosition4X
+    question8Answer3.y = answerPosition4Y
 
     -- insert the text objects into this scene
     sceneGroup:insert(question8Text)
@@ -898,10 +909,14 @@ local function AskQuestion9(sceneGroup)
     -- set the correct answer text, text color, and position (2nd)
     question9CorrectAnswer = display.newText("PURPLE", 0, 0, Arial, textSize)
     question9CorrectAnswer:setTextColor(127/255, 0, 1)
+    question9CorrectAnswer.x = answerPosition2X
+    question9CorrectAnswer.y = answerPosition2Y
 
     -- set the first wrong answer text, text color, and position
     question9Answer1 = display.newText("BLUE", 0, 0, Arial, textSize)
     question9Answer1:setTextColor(0, 1, 0)
+    question9Answer1.x = 
+    question9Answer1.y = 
 
     -- set the second wrong answer text, text color, and position
     question9Answer2 = display.newText("YELLOW", 0, 0, Arial, textSize)
