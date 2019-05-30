@@ -479,7 +479,7 @@ local function BackToLevel2()
 end 
 
 -----------------------------------------------------------------------------------------
---checking to see if the user pressed the right answer and bring them back to level 1
+--checking to see if the user pressed the right answer and bring them back to level 1, added to the scroll speed
 local function TouchListenerAnswer(touch)
     userAnswer = correctAnswer.text
     
@@ -519,6 +519,7 @@ local function TouchListenerWrongAnswer2(touch)
     end 
 end
 
+--checking to see if the user pressed the right answer and bring them back to level 1
 local function TouchListenerWrongAnswer3(touch)
     userAnswer = wrongAnswer3.text
     
@@ -529,7 +530,6 @@ local function TouchListenerWrongAnswer3(touch)
     end 
 end
 
-
 --adding the event listeners 
 local function AddTextListeners()
     correctAnswer:addEventListener( "touch", TouchListenerAnswer )
@@ -537,7 +537,6 @@ local function AddTextListeners()
     wrongAnswer1:addEventListener( "touch", TouchListenerWrongAnswer)
     wrongAnswer2:addEventListener( "touch", TouchListenerWrongAnswer2)
     wrongAnswer3:addEventListener( "touch", TouchListenerWrongAnswer3)
-
 end
 
 --removing the event listeners
@@ -595,6 +594,7 @@ local function AskQuestion1(sceneGroup)
     question1WasAsked = true
 end
 
+-- second question
 local function AskQuestion2(sceneGroup)
     -- set the question text
     question2Text = display.newText("Which mixture will make brown?", 0, 0, Arial, textSize)
@@ -641,6 +641,7 @@ local function AskQuestion2(sceneGroup)
     question2WasAsked = true
 end
 
+-- third question
 local function AskQuestion3(sceneGroup)
     -- set the question text
     question3Text = display.newText("Which color is the opposite of orange?", 0, 0, Arial, textSize)
@@ -687,6 +688,7 @@ local function AskQuestion3(sceneGroup)
     question3WasAsked = true
 end
 
+-- fourth question
 local function AskQuestion4(sceneGroup)
     -- set the question text
     question4Text = display.newText("Which color is the opposite of purple?", 0, 0, Arial, textSize)
@@ -733,6 +735,7 @@ local function AskQuestion4(sceneGroup)
     question4WasAsked = true
 end
 
+-- fifth question
 local function AskQuestion5(sceneGroup)
     -- set the question text
     question5Text = display.newText("Which mixture will create green?", 0, 0, Arial, textSize)
@@ -778,6 +781,7 @@ local function AskQuestion5(sceneGroup)
     question5WasAsked = true
 end
 
+-- sixth question
 local function AskQuestion6(sceneGroup)
     print("AskQuestion6(sceneGroup)")
     -- set the question text
@@ -824,7 +828,8 @@ local function AskQuestion6(sceneGroup)
 
     question6WasAsked = true
 end
- 
+
+-- seventh question
 local function AskQuestion7(sceneGroup)
     -- set the question text
     question7Text = display.newText("Which mixture will create orange?", 0, 0, Arial, textSize)
@@ -871,6 +876,7 @@ local function AskQuestion7(sceneGroup)
     question7WasAsked = true
 end
 
+-- eigth question
 local function AskQuestion8(sceneGroup)
     -- set the question text
     question8Text = display.newText("Which colour is a secondary colour?", 0, 0, Arial, textSize)
@@ -917,6 +923,7 @@ local function AskQuestion8(sceneGroup)
     question8WasAsked = true
 end
 
+-- ninth question
 local function AskQuestion9(sceneGroup)
     -- set the question text
     question9Text = display.newText("Which colour is a secondary colour?", 0, 0, Arial, textSize)
@@ -963,6 +970,7 @@ local function AskQuestion9(sceneGroup)
     question9WasAsked = true
 end
 
+-- tenth question
 local function AskQuestion10(sceneGroup)
     -- set the question text
     question10Text = display.newText("Which colour is a secondary colour?", 0, 0, Arial, textSize)
@@ -1009,6 +1017,7 @@ local function AskQuestion10(sceneGroup)
     question10WasAsked = true
 end
 
+-- eleventh question
 local function AskQuestion11(sceneGroup)
     -- set the question text
     question11Text = display.newText("Click on the Primary Color", 0, 0, Arial, textSize)
@@ -1055,6 +1064,7 @@ local function AskQuestion11(sceneGroup)
     question11WasAsked = true
 end
 
+-- twelveth question
 local function AskQuestion12(sceneGroup)
     -- set the question text
     question12Text = display.newText("Which colour is a primary colour?", 0, 0, Arial, textSize)
@@ -1101,6 +1111,7 @@ local function AskQuestion12(sceneGroup)
     question12WasAsked = true
 end
 
+-- thirteenth question
 local function AskQuestion13(sceneGroup)
     -- set the question text
     question13Text = display.newText("Which colour is the opposite colour of red?", 0, 0, Arial, textSize)
@@ -1147,6 +1158,7 @@ local function AskQuestion13(sceneGroup)
     question13WasAsked = true
 end
 
+-- fourteenth question
 local function AskQuestion14(sceneGroup)
     -- set the question text
     question14Text = display.newText("Which colour is the opposite colour of blue?", 0, 0, Arial, textSize)
@@ -1193,6 +1205,7 @@ local function AskQuestion14(sceneGroup)
     question14WasAsked = true
 end
 
+-- fifteenth question
 local function AskQuestion15(sceneGroup)
     -- set the question text
     question15Text = display.newText("Which colour is the opposite colour of green?", 0, 0, Arial, textSize)
@@ -1239,6 +1252,7 @@ local function AskQuestion15(sceneGroup)
     question15WasAsked = true
 end
 
+-- sixteenth question
 local function AskQuestion16(sceneGroup)
     -- set the question text
     question16Text = display.newText("Which mixture will create pink?", 0, 0, Arial, textSize)
@@ -1284,6 +1298,7 @@ local function AskQuestion16(sceneGroup)
     question16WasAsked = true
 end
 
+-- seventeenth question
 local function AskQuestion17(sceneGroup)
     -- set the question text
     question17Text = display.newText("How many primary colours are there?", 0, 0, Arial, textSize)
@@ -1330,6 +1345,7 @@ local function AskQuestion17(sceneGroup)
     question17WasAsked = true
 end
 
+-- eigtheenth question
 local function AskQuestion18(sceneGroup)
     -- set the question text
     question18Text = display.newText("How many secondary colours are there?", 0, 0, Arial, textSize)
@@ -1376,6 +1392,7 @@ local function AskQuestion18(sceneGroup)
     question18WasAsked = true
 end
 
+-- nineteenth question
 local function AskQuestion19(sceneGroup)
     -- set the question text
     question19Text = display.newText("How many tertiary (third level) colours are there?", 0, 0, Arial, textSize)
@@ -1414,6 +1431,7 @@ local function AskQuestion19(sceneGroup)
     question19WasAsked = true
 end
 
+-- twentyth question
 local function AskQuestion20(sceneGroup)
     -- set the question text
     question20Text = display.newText("Which color is a tertiary (third level) colour?", 0, 0, Arial, textSize)
