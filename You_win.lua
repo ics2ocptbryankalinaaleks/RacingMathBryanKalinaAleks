@@ -40,8 +40,8 @@ local bkg
 -----------------------------------------------------------------------------------------
 
 -- goes to the main menu
-local function GoToMainMenu()
-    composer.gotoScene("main_menu")
+local function GoToLevelSelect()
+    composer.gotoScene("level_select")
 end
 
 --------------------------------------------------------------------------------------
@@ -88,7 +88,7 @@ function scene:show( event )
 
     elseif ( phase == "did" ) then
         -- after five seconds of the screen being shown, go to the main menu
-        timer.performWithDelay(5000, GoToMainMenu)
+        timer.performWithDelay(5000, GoToLevelSelect)
 
 
 

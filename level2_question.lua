@@ -167,6 +167,18 @@ local textSize = 50
 local userAnswer
 local textTouched = false
 
+local correct = display.newText("Correct!", 0, 0, Arial, textSize)
+correct.x = display.contentCenterX
+correct.y = display.contentCenterY - 100
+correct:setTextColor(0, 1, 0)
+correct.isVisible = false
+
+local incorrect = display.newText("Sorry, that's wrong...", 0, 0, Arial, textSize)
+incorrect.x = display.contentCenterX
+incorrect.y = display.contentCenterY - 100
+incorrect:setTextColor(1, 0, 0)
+incorrect.isVisible = false
+
 local textPositionX = display.contentWidth*1/2
 local textPositionY = display.contentHeight*2/8
 
@@ -213,6 +225,14 @@ local question20WasAsked = false
 --LOCAL FUNCTIONS
 -----------------------------------------------------------------------------------------
 
+local function HideCorrect()
+    correct.isVisible = false
+end
+
+local function HideIncorrect()
+    incorrect.isVisible = false
+end
+
 -- set the scroll speed of the cars
 local function StartCars()
 
@@ -220,7 +240,6 @@ local function StartCars()
     scrollSpeedCar1 = 1.4
     scrollSpeedCar2 = 1.2
     scrollSpeedCar3 = 1
-
 end
 
 -- hide objects for question 1
@@ -484,6 +503,10 @@ local function TouchListenerAnswer(touch)
     
     if (touch.phase == "ended") then
         questionsAnsweredLevel2 = questionsAnsweredLevel2 + 1
+        
+        -- make correct visible, then hide it after 2 seconds
+        correct.isVisible = true
+        timer.performWithDelay(2000, HideCorrect)
 
         if (questionsAnsweredLevel2 == 1) then
             scrollSpeedLogoNew = scrollSpeedLogoAfterQuestion1
@@ -502,6 +525,9 @@ local function TouchListenerWrongAnswer(touch)
     userAnswer = wrongAnswer1.text
     
     if (touch.phase == "ended") then
+        -- make incorrect visible, then hide it after 2 seconds
+        incorrect.isVisible = true
+        timer.performWithDelay(2000, HideIncorrect)
         
         BackToLevel2()  
     end 
@@ -512,6 +538,9 @@ local function TouchListenerWrongAnswer2(touch)
     userAnswer = wrongAnswer2.text
     
     if (touch.phase == "ended") then
+        -- make incorrect visible, then hide it after 2 seconds
+        incorrect.isVisible = true
+        timer.performWithDelay(2000, HideIncorrect)
 
         BackToLevel2()
         
@@ -523,6 +552,9 @@ local function TouchListenerWrongAnswer3(touch)
     userAnswer = wrongAnswer3.text
     
     if (touch.phase == "ended") then
+        -- make incorrect visible, then hide it after 2 seconds
+        incorrect.isVisible = true
+        timer.performWithDelay(2000, HideIncorrect)
 
         BackToLevel2()
         
@@ -1487,9 +1519,9 @@ end
 
 -- ask a question
 function AskQuestion(sceneGroup)
-    print("AskQuestion(sceneGroup)")
     -- choose out of the possoble 20 questions
     questionNumber = math.random(1, 20)
+    print("AskQuestion(sceneGroup) :: questionnumber = " .. questionNumber)
 
     -- based on the questionNumber, call the function that will create that question. They are seperate because there was too
     --many lines of code in a single function if theye ere all together - there was an error because of it

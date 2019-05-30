@@ -68,7 +68,7 @@ local bkgSoundChannel
 local carsAreMoving = 0
 local function MoveLogoCar(event)
     logoCar.x = logoCar.x + scrollSpeedLogo
-    print("logoCar.x" .. logoCar.x)
+    --print("logoCar.x" .. logoCar.x)
 
     if (logoCar.x == 200 
         or (logoCar.x >= 400 and logoCar.x <= 401)
@@ -92,7 +92,7 @@ local function MoveCar1(event)
         Runtime:removeEventListener("enterFrame", MoveCar1)
     else 
         car1.x = car1.x + scrollSpeedCar1
-        print("car1.x" ..car1.x)
+        --print("car1.x" ..car1.x)
     end
 end
 
@@ -102,7 +102,7 @@ local function MoveCar2(event)
         Runtime:removeEventListener("enterFrame", MoveCar2)
     else 
         car2.x = car2.x + scrollSpeedCar2
-        print("car2.x" .. car2.x)
+        --print("car2.x" .. car2.x)
     end
 end
 
@@ -112,7 +112,7 @@ local function MoveCar3(event)
         Runtime:removeEventListener("enterFrame", MoveCar3)
     else 
         car3.x = car3.x + scrollSpeedCar3
-        print("car3.x" .. car3.x)
+        --print("car3.x" .. car3.x)
     end
 end
 
