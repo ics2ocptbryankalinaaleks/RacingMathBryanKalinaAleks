@@ -47,7 +47,7 @@ lives = 3
 -----------------------------------------------------------------------------------------
 --LOCAL SOUNDS
 -----------------------------------------------------------------------------------------
-local bkgSound = audio.loadStream("Sounds/bkgslevel2.mp3")
+local bkgSound = audio.loadStream("Sounds/bkgslevel1.mp3")
 local bkgSoundChannel
 -----------------------------------------------------------------------------------------
 -- LOCAL VARIABLES
