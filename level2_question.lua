@@ -205,6 +205,12 @@ local cover
 local userAnswer
 local textTouched = false
 
+local textPosition
+local answerPosition1
+local answerPosition2
+local answerPosition3
+local answerPosition4
+
 -----------------------------------------------------------------------------------------
 --LOCAL FUNCTIONS
 -----------------------------------------------------------------------------------------
@@ -701,7 +707,7 @@ local function AskQuestion12(sceneGroup)
 
     -- set the third wrong answer text, text color, and position
     question12Answer3 = display.newText("BLACK", 0, 0, Arial, textSize)
-    question12Answer3:setTextColor(1, 51/255, 1)
+    question12Answer3:setTextColor(0, 0, 0)
 
     sceneGroup:insert(question12Text)
     sceneGroup:insert(question12CorrectAnswer)
