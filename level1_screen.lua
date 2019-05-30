@@ -27,9 +27,28 @@ local scene = composer.newScene( sceneName )
 -----------------------------------------------------------------------------------------
 -- GLOBAL VARIABLES
 -----------------------------------------------------------------------------------------
+heart1 = display.newImageRect("Images/heart.png", 80, 80)
+heart1.x = 976
+heart1.y = 50
+heart1.isVisible = true
+
+heart2 = display.newImageRect("Images/heart.png", 80, 80)
+heart2.x = 896
+heart2.y = 50
+heart2.isVisible = true
+
+heart3 = display.newImageRect("Images/heart.png", 80, 80)
+heart3.x = 816
+heart3.y = 50
+heart3.isVisible = true
 
 lives = 3
 
+-----------------------------------------------------------------------------------------
+--LOCAL SOUNDS
+-----------------------------------------------------------------------------------------
+local bkgSound = audio.loadStream("Sounds/bkgslevel2.mp3")
+local bkgSoundChannel
 -----------------------------------------------------------------------------------------
 -- LOCAL VARIABLES
 -----------------------------------------------------------------------------------------
@@ -104,27 +123,28 @@ local function Movelogocar(event)
 end
 
 local function UpdateHearts()
-    if (numLives == 3) then
+    if (lives == 3) then
         -- update hearts
         heart1.isVisible = true
         heart2.isVisible = true   
         heart3.isVisible = true
         timer.performWithDelay(200, ReplaceCharacter) 
 
-    elseif (numLives == 2) then
+    elseif (lives == 2) then
         -- update hearts
         heart1.isVisible = true
         heart2.isVisible = true
         heart3.isVisible = false
         timer.performWithDelay(200, YouLoseTransition)
-    elseif (numLives == 1) then
+    elseif (lives == 1) then
         -- update hearts
         heart1.isVisible = true
         heart2.isVisible = false
+
         heart3.isVisible = false
         timer.performWithDelay(200, ReplaceCharacter) 
 
-    elseif (numLives == 0) then
+    elseif (lives == 0) then
         -- update hearts
         heart1.isVisible = false
         heart2.isVisible = false
@@ -149,6 +169,7 @@ function ResumeLevel1()
         -- after getting 2 questions right, go to the you win screen
         composer.gotoScene( "level2_screen" )
     end
+
 end
 
 -----------------------------------------------------------------------------------------
@@ -191,12 +212,13 @@ function scene:show( event )
 
         -- Called when the scene is still off screen (but is about to come on screen).
         logocar.x = display.contentWidth*1/8
-        logocar.y = display.contentHeight*5.9/8
+        logocar.y = display.contentHeight*5.5/8
         logocar:rotate(-45)
         logocar:scale(0.1, 0.1)
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
+        bkgSoundChannel = audio.play( bkgSound, {channel=1, loops=-1})
 
         -- Called when the scene is now on screen.
         -- Insert code here to make the scene come alive.
@@ -227,6 +249,8 @@ function scene:hide( event )
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
+        audio.stop(bkgSoundChannel)
+
         -- Called immediately after scene goes off screen.
         Runtime:removeEventListener("enterFrame", Movelogocar)
         Runtime:removeEventListener("enterFrame", MovelogocarDown)
