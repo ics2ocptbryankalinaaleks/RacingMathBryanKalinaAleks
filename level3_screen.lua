@@ -48,7 +48,17 @@ local bkgSoundChannel
 -----------------------------------------------------------------------------------------
 -- LOCAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
-
+local function AskQuestion()
+    -- set all scroll speeds to 0 to stop the car
+    scrollSpeed = 0
+    scrollSpeed2 = 0
+    scrollSpeed3 = 0
+    scrollSpeed4 = 0
+    if (logocar.x >= 400) then 
+        
+        composer.showOverlay( "level3_question", { isModal = true, effect = "fade", time = 100})
+    end     
+end
 
 local function MovelogocarRight(event)
     --print ("***MovelogocarRight")
@@ -58,10 +68,9 @@ end
 local function MovelogocarDown(event)
     --print ("***MovelogocarDown")
     logocar.x = logocar.x - scrollSpeed3
-    logocar.y = logocar.y - scrollSpeed4
 
     if (logocar.x >= 900) then
-        logocar:rotate(-45)
+
         Runtime:removeEventListener("enterFrame", MovelogocarDown)
         --Ask a question
         Runtime:addEventListener("enterFrame", MovelogocarRight)
@@ -73,11 +82,10 @@ end
 local function Movelogocar(event)
     --print ("***Movelogocar")
     logocar.x = logocar.x + scrollSpeed
-    logocar.y = logocar.y + scrollSpeed2
 
     
     if (logocar.x >= 657) then
-        logocar:rotate(90)
+        
         Runtime:removeEventListener("enterFrame", Movelogocar)
         -- Ask another question
         Runtime:addEventListener("enterFrame", MovelogocarDown)

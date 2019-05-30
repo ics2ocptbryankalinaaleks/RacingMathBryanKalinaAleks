@@ -267,7 +267,7 @@ function scene:create( event )
 
     -- create the question text and answer text objects
     -- set the question text
-    questionText = display.newText("", 50, 50, Arial, 40)
+    questionText = display.newText("",display.contentCenterX, display.contentCenterY*3/8, Arial, 75)
 
 
 
