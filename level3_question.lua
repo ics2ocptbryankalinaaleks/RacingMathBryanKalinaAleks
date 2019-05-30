@@ -45,6 +45,10 @@ local Y2 = display.contentHeight*5.5/7
 
 local userAnswer
 local textTouched = false
+local questionNumber1
+local questionNumber2
+local questionNumber3
+local questionNumber4
 
 -- question1
 local question1Text
@@ -224,7 +228,7 @@ local function TouchListenerAnswer2(touch)
     
     if (touch.phase == "ended") then
 
-        BackToLevel1()
+        BackToLevel3()
         
     end 
 end
@@ -234,7 +238,7 @@ local function TouchListenerAnswer3(touch)
     
     if (touch.phase == "ended") then
 
-        BackToLevel1()
+        BackToLevel3()
         
     end 
 end
@@ -260,14 +264,14 @@ end
 -- ask a question
 local function AskQuestion1()
     -- set the question text
-    question1Text = display.newText("", 0, 0, Arial, textSize)
+    question1Text = display.newText("What are the three main parts of a plant", 0, 0, Arial, textSize)
 
     -- set the correct answer text, text color, and position
-    question1CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+    question1CorrectAnswer = display.newText("roots, leaves, stem", 0, 0, Arial, textSize)
     question1CorrectAnswer:setTextColor(1, 0, 0)
 
     -- set the first wrong answer text, text color, and position
-    question1Answer1 = display.newText("", 0, 0, Arial, textSize)
+    question1Answer1 = display.newText("roots, stem, branches", 0, 0, Arial, textSize)
     question1Answer1:setTextColor(0, 1, 0)
 
     -- set the second wrong answer text, text color, and position
@@ -281,14 +285,14 @@ end
 
 local function AskQuestion2()
     -- set the question text
-    question2Text = display.newText("", 0, 0, Arial, textSize)
+    question2Text = display.newText("What do roots do", 0, 0, Arial, textSize)
 
     -- set the correct answer text, text color, and position
-    question2CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+    question2CorrectAnswer = display.newText("soak up food and water", 0, 0, Arial, textSize)
     question2CorrectAnswer:setTextColor(1, 0, 0)
 
     -- set the first wrong answer text, text color, and position
-    question2Answer1 = display.newText("", 0, 0, Arial, textSize)
+    question2Answer1 = display.newText("grow food", 0, 0, Arial, textSize)
     question2Answer1:setTextColor(1, 51/255, 1)
 
     -- set the second wrong answer text, text color, and position
@@ -301,14 +305,14 @@ local function AskQuestion2()
 
 local function AskQuestion3()
     -- set the question text
-    question3Text = display.newText("", 0, 0, Arial, textSize)
+    question3Text = display.newText("What do plants do to help animals", 0, 0, Arial, textSize)
 
     -- set the correct answer text, text color, and position
-    question3CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+    question3CorrectAnswer = display.newText("provide food for certain animals", 0, 0, Arial, textSize)
     question3CorrectAnswer:setTextColor(0, 0, 1)
 
     -- set the first wrong answer text, text color, and position
-    question3Answer1 = display.newText("", 0, 0, Arial, textSize)
+    question3Answer1 = display.newText("release carbon dioxide animals need", 0, 0, Arial, textSize)
     question3Answer1:setTextColor(1, 0, 0)
 
     -- set the second wrong answer text, text color, and position
@@ -322,35 +326,35 @@ end
 
 local function AskQuestion4()
     -- set the question text
-    question4Text = display.newText("", 0, 0, Arial, textSize)
+    question4Text = display.newText("Some plants grow bulbs, what do the bubls do", 0, 0, Arial, textSize)
 
     -- set the correct answer text, text color, and position
-    question4CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+    question4CorrectAnswer = display.newText("turn into flowers", 0, 0, Arial, textSize)
     question4CorrectAnswer:setTextColor(0, 0, 0)
 
     -- set the first wrong answer text, text color, and position
-    question4Answer1 = display.newText("", 0, 0, Arial, textSize)
+    question4Answer1 = display.newText("turn into seeds", 0, 0, Arial, textSize)
     question4Answer1:setTextColor(1, 0, 0)
 
     -- set the second wrong answer text, text color, and position
-    question4Answer2 = display.newText("", 0, 0, Arial, textSize)
+    question4Answer2 = display.newText("turn into trees", 0, 0, Arial, textSize)
     question4Answer2:setTextColor(0, 0, 1)
 
     -- set the third wrong answer text, text color, and position
-    question4Answer3 = display.newText("", 0, 0, Arial, textSize)
+    question4Answer3 = display.newText("turn into grass", 0, 0, Arial, textSize)
     question4Answer3:setTextColor(1, 51/255, 1)
 end
 
 local function AskQuestion5()
     -- set the question text
-    question5Text = display.newText("", 0, 0, Arial, textSize)
+    question5Text = display.newText("how does the sun help plants", 0, 0, Arial, textSize)
 
     -- set the correct answer text, text color, and position
-    question5CorrectAnswerFirst = display.newText("", 0, 0, Arial, textSize)
+    question5CorrectAnswerFirst = display.newText("turn the energy from the sun into food", 0, 0, Arial, textSize)
     question5CorrectAnswerFirst:setTextColor(1, 0, 0)
 
     -- set the first wrong answer text, text color, and position
-    question5Answer1First = display.newText("", 0, 0, Arial, textSize)
+    question5Answer1First = display.newText("uses the enegy to create pollen", 0, 0, Arial, textSize)
     question5Answer1First:setTextColor(0, 1, 0)
 
 
@@ -367,18 +371,18 @@ end
 
 local function AskQuestion6()
     -- set the question text
-    question6Text = display.newText("", 0, 0, Arial, textSize)
+    question6Text = display.newText("What structures are NOT natural", 0, 0, Arial, textSize)
 
     -- set the correct answer text, text color, and position
-    question6CorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+    question6CorrectAnswer = display.newText("pyramid", 0, 0, Arial, textSize)
     question6CorrectAnswer:setTextColor(1, 0, 0)
 
     -- set the first wrong answer text, text color, and position
-    question6Answer1 = display.newText("", 0, 0, Arial, textSize)
+    question6Answer1 = display.newText("mountain", 0, 0, Arial, textSize)
     question6Answer1:setTextColor(0, 1, 0)
 
     -- set the second wrong answer text, text color, and position
-    question6Answer2 = display.newText("", 0, 0, Arial, textSize)
+    question6Answer2 = display.newText("tree", 0, 0, Arial, textSize)
     question6Answer2:setTextColor(127/255, 0, 1)
 
     -- set the third wrong answer text, text color, and position
@@ -697,9 +701,9 @@ local function AskQuestion20()
 end
 
 -- ask a question
-local function AskQuestion()
+local function AskQuestion1()
     -- choose out of the possoble 20 questions
-    questionNumber = math.random(1, 20)
+    questionNumber1 = math.random(1, 20)
 
     -- based on the questionNumber, call the function that will create that question. They are seperate because there was too
     --many lines of code in a single function if theye ere all together - there was an error because of it
@@ -765,6 +769,155 @@ local function AskQuestion()
 
     end
 end
+
+-- ask a question
+local function AskQuestion2()
+    -- choose out of the possoble 20 questions
+    questionNumber2 = math.random(1, 20)
+
+    -- based on the questionNumber, call the function that will create that question. They are seperate because there was too
+    --many lines of code in a single function if theye ere all together - there was an error because of it
+    if (questionNumber == 1) then
+        AskQuestion1()
+
+    elseif (questionNumber == 2) then
+        AskQuestion2()
+
+    elseif (questionNumber == 3) then
+        AskQuestion3()
+
+    elseif (questionNumber == 4) then
+        AskQuestion4()
+
+    elseif (questionNumber == 5) then
+        AskQuestion5()
+
+    elseif (questionNumber == 6) then
+        AskQuestion6()
+
+    elseif (questionNumber == 7) then
+        AskQuestion7()
+
+    elseif (questionNumber == 8) then
+        AskQuestion8()
+
+    elseif (questionNumber == 9) then
+        AskQuestion9()
+
+    elseif (questionNumber == 10) then
+        AskQuestion10()
+
+    elseif (questionNumber == 11) then
+        AskQuestion11()
+
+    elseif (questionNumber == 12) then
+        AskQuestion12()
+
+    elseif (questionNumber == 13) then
+        AskQuestion13()
+
+    elseif (questionNumber == 14) then
+        AskQuestion14()
+
+    elseif (questionNumber == 15) then
+        AskQuestion15()
+
+    elseif (questionNumber == 16) then
+        AskQuestion16()
+
+    elseif (questionNumber == 17) then
+        AskQuestion17()
+
+    elseif (questionNumber == 18) then
+        AskQuestion18()
+
+    elseif (questionNumber == 19) then
+        AskQuestion19()
+
+    elseif (questionNumber == 20) then
+        AskQuestion20()
+
+    end
+end
+
+-- ask a question
+local function AskQuestion3()
+    -- choose out of the possoble 20 questions
+    questionNumber3 = math.random(1, 20)
+
+    -- based on the questionNumber, call the function that will create that question. They are seperate because there was too
+    --many lines of code in a single function if theye ere all together - there was an error because of it
+    if (questionNumber == 1) then
+        AskQuestion1()
+
+    elseif (questionNumber == 2) then
+        AskQuestion2()
+
+    elseif (questionNumber == 3) then
+        AskQuestion3()
+
+    elseif (questionNumber == 4) then
+        AskQuestion4()
+
+    elseif (questionNumber == 5) then
+        AskQuestion5()
+
+    elseif (questionNumber == 6) then
+        AskQuestion6()
+
+    elseif (questionNumber == 7) then
+        AskQuestion7()
+
+    elseif (questionNumber == 8) then
+        AskQuestion8()
+
+    elseif (questionNumber == 9) then
+        AskQuestion9()
+
+    elseif (questionNumber == 10) then
+        AskQuestion10()
+
+    elseif (questionNumber == 11) then
+        AskQuestion11()
+
+    elseif (questionNumber == 12) then
+        AskQuestion12()
+
+    elseif (questionNumber == 13) then
+        AskQuestion13()
+
+    elseif (questionNumber == 14) then
+        AskQuestion14()
+
+    elseif (questionNumber == 15) then
+        AskQuestion15()
+
+    elseif (questionNumber == 16) then
+        AskQuestion16()
+
+    elseif (questionNumber == 17) then
+        AskQuestion17()
+
+    elseif (questionNumber == 18) then
+        AskQuestion18()
+
+    elseif (questionNumber == 19) then
+        AskQuestion19()
+
+    elseif (questionNumber == 20) then
+        AskQuestion20()
+
+    end
+end
+
+local function PositionAnswers()
+
+    -- creating random start position in a cretain area
+    answerPosition = math.random(1,3)
+
+    if (answerPosition == 1) then
+
+        answer
 
 sceneGroup:insert(question1Text)
 sceneGroup:insert(question1CorrectAnswer)
