@@ -83,6 +83,13 @@ local function MoveLogoCar(event)
         AskQuestion()
     end
 
+    if (logoCar.x >= 400) then
+            composer.gotoScene("you_win")
+                scrollSpeedLogo = 0
+                scrollSpeedCar1 = 0
+                scrollSpeedCar2 = 0
+                scrollSpeedCar3 = 0
+    end
 end
 
 local function MoveCar1(event)
@@ -159,7 +166,11 @@ function scene:create( event )
 
         -- Insert background image into the scene group in order to ONLY be associated with this scene
     sceneGroup:insert( bkg_image )    
-
+    sceneGroup:insert(car3)
+    sceneGroup:insert(car2)
+    sceneGroup:insert(car1)
+    sceneGroup:insert(logoCar)
+    
 end --function scene:create( event )
 
 -----------------------------------------------------------------------------------------
