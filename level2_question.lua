@@ -200,26 +200,8 @@ local wrongAnswer1
 local wrongAnswer2
 local wrongAnswer3
 
-local question1WasAsked = false
-local question2WasAsked = false
-local question3WasAsked = false
-local question4WasAsked = false
-local question5WasAsked = false
-local question6WasAsked = false
-local question7WasAsked = false
-local question8WasAsked = false
-local question9WasAsked = false
-local question10WasAsked = false
-local question11WasAsked = false
-local question12WasAsked = false
-local question13WasAsked = false
-local question14WasAsked = false
-local question15WasAsked = false
-local question16WasAsked = false
-local question17WasAsked = false
-local question18WasAsked = false
-local question19WasAsked = false
-local question20WasAsked = false
+-- 0 means no question asked yet
+local questionWasAsked = 0
 
 -----------------------------------------------------------------------------------------
 --LOCAL FUNCTIONS
@@ -424,70 +406,72 @@ end
 
 --making transition to next scene
 local function BackToLevel2() 
-
+    print("level2_question :: BackToLevel2 : questionWasAsked = " .. questionWasAsked)
     StartCars()
 
     -- hide all of the text objects, depending on which question was called
-    if (question1WasAsked == true) then
+    if (questionWasAsked == 1) then
         HideTextObjectsQuestion1()
 
-    elseif (question2WasAsked == true) then
+    elseif (questionWasAsked == 2) then
         HideTextObjectsQuestion2()
     
-    elseif (question3WasAsked == true) then
+    elseif (questionWasAsked == 3) then
         HideTextObjectsQuestion3()
 
-    elseif (question4WasAsked == true) then
+    elseif (questionWasAsked == 4) then
         HideTextObjectsQuestion4()
 
-    elseif (question5WasAsked == true) then
+    elseif (questionWasAsked == 5) then
         HideTextObjectsQuestion5()
 
-    elseif (question6WasAsked == true) then
+    elseif (questionWasAsked == 6) then
         HideTextObjectsQuestion6()
 
-    elseif (question7WasAsked == true) then
+    elseif (questionWasAsked == 7) then
         HideTextObjectsQuestion7()
 
-    elseif (question8WasAsked == true) then
+    elseif (questionWasAsked == 8) then
         HideTextObjectsQuestion8()
 
-    elseif (question9WasAsked == true) then
+    elseif (questionWasAsked == 9) then
         HideTextObjectsQuestion9()
 
-    elseif (question10WasAsked == true) then
+    elseif (questionWasAsked == 10) then
         HideTextObjectsQuestion10()
 
-    elseif (question11WasAsked == true) then
+    elseif (questionWasAsked == 11) then
         HideTextObjectsQuestion11()
 
-    elseif (question12WasAsked == true) then
+    elseif (questionWasAsked == 12) then
         HideTextObjectsQuestion12()
  
-    elseif (question13WasAsked == true) then
+    elseif (questionWasAsked == 13) then
         HideTextObjectsQuestion13()
 
-    elseif (question14WasAsked == true) then
+    elseif (questionWasAsked == 14) then
         HideTextObjectsQuestion14()
 
-    elseif (question15WasAsked == true) then
+    elseif (questionWasAsked == 15) then
         HideTextObjectsQuestion15()
 
-    elseif (question16WasAsked == true) then
+    elseif (questionWasAsked == 16) then
         HideTextObjectsQuestion16()
  
-    elseif (question17WasAsked == true) then
+    elseif (questionWasAsked == 17) then
         HideTextObjectsQuestion17()
 
-    elseif (question18WasAsked == true) then
+    elseif (questionWasAsked == 18) then
         HideTextObjectsQuestion18()
 
-    elseif (question19WasAsked == true) then
+    elseif (questionWasAsked == 19) then
         HideTextObjectsQuestion19()
 
-    elseif (question20WasAsked == true) then
+    elseif (questionWasAsked == 20) then
         HideTextObjectsQuestion20()
 
+    --else 
+    --    stopworkinghere
     end
 
 
@@ -622,7 +606,7 @@ local function AskQuestion1(sceneGroup)
     wrongAnswer2 = question1Answer2
     wrongAnswer3 = question1Answer3
 
-    question1WasAsked = true
+    questionWasAsked = 1
 end
 
 -- second question
@@ -669,7 +653,7 @@ local function AskQuestion2(sceneGroup)
     wrongAnswer2 = question2Answer2
     wrongAnswer3 = question2Answer3
 
-    question2WasAsked = true
+    questionWasAsked = 2
 end
 
 -- third question
@@ -716,7 +700,7 @@ local function AskQuestion3(sceneGroup)
     wrongAnswer2 = question3Answer2
     wrongAnswer3 = question3Answer3
 
-    question3WasAsked = true
+    questionWasAsked = 3
 end
 
 -- fourth question
@@ -763,7 +747,7 @@ local function AskQuestion4(sceneGroup)
     wrongAnswer2 = question4Answer2
     wrongAnswer3 = question4Answer3
 
-    question4WasAsked = true
+    questionWasAsked = 4
 end
 
 -- fifth question
@@ -809,7 +793,7 @@ local function AskQuestion5(sceneGroup)
     wrongAnswer2 = question5Answer2
     wrongAnswer3 = question5Answer3
 
-    question5WasAsked = true
+    questionWasAsked = 5
 end
 
 -- sixth question
@@ -857,7 +841,7 @@ local function AskQuestion6(sceneGroup)
     wrongAnswer2 = question6Answer2
     wrongAnswer3 = question6Answer3
 
-    question6WasAsked = true
+    questionWasAsked = 6
 end
 
 -- seventh question
@@ -904,7 +888,7 @@ local function AskQuestion7(sceneGroup)
     wrongAnswer2 = question7Answer2
     wrongAnswer3 = question7Answer3
 
-    question7WasAsked = true
+    questionWasAsked = 7
 end
 
 -- eigth question
@@ -951,7 +935,7 @@ local function AskQuestion8(sceneGroup)
     wrongAnswer2 = question8Answer2
     wrongAnswer3 = question8Answer3
 
-    question8WasAsked = true
+    questionWasAsked = 8
 end
 
 -- ninth question
@@ -998,7 +982,7 @@ local function AskQuestion9(sceneGroup)
     wrongAnswer2 = question9Answer2
     wrongAnswer3 = question9Answer3
 
-    question9WasAsked = true
+    questionWasAsked = 9
 end
 
 -- tenth question
@@ -1045,7 +1029,7 @@ local function AskQuestion10(sceneGroup)
     wrongAnswer2 = question10Answer2
     wrongAnswer3 = question10Answer3
 
-    question10WasAsked = true
+    questionWasAsked = 10
 end
 
 -- eleventh question
@@ -1092,7 +1076,7 @@ local function AskQuestion11(sceneGroup)
     wrongAnswer2 = question11Answer2
     wrongAnswer3 = question11Answer3
 
-    question11WasAsked = true
+    questionWasAsked = 11
 end
 
 -- twelveth question
@@ -1139,7 +1123,7 @@ local function AskQuestion12(sceneGroup)
     wrongAnswer2 = question12Answer2
     wrongAnswer3 = question12Answer3
 
-    question12WasAsked = true
+    questionWasAsked = 12
 end
 
 -- thirteenth question
@@ -1186,7 +1170,7 @@ local function AskQuestion13(sceneGroup)
     wrongAnswer2 = question13Answer2
     wrongAnswer3 = question13Answer3
 
-    question13WasAsked = true
+    questionWasAsked = 13
 end
 
 -- fourteenth question
@@ -1233,7 +1217,7 @@ local function AskQuestion14(sceneGroup)
     wrongAnswer2 = question14Answer2
     wrongAnswer3 = question14Answer3
 
-    question14WasAsked = true
+    questionWasAsked = 14
 end
 
 -- fifteenth question
@@ -1280,7 +1264,7 @@ local function AskQuestion15(sceneGroup)
     wrongAnswer2 = question15Answer2
     wrongAnswer3 = question15Answer3
 
-    question15WasAsked = true
+    questionWasAsked = 15
 end
 
 -- sixteenth question
@@ -1326,7 +1310,7 @@ local function AskQuestion16(sceneGroup)
     wrongAnswer2 = question16Answer2
     wrongAnswer3 = question16Answer3
 
-    question16WasAsked = true
+    questionWasAsked = 16
 end
 
 -- seventeenth question
@@ -1373,7 +1357,7 @@ local function AskQuestion17(sceneGroup)
     wrongAnswer2 = question17Answer2
     wrongAnswer3 = question17Answer3
 
-    question17WasAsked = true
+    questionWasAsked = 17
 end
 
 -- eigtheenth question
@@ -1420,7 +1404,7 @@ local function AskQuestion18(sceneGroup)
     wrongAnswer2 = question18Answer2
     wrongAnswer3 = question18Answer3
 
-    question18WasAsked = true
+    questionWasAsked = 18
 end
 
 -- nineteenth question
@@ -1467,7 +1451,7 @@ local function AskQuestion19(sceneGroup)
     wrongAnswer2 = question19Answer2
     wrongAnswer3 = question19Answer3
 
-    question19WasAsked = true
+    questionWasAsked = 19
 end
 
 -- twentyth question
@@ -1514,7 +1498,7 @@ local function AskQuestion20(sceneGroup)
     wrongAnswer2 = question20Answer2
     wrongAnswer3 = question20Answer3
 
-    question20WasAsked = true
+    questionWasAsked = 20
 end
 
 -- ask a question

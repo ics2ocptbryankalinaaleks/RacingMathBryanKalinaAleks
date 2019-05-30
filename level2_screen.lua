@@ -75,6 +75,7 @@ local function MoveLogoCar(event)
         or (logoCar.x >= 600 and logoCar.x <= 602)
         or logoCar.x >= 900)
     then
+        logoCar.x = logoCar.x + 2   -- make 600 more than 602
         carsAreMoving = 0
         Runtime:removeEventListener("enterFrame", MoveLogoCar)
 
