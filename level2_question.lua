@@ -39,18 +39,10 @@ local question1Answer2
 local question1Answer3 
 
 local question2Text
-local question2CorrectAnswerFirst
-local question2CorrectAnswerPlus
-local question2CorrectAnswerSecond
-local question2Answer1First
-local question2Answer1Plus
-local question2Answer1Second
-local question2Answer2First
-local question2Answer2Plus
-local question2Answer2Second
-local question2Answer3First
-local question2Answer3Plus
-local question2Answer3Second
+local question2CorrectAnswer
+local question2Answer1
+local question2Answer2
+local question2Answer3
 
 local question3Text
 local question3CorrectAnswer
@@ -65,46 +57,22 @@ local question4Answer2
 local question4Answer3 
 
 local question5Text
-local question5CorrectAnswerFirst
-local question5CorrectAnswerPlus
-local question5CorrectAnswerSecond
-local question5Answer1First
-local question5Answer1Plus
-local question5Answer1Second
-local question5Answer2First
-local question5Answer2Plus
-local question5Answer2Second
-local question5Answer3First
-local question5Answer3Plus
-local question5Answer3Second
+local question5CorrectAnswer
+local question5Answer1
+local question5Answer2
+local question5Answer3
 
 local question6Text
-local question6CorrectAnswerFirst
-local question6CorrectAnswerPlus
-local question6CorrectAnswerSecond
-local question6Answer1First
-local question6Answer1Plus
-local question6Answer1Second
-local question6Answer2First
-local question6Answer2Plus
-local question6Answer2Second
-local question6Answer3First
-local question6Answer3Plus
-local question6Answer3Second
+local question6CorrectAnswer
+local question6Answer1
+local question6Answer2
+local question6Answer3
 
 local question7Text
-local question7CorrectAnswerFirst
-local question7CorrectAnswerPlus
-local question7CorrectAnswerSecond
-local question7Answer1First
-local question7Answer1Plus
-local question7Answer1Second
-local question7Answer2First
-local question7Answer2Plus
-local question7Answer2Second
-local question7Answer3First
-local question7Answer3Plus
-local question7Answer3Second
+local question7CorrectAnswer
+local question7Answer1
+local question7Answer2
+local question7Answer3
 
 local question8Text
 local question8CorrectAnswer
@@ -155,18 +123,10 @@ local question15Answer2
 local question15Answer3 
 
 local question16Text
-local question16CorrectAnswerFirst
-local question16CorrectAnswerPlus
-local question16CorrectAnswerSecond
-local question16Answer1First
-local question16Answer1Plus
-local question16Answer1Second
-local question16Answer2First
-local question16Answer2Plus
-local question16Answer2Second
-local question16Answer3First
-local question16Answer3Plus
-local question16Answer3Second
+local question16CorrectAnswer
+local question16Answer1
+local question16Answer2
+local question16Answer3
 
 local question16Text
 local question16CorrectAnswer
@@ -209,26 +169,289 @@ local textTouched = false
 
 local textPositionX = display.contentWidth*1/2
 local textPositionY = display.contentHeight*2/8
-local answerPosition1X = display.contentWidth*1/3.5 --red
-local answerPosition1Y = display.contentHeight*1/2 --red
-local answerPosition2X = display.contentWidth --green
-local answerPosition2Y = display.contentHeight*1/2 --green
-local answerPosition3X = display.contentWidth*1/3.5 --purple
-local answerPosition3Y = display.contentHeight*3/4 --purple
-local answerPosition4X = display.contentWidth --pink
-local answerPosition4Y = display.contentHeight --pink
+
+local answerPosition1X = display.contentWidth*1/3.5 
+local answerPosition1Y = display.contentHeight*1/2 
+
+local answerPosition2X = display.contentWidth*2.4/3.5 
+local answerPosition2Y = display.contentHeight*1/2 
+
+local answerPosition3X = display.contentWidth*1/3.5 
+local answerPosition3Y = display.contentHeight*3/4 
+
+local answerPosition4X = display.contentWidth*2.4/3.5 
+local answerPosition4Y = display.contentHeight*3/4 
 
 -- event listener variables
 local correctAnswer
 local wrongAnswer1
 local wrongAnswer2
 local wrongAnswer3
+
+local question1WasAsked = false
+local question2WasAsked = false
+local question3WasAsked = false
+local question4WasAsked = false
+local question5WasAsked = false
+local question6WasAsked = false
+local question7WasAsked = false
+local question8WasAsked = false
+local question9WasAsked = false
+local question10WasAsked = false
+local question11WasAsked = false
+local question12WasAsked = false
+local question13WasAsked = false
+local question14WasAsked = false
+local question15WasAsked = false
+local question16WasAsked = false
+local question17WasAsked = false
+local question18WasAsked = false
+local question19WasAsked = false
+local question20WasAsked = false
+
 -----------------------------------------------------------------------------------------
 --LOCAL FUNCTIONS
 -----------------------------------------------------------------------------------------
 
+local function StartCars()
+
+    scrollSpeedLogo = scrollSpeedLogoNew
+    scrollSpeedCar1 = 1.4
+    scrollSpeedCar2 = 1.2
+    scrollSpeedCar3 = 1
+
+end
+
+local function HideTextObjectsQuestion1()
+    question1Text.isVisible = false
+    question1CorrectAnswer.isVisible = false
+    question1Answer1.isVisible = false
+    question1Answer2.isVisible = false
+    question1Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion2()
+    question2Text.isVisible = false
+    question2CorrectAnswer.isVisible = false
+    question2Answer1.isVisible = false
+    question2Answer2.isVisible = false
+    question2Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion3()
+    question3Text.isVisible = false
+    question3CorrectAnswer.isVisible = false
+    question3Answer1.isVisible = false
+    question3Answer2.isVisible = false
+    question3Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion4()
+    question4Text.isVisible = false
+    question4CorrectAnswer.isVisible = false
+    question4Answer1.isVisible = false
+    question4Answer2.isVisible = false
+    question4Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion5()
+    question5Text.isVisible = false
+    question5CorrectAnswer.isVisible = false
+    question5Answer1.isVisible = false
+    question5Answer2.isVisible = false
+    question5Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion6()
+    question6Text.isVisible = false
+    question6CorrectAnswer.isVisible = false
+    question6Answer1.isVisible = false
+    question6Answer2.isVisible = false
+    question6Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion7()
+    question7Text.isVisible = false
+    question7CorrectAnswer.isVisible = false
+    question7Answer1.isVisible = false
+    question7Answer2.isVisible = false
+    question7Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion8()
+    question8Text.isVisible = false
+    question8CorrectAnswer.isVisible = false
+    question8Answer1.isVisible = false
+    question8Answer2.isVisible = false
+    question8Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion9()
+    question9Text.isVisible = false
+    question9CorrectAnswer.isVisible = false
+    question9Answer1.isVisible = false
+    question9Answer2.isVisible = false
+    question9Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion10()
+    question10Text.isVisible = false
+    question10CorrectAnswer.isVisible = false
+    question10Answer1.isVisible = false
+    question10Answer2.isVisible = false
+    question10Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion11()
+    question11Text.isVisible = false
+    question11CorrectAnswer.isVisible = false
+    question11Answer1.isVisible = false
+    question11Answer2.isVisible = false
+    question11Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion12()
+    question12Text.isVisible = false
+    question12CorrectAnswer.isVisible = false
+    question12Answer1.isVisible = false
+    question12Answer2.isVisible = false
+    question12Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion13()
+    question13Text.isVisible = false
+    question13CorrectAnswer.isVisible = false
+    question13Answer1.isVisible = false
+    question13Answer2.isVisible = false
+    question13Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion14()
+    question14Text.isVisible = false
+    question14CorrectAnswer.isVisible = false
+    question14Answer1.isVisible = false
+    question14Answer2.isVisible = false
+    question14Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion15()
+    question15Text.isVisible = false
+    question15CorrectAnswer.isVisible = false
+    question15Answer1.isVisible = false
+    question15Answer2.isVisible = false
+    question15Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion16()
+    question16Text.isVisible = false
+    question16CorrectAnswer.isVisible = false
+    question16Answer1.isVisible = false
+    question16Answer2.isVisible = false
+    question16Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion17()
+    question17Text.isVisible = false
+    question17CorrectAnswer.isVisible = false
+    question17Answer1.isVisible = false
+    question17Answer2.isVisible = false
+    question17Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion18()
+    question18Text.isVisible = false
+    question18CorrectAnswer.isVisible = false
+    question18Answer1.isVisible = false
+    question18Answer2.isVisible = false
+    question18Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion19()
+    question19Text.isVisible = false
+    question19CorrectAnswer.isVisible = false
+    question19Answer1.isVisible = false
+    question19Answer2.isVisible = false
+    question19Answer3.isVisible = false
+end
+
+local function HideTextObjectsQuestion20()
+    question20Text.isVisible = false
+    question20CorrectAnswer.isVisible = false
+    question20Answer1.isVisible = false
+    question20Answer2.isVisible = false
+    question20Answer3.isVisible = false
+end
+
+
 --making transition to next scene
-function BackToLevel2() 
+local function BackToLevel2() 
+
+    StartCars()
+
+    -- hide all of the text objects
+    if (question1WasAsked == true) then
+        HideTextObjectsQuestion1()
+
+    elseif (question2WasAsked == true) then
+        HideTextObjectsQuestion2()
+    
+    elseif (question3WasAsked == true) then
+        HideTextObjectsQuestion3()
+
+    elseif (question4WasAsked == true) then
+        HideTextObjectsQuestion4()
+
+    elseif (question5WasAsked == true) then
+        HideTextObjectsQuestion5()
+
+    elseif (question6WasAsked == true) then
+        HideTextObjectsQuestion6()
+
+    elseif (question7WasAsked == true) then
+        HideTextObjectsQuestion7()
+
+    elseif (question8WasAsked == true) then
+        HideTextObjectsQuestion8()
+
+    elseif (question9WasAsked == true) then
+        HideTextObjectsQuestion9()
+
+    elseif (question10WasAsked == true) then
+        HideTextObjectsQuestion10()
+
+    elseif (question11WasAsked == true) then
+        HideTextObjectsQuestion11()
+
+    elseif (question12WasAsked == true) then
+        HideTextObjectsQuestion12()
+ 
+    elseif (question13WasAsked == true) then
+        HideTextObjectsQuestion13()
+
+    elseif (question14WasAsked == true) then
+        HideTextObjectsQuestion14()
+
+    elseif (question15WasAsked == true) then
+        HideTextObjectsQuestion15()
+
+    elseif (question16WasAsked == true) then
+        HideTextObjectsQuestion16()
+ 
+    elseif (question17WasAsked == true) then
+        HideTextObjectsQuestion17()
+
+    elseif (question18WasAsked == true) then
+        HideTextObjectsQuestion18()
+
+    elseif (question19WasAsked == true) then
+        HideTextObjectsQuestion19()
+
+    elseif (question20WasAsked == true) then
+        HideTextObjectsQuestion20()
+
+    end
+
+
     composer.hideOverlay("crossFade", 400 )
   
     composer.gotoScene( "level2_screen" )
@@ -240,6 +463,15 @@ local function TouchListenerAnswer(touch)
     userAnswer = correctAnswer.text
     
     if (touch.phase == "ended") then
+        questionsAnsweredLevel2 = questionsAnsweredLevel2 + 1
+
+        if (questionsAnsweredLevel2 == 1) then
+            scrollSpeedLogoNew = scrollSpeedLogoAfterQuestion1
+        elseif (questionsAnsweredLevel2 == 2) then
+            scrollSpeedLogoNew = scrollSpeedLogoAfterQuestion2
+        elseif (questionsAnsweredLevel2 == 3) then
+            scrollSpeedLogoNew = scrollSpeedLogoAfterQuestion3
+        end
 
         BackToLevel2()
     end 
@@ -278,8 +510,9 @@ end
 
 
 --adding the event listeners 
-local function AddTextListeners ( )
+local function AddTextListeners()
     correctAnswer:addEventListener( "touch", TouchListenerAnswer )
+    print("AddTextListeners()")
     wrongAnswer1:addEventListener( "touch", TouchListenerWrongAnswer)
     wrongAnswer2:addEventListener( "touch", TouchListenerWrongAnswer2)
     wrongAnswer3:addEventListener( "touch", TouchListenerWrongAnswer3)
@@ -337,6 +570,8 @@ local function AskQuestion1(sceneGroup)
     wrongAnswer1 = question1Answer1
     wrongAnswer2 = question1Answer2
     wrongAnswer3 = question1Answer3
+
+    question1WasAsked = true
 end
 
 local function AskQuestion2(sceneGroup)
@@ -346,57 +581,43 @@ local function AskQuestion2(sceneGroup)
     question2Text.x = textPositionX
     question2Text.y = textPositionY
 
-    -- set the correct answer text, text color, and position (2nd)
-    question2CorrectAnswerFirst = display.newText("RED", 0, 0, Arial, textSize)
-    question2CorrectAnswerFirst:setTextColor(1, 0, 0)
-    question2CorrectAnswerPlus = display.newText(" + ", 0, 0, Arial, textSize)
-    question2CorrectAnswerPlus:setTextColor(0, 0, 0)
-    question2CorrectAnswerSecond = display.newText("BROWN", 0, 0, Arial, textSize)
-    question2CorrectAnswerSecond:setTextColor(102/255, 51/255, 0)
+    --set the correct answer text, text color, and position (2nd)
+    question2CorrectAnswer = display.newText("RED + GREEN", 0, 0, Arial, textSize)
+    question2CorrectAnswer:setTextColor(1, 0, 0)
+    question2CorrectAnswer.x = answerPosition4X
+    question2CorrectAnswer.y = answerPosition4Y
 
     -- set the first wrong answer text, text color, and position
-    question2Answer1First = display.newText("PINK", 0, 0, Arial, textSize)
-    question2Answer1First:setTextColor(1, 51/255, 1)
-
-    question2Answer1Plus = display.newText(" + ", 0, 0, Arial, textSize)
-    question2Answer1Plus:setTextColor(0, 0, 0)
-    question2Answer1Second = display.newText("BLUE", 0, 0, Arial, textSize)
-    question2Answer1Second:setTextColor(0, 1, 0)
+    question2Answer1 = display.newText("PINK + BLUE", 0, 0, Arial, textSize)
+    question2Answer1:setTextColor(1, 51/255, 1)
+    question2Answer1.x = answerPosition1X
+    question2Answer1.y = answerPosition1Y
 
     -- set the second wrong answer text, text color, and position
-    question2Answer2First = display.newText("ORANGE", 0, 0, Arial, textSize)
-    question2Answer2First:setTextColor(1, 128/255, 0)
-    question2Answer2Plus = display.newText(" + ", 0, 0, Arial, textSize)
-    question2Answer2Plus:setTextColor(0, 0, 0)
-    question2Answer2Second = display.newText("PURPLE", 0, 0, Arial, textSize)
-    question2Answer2Second:setTextColor(127/255, 0, 1)
+    question2Answer2 = display.newText("ORANGE + PURPLE", 0, 0, Arial, textSize)
+    question2Answer2:setTextColor(1, 128/255, 0)
+    question2Answer2.x = answerPosition3X
+    question2Answer2.y = answerPosition3Y
 
     -- set the third wrong answer text, text color, and position
-    question2Answer3First = display.newText("YELLOW", 0, 0, Arial, textSize) 
-    question2Answer3First:setTextColor(1, 1, 0)
-    question2Answer3Plus = display.newText(" + ", 0, 0, Arial, textSize)
-    question2Answer3Plus:setTextColor(0, 0, 0)
-    question2Answer3Second = display.newText("GREEN", 0, 0, Arial, textSize)
-    question2Answer3Second:setTextColor(0, 1, 0)
+    question2Answer3 = display.newText("YELLOW + GREEN", 0, 0, Arial, textSize) 
+    question2Answer3:setTextColor(1, 1, 0)
+    question2Answer3.x = answerPosition2X
+    question2Answer3.y = answerPosition2Y
 
     -- insert the text objects into this scene
-    sceneGroup:insert(question2CorrectAnswerFirst)
-    sceneGroup:insert(question2CorrectAnswerPlus)
-    sceneGroup:insert(question2CorrectAnswerSecond)
-    sceneGroup:insert(question2Answer1First)
-    sceneGroup:insert(question2Answer1Plus)
-    sceneGroup:insert(question2Answer1Second)
-    sceneGroup:insert(question2Answer2First)
-    sceneGroup:insert(question2Answer2Plus)
-    sceneGroup:insert(question2Answer2Second)
-    sceneGroup:insert(question2Answer3First)
-    sceneGroup:insert(question2Answer3Plus)
-    sceneGroup:insert(question2Answer3Second)
+    sceneGroup:insert(question2Text)
+    sceneGroup:insert(question2CorrectAnswer)
+    sceneGroup:insert(question2Answer1)
+    sceneGroup:insert(question2Answer2)
+    sceneGroup:insert(question2Answer3)
 
     correctAnswer = question2CorrectAnswer
     wrongAnswer1 = question2Answer1
     wrongAnswer2 = question2Answer2
     wrongAnswer3 = question2Answer3
+
+    question2WasAsked = true
 end
 
 local function AskQuestion3(sceneGroup)
@@ -408,19 +629,27 @@ local function AskQuestion3(sceneGroup)
 
     -- set the correct answer text, text color, and position (4th)
     question3CorrectAnswer = display.newText("BLUE", 0, 0, Arial, textSize)
-    question3CorrectAnswer:setTextColor(0, 1, 0)
+    question3CorrectAnswer:setTextColor(0, 0, 1)
+    question3CorrectAnswer.x = answerPosition4X
+    question3CorrectAnswer.y = answerPosition4Y
 
     -- set the first wrong answer text, text color, and position
     question3Answer1 = display.newText("RED", 0, 0, Arial, textSize)
     question3Answer1:setTextColor(1, 0, 0)
+    question3Answer1.x = answerPosition1X
+    question3Answer1.y = answerPosition1Y
 
     -- set the second wrong answer text, text color, and position
     question3Answer2 = display.newText("PURPLE", 0, 0, Arial, textSize)
     question3Answer2:setTextColor(127/255, 0, 1)
+    question3Answer2.x = answerPosition2X
+    question3Answer2.y = answerPosition2Y
 
     -- set the third wrong answer text, text color, and position
     question3Answer3 = display.newText("GREEN", 0, 0, Arial, textSize)
     question3Answer3:setTextColor(0, 1, 0)
+    question3Answer3.x = answerPosition3X
+    question3Answer3.y = answerPosition3Y
 
     -- insert the text objects into this scene
     sceneGroup:insert(question3Text)
@@ -433,6 +662,8 @@ local function AskQuestion3(sceneGroup)
     wrongAnswer1 = question3Answer1
     wrongAnswer2 = question3Answer2
     wrongAnswer3 = question3Answer3
+
+    question3WasAsked = true
 end
 
 local function AskQuestion4(sceneGroup)
@@ -443,20 +674,28 @@ local function AskQuestion4(sceneGroup)
     question4Text.y = textPositionY
 
     -- set the correct answer text, text color, and position (1st)
-    question4CorrectAnswer = display.newText("BLACK", 0, 0, Arial, textSize)
-    question4CorrectAnswer:setTextColor(0, 0, 0)
+    question4CorrectAnswer = display.newText("YELLOW", 0, 0, Arial, textSize)
+    question4CorrectAnswer:setTextColor(1, 1, 0)
+    question4CorrectAnswer.x = answerPosition1X
+    question4CorrectAnswer.y = answerPosition1Y
 
     -- set the first wrong answer text, text color, and position
     question4Answer1 = display.newText("RED", 0, 0, Arial, textSize)
     question4Answer1:setTextColor(1, 0, 0)
+    question4Answer1.x = answerPosition2X
+    question4Answer1.y = answerPosition2Y
 
     -- set the second wrong answer text, text color, and position
     question4Answer2 = display.newText("BLUE", 0, 0, Arial, textSize)
     question4Answer2:setTextColor(0, 1, 0)
+    question4Answer2.x = answerPosition3X
+    question4Answer2.y = answerPosition3Y
 
     -- set the third wrong answer text, text color, and position
     question4Answer3 = display.newText("PINK", 0, 0, Arial, textSize)
     question4Answer3:setTextColor(1, 51/255, 1)
+    question4Answer3.x = answerPosition4X
+    question4Answer3.y = answerPosition4Y
 
     -- insert the text objects into this scene
     sceneGroup:insert(question4Text)
@@ -469,6 +708,8 @@ local function AskQuestion4(sceneGroup)
     wrongAnswer1 = question4Answer1
     wrongAnswer2 = question4Answer2
     wrongAnswer3 = question4Answer3
+
+    question4WasAsked = true
 end
 
 local function AskQuestion5(sceneGroup)
@@ -479,58 +720,45 @@ local function AskQuestion5(sceneGroup)
     question5Text.y = textPositionY
 
     -- set the correct answer text, text color, and position (3rd)
-    question5CorrectAnswerFirst = display.newText("YELLOW", 0, 0, Arial, textSize)
-    question5CorrectAnswerFirst:setTextColor(1, 1, 0)
-    question5CorrectAnswerPlus = display.newText(" + ", 0, 0, Arial, textSize)
-    question5CorrectAnswerPlus:setTextColor(244/255, 244/255, 244/255)
-    question5CorrectAnswerSecond = display.newText("BLUE", 0, 0, Arial, textSize)
-    question5CorrectAnswerSecond:setTextColor(0, 1, 0)
+    question5CorrectAnswer = display.newText("YELLOW + BLUE", 0, 0, Arial, textSize)
+    question5CorrectAnswer:setTextColor(1, 1, 0)
+    question5CorrectAnswer.x = answerPosition3X
+    question5CorrectAnswer.y = answerPosition3Y
 
     -- set the first wrong answer text, text color, and position
-    question5Answer1First = display.newText("RED", 0, 0, Arial, textSize)
-    question5Answer1First:setTextColor(1, 0, 0)
-    question5Answer1Plus = display.newText(" + ", 0, 0, Arial, textSize)
-    question5Answer1Plus:setTextColor(244/255, 244/255, 244/255)
-    question5Answer1Second = display.newText("PURPLE", 0, 0, Arial, textSize)
-    question5Answer1Second:setTextColor(127/255, 0, 1)
+    question5Answer1 = display.newText("RED + PURPLE", 0, 0, Arial, textSize)
+    question5Answer1:setTextColor(1, 0, 0)
+    question5Answer1.x = answerPosition1X
+    question5Answer1.y = answerPosition1Y
 
     -- set the second wrong answer text, text color, and position
-    question5Answer2First = display.newText("BLUE", 0, 0, Arial, textSize)
-    question5Answer2First:setTextColor(0, 1, 0)
-    question5Answer2Plus = display.newText(" + ", 0, 0, Arial, textSize)
-    question5Answer2Plus:setTextColor(244/255, 244/255, 244/255)
-    question5Answer2Second = display.newText("RED", 0, 0, Arial, textSize)
-    question5Answer2Second:setTextColor(1, 0, 0)
+    question5Answer2 = display.newText("BLUE + RED", 0, 0, Arial, textSize)
+    question5Answer2:setTextColor(0, 1, 0)
+    question5Answer2.x = answerPosition2X
+    question5Answer2.y = answerPosition2Y
 
     -- set the third wrong answer text, text color, and position
-    question5Answer3First = display.newText("RED", 0, 0, Arial, textSize)
-    question5Answer3First:setTextColor(1, 0, 0)
-    question5Answer3Plus = display.newText(" + ", 0, 0, Arial, textSize)
-    question5Answer3Plus:setTextColor(244/255, 244/255, 244/255)
-    question5Answer3Second = display.newText("YELLOW", 0, 0, Arial, textSize)
-    question5Answer3Second:setTextColor(1, 1, 0)
+    question5Answer3 = display.newText("RED + YELLOW", 0, 0, Arial, textSize)
+    question5Answer3:setTextColor(1, 0, 0)
+    question5Answer3.x = answerPosition4X
+    question5Answer3.y = answerPosition4Y
 
     -- insert the text objects into this scene
-    sceneGroup:insert(question5CorrectAnswerFirst)
-    sceneGroup:insert(question5CorrectAnswerPlus)
-    sceneGroup:insert(question5CorrectAnswerSecond)
-    sceneGroup:insert(question5Answer1First)
-    sceneGroup:insert(question5Answer1Plus)
-    sceneGroup:insert(question5Answer1Second)
-    sceneGroup:insert(question5Answer2First)
-    sceneGroup:insert(question5Answer2Plus)
-    sceneGroup:insert(question5Answer2Second)
-    sceneGroup:insert(question5Answer3First)
-    sceneGroup:insert(question5Answer3Plus)
-    sceneGroup:insert(question5Answer3Second)
+    sceneGroup:insert(question5CorrectAnswer)
+    sceneGroup:insert(question5Answer1)
+    sceneGroup:insert(question5Answer2)
+    sceneGroup:insert(question5Answer3)
 
     correctAnswer = question5CorrectAnswer
     wrongAnswer1 = question5Answer1
     wrongAnswer2 = question5Answer2
     wrongAnswer3 = question5Answer3
+
+    question5WasAsked = true
 end
 
 local function AskQuestion6(sceneGroup)
+    print("AskQuestion6(sceneGroup)")
     -- set the question text
     question6Text = display.newText("Which mixture will create purple?", 0, 0, Arial, textSize)
     question6Text:setTextColor(244/255, 244/255, 244/255)
@@ -538,56 +766,42 @@ local function AskQuestion6(sceneGroup)
     question6Text.y = textPositionY
 
     -- set the correct answer text, text color, and position (4th)
-    question6CorrectAnswerFirst = display.newText("RED", 0, 0, Arial, textSize)
-    question6CorrectAnswerFirst:setTextColor(1, 0, 0)
-    question6CorrectAnswerPlus = display.newText(" + ", 0, 0, Arial, textSize)
-    question6CorrectAnswerPlus:setTextColor(244/255, 244/255, 244/255)
-    question6CorrectAnswerSecond = display.newText("BLUE", 0, 0, Arial, textSize)
-    question6CorrectAnswerSecond:setTextColor(0, 1, 0)
+    question6CorrectAnswer = display.newText("RED + BLUE", 0, 0, Arial, textSize)
+    question6CorrectAnswer:setTextColor(1, 0, 0)
+    question6CorrectAnswer.x = answerPosition4X
+    question6CorrectAnswer.y = answerPosition4Y
 
     -- set the first wrong answer text, text color, and position
-    question6Answer1First = display.newText("RED", 0, 0, Arial, textSize)
-    question6Answer1First:setTextColor(1, 0, 0)
-    question6Answer1Plus = display.newText(" + ", 0, 0, Arial, textSize)
-    question6Answer1Plus:setTextColor(244/255, 244/255, 244/255)
-    question6Answer1Second = display.newText("GREEN", 0, 0, Arial, textSize)
-    question6Answer1Second:setTextColor(0, 1, 0)
+    question6Answer1 = display.newText("RED + GREEN", 0, 0, Arial, textSize)
+    question6Answer1:setTextColor(1, 0, 0)
+    question6Answer1.x = answerPosition1X
+    question6Answer1.y = answerPosition1Y
 
-    -- set the second wrong answer text, text color, and position green
-    question6Answer2First = display.newText("BLUE", 0, 0, Arial, textSize)
-    question6Answer2First:setTextColor(0, 1, 0)
-    question6Answer2Plus = display.newText(" + ", 0, 0, Arial, textSize)
-    question6Answer2Plus:setTextColor(244/255, 244/255, 244/255)
-    question6Answer2Second = display.newText("YELLOW", 0, 0, Arial, textSize)
-    question6Answer2Second:setTextColor(1, 1, 0)
+    -- set the second wrong answer text, text color, and position
+    question6Answer2 = display.newText("BLUE + YELLOW", 0, 0, Arial, textSize)
+    question6Answer2:setTextColor(0, 1, 0)
+    question6Answer2.x = answerPosition2X
+    question6Answer2.y = answerPosition2Y
 
     -- set the third wrong answer text, text color, and position
-    question6Answer3First = display.newText("YELLOW", 0, 0, Arial, textSize)
-    question6Answer3First:setTextColor(1, 1, 0)
-    question6Answer3Plus = display.newText(" + ", 0, 0, Arial, textSize)
-    question6Answer3Plus:setTextColor(244/255, 244/255, 244/255)
-    question6Answer3Second = display.newText("GREEN", 0, 0, Arial, textSize)
-    question6Answer3Second:setTextColor(0, 1, 0)
+    question6Answer3 = display.newText("YELLOW + GREEN", 0, 0, Arial, textSize)
+    question6Answer3:setTextColor(1, 1, 0)
+    question6Answer3.x = answerPosition3X
+    question6Answer3.y = answerPosition3Y
 
     -- insert the text objects into this scene
     sceneGroup:insert(question6Text)
-    sceneGroup:insert(question6CorrectAnswerFirst)
-    sceneGroup:insert(question6CorrectAnswerPlus)
     sceneGroup:insert(question6CorrectAnswer)
-    sceneGroup:insert(question6Answer1First)
-    sceneGroup:insert(question6Answer1Plus)
-    sceneGroup:insert(question6Answer1Second)
-    sceneGroup:insert(question6Answer2First)
-    sceneGroup:insert(question6Answer2Plus)
-    sceneGroup:insert(question6Answer2Second)
-    sceneGroup:insert(question6Answer3First)
-    sceneGroup:insert(question6Answer3Plus)
-    sceneGroup:insert(question6Answer3Second)
+    sceneGroup:insert(question6Answer1)
+    sceneGroup:insert(question6Answer2)
+    sceneGroup:insert(question6Answer3)
 
     correctAnswer = question6CorrectAnswer
     wrongAnswer1 = question6Answer1
     wrongAnswer2 = question6Answer2
     wrongAnswer3 = question6Answer3
+
+    question6WasAsked = true
 end
  
 local function AskQuestion7(sceneGroup)
@@ -598,56 +812,42 @@ local function AskQuestion7(sceneGroup)
     question7Text.y = textPositionY
 
     -- set the correct answer text, text color, and position (4th)
-    question7CorrectAnswerFirst = display.newText("YELLOW", 0, 0, Arial, textSize)
-    question7CorrectAnswerFirst:setTextColor(1, 1, 0)
-    question7CorrectAnswerPlus = display.newText(" + ", 0, 0, Arial, textSize)
-    question7CorrectAnswerPlus:setTextColor(0, 0, 0)
-    question7CorrectAnswerSecond = display.newText("RED", 0, 0, Arial, textSize)
-    question7CorrectAnswerSecond:setTextColor(1, 0, 0)
+    question7CorrectAnswer = display.newText("YELLOW + RED", 0, 0, Arial, textSize)
+    question7CorrectAnswer:setTextColor(1, 1, 0)
+    question7CorrectAnswer.x = answerPosition4X
+    question7CorrectAnswer.y = answerPosition4Y
 
     -- set the first wrong answer text, text color, and position
-    question7Answer1First = display.newText("BLUE", 0, 0, Arial, textSize)
-    question7Answer1First:setTextColor(0, 1, 0)
-    question7Answer1Plus = display.newText(" + ", 0, 0, Arial, textSize)
-    question7Answer1Plus:setTextColor(244/255, 244/255, 244/255)
-    question7Answer1Second = display.newText("YELLOW", 0, 0, Arial, textSize)
-    question7Answer1Second:setTextColor(1, 1, 0)
-
-    -- set the second wrong answer text, text color, and position green
-    question7Answer2First = display.newText("PURPLE", 0, 0, Arial, textSize)
-    question7Answer2First:setTextColor(127/255, 0, 1)
-    question7Answer2Plus = display.newText(" + ", 0, 0, Arial, textSize)
-    question7Answer2Plus:setTextColor(244/255, 244/255, 244/255)
-    question7Answer2Second = display.newText("GREEN", 0, 0, Arial, textSize)
-    question7Answer2Second:setTextColor(0, 1, 0)
+    question7Answer1 = display.newText("BLUE + YELLOW", 0, 0, Arial, textSize)
+    question7Answer1:setTextColor(0, 0, 1)
+    question7Answer1.x = answerPosition1X
+    question7Answer1.y = answerPosition1Y
 
     -- set the third wrong answer text, text color, and position
-    question7Answer3First = display.newText("GREEN", 0, 0, Arial, textSize)
-    question7Answer3First:setTextColor(0, 1, 0)
-    question7Answer3Plus = display.newText(" + ", 0, 0, Arial, textSize)
-    question7Answer3Plus:setTextColor(244/255, 244/255, 244/255)
-    question7Answer3Second = display.newText("BLUE", 0, 0, Arial, textSize)
-    question7Answer3Second:setTextColor(0, 1, 0)
+    question7Answer2 = display.newText("GREEN + BLUE", 0, 0, Arial, textSize)
+    question7Answer2:setTextColor(0, 1, 0)
+    question7Answer2.x = answerPosition2X
+    question7Answer2.y = answerPosition2Y
+
+    -- set the second wrong answer text, text color, and position green
+    question7Answer3 = display.newText("PURPLE + GREEN", 0, 0, Arial, textSize)
+    question7Answer3:setTextColor(127/255, 0, 1)
+    question7Answer3.x = answerPosition3X
+    question7Answer3.y = answerPosition3Y
 
     -- insert the text objects into this scene
     sceneGroup:insert(question7Text)
-    sceneGroup:insert(question7CorrectAnswerFirst)
-    sceneGroup:insert(question7CorrectAnswerPlus)
     sceneGroup:insert(question7CorrectAnswer)
-    sceneGroup:insert(question7Answer1First)
-    sceneGroup:insert(question7Answer1Plus)
-    sceneGroup:insert(question7Answer1Second)
-    sceneGroup:insert(question7Answer2First)
-    sceneGroup:insert(question7Answer2Plus)
-    sceneGroup:insert(question7Answer2Second)
-    sceneGroup:insert(question7Answer3First)
-    sceneGroup:insert(question7Answer3Plus)
-    sceneGroup:insert(question7Answer3Second)
+    sceneGroup:insert(question7Answer1)
+    sceneGroup:insert(question7Answer2)
+    sceneGroup:insert(question7Answer3)
 
     correctAnswer = question7CorrectAnswer
     wrongAnswer1 = question7Answer1
     wrongAnswer2 = question7Answer2
     wrongAnswer3 = question7Answer3
+
+    question7WasAsked = true
 end
 
 local function AskQuestion8(sceneGroup)
@@ -684,6 +884,8 @@ local function AskQuestion8(sceneGroup)
     wrongAnswer1 = question8Answer1
     wrongAnswer2 = question8Answer2
     wrongAnswer3 = question8Answer3
+
+    question8WasAsked = true
 end
 
 local function AskQuestion9(sceneGroup)
@@ -720,6 +922,8 @@ local function AskQuestion9(sceneGroup)
     wrongAnswer1 = question9Answer1
     wrongAnswer2 = question9Answer2
     wrongAnswer3 = question9Answer3
+
+    question9WasAsked = true
 end
 
 local function AskQuestion10(sceneGroup)
@@ -756,6 +960,8 @@ local function AskQuestion10(sceneGroup)
     wrongAnswer1 = question10Answer1
     wrongAnswer2 = question10Answer2
     wrongAnswer3 = question10Answer3
+
+    question10WasAsked = true
 end
 
 local function AskQuestion11(sceneGroup)
@@ -792,6 +998,8 @@ local function AskQuestion11(sceneGroup)
     wrongAnswer1 = question11Answer1
     wrongAnswer2 = question11Answer2
     wrongAnswer3 = question11Answer3
+
+    question11WasAsked = true
 end
 
 local function AskQuestion12(sceneGroup)
@@ -828,6 +1036,8 @@ local function AskQuestion12(sceneGroup)
     wrongAnswer1 = question12Answer1
     wrongAnswer2 = question12Answer2
     wrongAnswer3 = question12Answer3
+
+    question12WasAsked = true
 end
 
 local function AskQuestion13(sceneGroup)
@@ -864,6 +1074,8 @@ local function AskQuestion13(sceneGroup)
     wrongAnswer1 = question13Answer1
     wrongAnswer2 = question13Answer2
     wrongAnswer3 = question13Answer3
+
+    question13WasAsked = true
 end
 
 local function AskQuestion14(sceneGroup)
@@ -900,6 +1112,8 @@ local function AskQuestion14(sceneGroup)
     wrongAnswer1 = question14Answer1
     wrongAnswer2 = question14Answer2
     wrongAnswer3 = question14Answer3
+
+    question14WasAsked = true
 end
 
 local function AskQuestion15(sceneGroup)
@@ -936,6 +1150,8 @@ local function AskQuestion15(sceneGroup)
     wrongAnswer1 = question15Answer1
     wrongAnswer2 = question15Answer2
     wrongAnswer3 = question15Answer3
+
+    question15WasAsked = true
 end
 
 local function AskQuestion16(sceneGroup)
@@ -995,6 +1211,8 @@ local function AskQuestion16(sceneGroup)
     wrongAnswer1 = question16Answer1
     wrongAnswer2 = question16Answer2
     wrongAnswer3 = question16Answer3
+
+    question16WasAsked = true
 end
 
 local function AskQuestion17(sceneGroup)
@@ -1031,6 +1249,8 @@ local function AskQuestion17(sceneGroup)
     wrongAnswer1 = question17Answer1
     wrongAnswer2 = question17Answer2
     wrongAnswer3 = question17Answer3
+
+    question17WasAsked = true
 end
 
 local function AskQuestion18(sceneGroup)
@@ -1067,6 +1287,8 @@ local function AskQuestion18(sceneGroup)
     wrongAnswer1 = question18Answer1
     wrongAnswer2 = question18Answer2
     wrongAnswer3 = question18Answer3
+
+    question18WasAsked = true
 end
 
 local function AskQuestion19(sceneGroup)
@@ -1103,6 +1325,8 @@ local function AskQuestion19(sceneGroup)
     wrongAnswer1 = question19Answer1
     wrongAnswer2 = question19Answer2
     wrongAnswer3 = question19Answer3
+
+    question19WasAsked = true
 end
 
 local function AskQuestion20(sceneGroup)
@@ -1139,12 +1363,15 @@ local function AskQuestion20(sceneGroup)
     wrongAnswer1 = question20Answer1
     wrongAnswer2 = question20Answer2
     wrongAnswer3 = question20Answer3
+
+    question20WasAsked = true
 end
 
 -- ask a question
 function AskQuestion(sceneGroup)
+    print("AskQuestion(sceneGroup)")
     -- choose out of the possoble 20 questions
-    questionNumber = 1 --math.random(1, 20)
+    questionNumber = math.random(1, 7) -- only done up to #7
 
     -- based on the questionNumber, call the function that will create that question. They are seperate because there was too
     --many lines of code in a single function if theye ere all together - there was an error because of it
@@ -1217,7 +1444,6 @@ end
 
 -- The function called when the screen doesn't exist
 function scene:create( event )
-
     -- Creating a group that associates objects with the scene
     local sceneGroup = self.view
     local phase = event.phase
@@ -1250,7 +1476,6 @@ end --function scene:create( event )
 
 -- The function called when the scene is issued to appear on screen
 function scene:show( event )
-
     -- Creating a group that associates objects with the scene
     local sceneGroup = self.view
     local phase = event.phase
@@ -1263,20 +1488,20 @@ function scene:show( event )
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
+    print("level2_question :: scene:show( event ) :: START")
         -- Called when the scene is now on screen.
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
         AskQuestion( sceneGroup )
         AddTextListeners()
+    print("level2_question :: scene:show( event ) :: END")
     end
-
 end --function scene:show( event )
 
 -----------------------------------------------------------------------------------------
 
 -- The function called when the scene is issued to leave the screen
 function scene:hide( event )
-
     -- Creating a group that associates objects with the scene
     local sceneGroup = self.view
     local phase = event.phase
@@ -1292,26 +1517,22 @@ function scene:hide( event )
 
     elseif ( phase == "did" ) then
         -- Called immediately after scene goes off screen.
-        --RemoveTextListeners()
+        RemoveTextListeners()
     end
-
 end --function scene:hide( event )
 
 -----------------------------------------------------------------------------------------
 
 -- The function called when the scene is issued to be destroyed
 function scene:destroy( event )
-
     -- Creating a group that associates objects with the scene
     local sceneGroup = self.view
-    local phase = event.phase
 
     -----------------------------------------------------------------------------------------
 
     -- Called prior to the removal of scene's view ("sceneGroup"). 
     -- Insert code here to clean up the scene.
     -- Example: remove display objects, save state, etc.
-
 end -- function scene:destroy( event )
 
 -----------------------------------------------------------------------------------------
@@ -1319,10 +1540,12 @@ end -- function scene:destroy( event )
 -----------------------------------------------------------------------------------------
 
 -- Adding Event Listeners
+print( "Adding Event Listeners...")
 scene:addEventListener( "create", scene )
 scene:addEventListener( "show", scene )
 scene:addEventListener( "hide", scene )
 scene:addEventListener( "destroy", scene )
+print( "Adding Event Listeners... done")
 
 -----------------------------------------------------------------------------------------
 

@@ -41,12 +41,20 @@ local logoCar
 local car1
 local car2
 local car3
-
+-----------------------------------------------------------------------------------------
+-- GLOBAL VARIABLES
+-----------------------------------------------------------------------------------------
 -- scrollspeeds
-local scrollSpeedLogo = 1
-local scrollSpeedCar1 = 1.4
-local scrollSpeedCar2 = 1.2
-local scrollSpeedCar3 = 1
+
+scrollSpeedLogo = 1
+scrollSpeedCar1 = 1.2
+scrollSpeedCar2 = 1.1
+scrollSpeedCar3 = 1
+scrollSpeedLogoAfterQuestion1 = 1.3
+scrollSpeedLogoAfterQuestion2 = 1.6
+scrollSpeedLogoAfterQuestion3 = 1.9
+scrollSpeedLogoNew = scrollSpeedLogo
+questionsAnsweredLevel2 = 0
 
 -----------------------------------------------------------------------------------------
 --LOCAL SOUNDS
@@ -56,39 +64,66 @@ local bkgSoundChannel
 -----------------------------------------------------------------------------------------
 -- LOCAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
-local function AskQuestion()
-    composer.gotoScene("level2_question")
-end
-
+-- moves the user's car
+local carsAreMoving = 0
 local function MoveLogoCar(event)
     logoCar.x = logoCar.x + scrollSpeedLogo
+    print("logoCar.x" .. logoCar.x)
 
-    if (logoCar.x == 500) then
-        AskQuestion()
+    if (logoCar.x == 200 
+        or (logoCar.x >= 400 and logoCar.x <= 401)
+        or (logoCar.x >= 600 and logoCar.x <= 602)
+        or logoCar.x >= 900)
+    then
+        carsAreMoving = 0
+        Runtime:removeEventListener("enterFrame", MoveLogoCar)
+
+        if (logoCar.x >= 900) then
+            composer.gotoScene("you_win")
+        else 
+            composer.gotoScene("level2_question")
+        end
     end
-
 end
 
+-- moves the first car
 local function MoveCar1(event)
-    car1.x = car1.x + scrollSpeedCar1
-
+    if(carsAreMoving == 0) then
+        Runtime:removeEventListener("enterFrame", MoveCar1)
+    else 
+        car1.x = car1.x + scrollSpeedCar1
+        print("car1.x" ..car1.x)
+    end
 end
 
+-- moves the second car
 local function MoveCar2(event)
-    car2.x = car2.x + scrollSpeedCar2
-
+    if(carsAreMoving == 0) then
+        Runtime:removeEventListener("enterFrame", MoveCar2)
+    else 
+        car2.x = car2.x + scrollSpeedCar2
+        print("car2.x" .. car2.x)
+    end
 end
 
+-- moves the third car
 local function MoveCar3(event)
-    car3.x = car3.x + scrollSpeedCar3
-
+    if(carsAreMoving == 0) then
+        Runtime:removeEventListener("enterFrame", MoveCar3)
+    else 
+        car3.x = car3.x + scrollSpeedCar3
+        print("car3.x" .. car3.x)
+    end
 end
 
+-- start to move the cars
 local function MoveCars()
+    print("level2_screen :: MoveCars")
     Runtime:addEventListener("enterFrame", MoveLogoCar)
     Runtime:addEventListener("enterFrame", MoveCar1)
     Runtime:addEventListener("enterFrame", MoveCar2)
     Runtime:addEventListener("enterFrame", MoveCar3)
+    carsAreMoving = 1
 end
 -------------------------------------------------------------
 --Objects
@@ -125,7 +160,7 @@ end
 
 -- The function called when the screen doesn't exist
 function scene:create( event )
-
+    print("level2_screen :: scene:create( event )")
     -- Creating a group that associates objects with the scene
     local sceneGroup = self.view
 
@@ -154,7 +189,7 @@ end --function scene:create( event )
 
 -- The function called when the scene is issued to appear on screen
 function scene:show( event )
-
+    print("level2_screen :: scene:show( event )")
     -- Creating a group that associates objects with the scene
     local sceneGroup = self.view
     local phase = event.phase
