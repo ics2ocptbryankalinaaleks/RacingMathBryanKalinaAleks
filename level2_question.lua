@@ -403,7 +403,6 @@ local function HideTextObjectsQuestion20()
     question20Answer3.isVisible = false
 end
 
-
 --making transition to next scene
 local function BackToLevel2() 
 
@@ -1450,18 +1449,26 @@ local function AskQuestion20(sceneGroup)
     -- set the correct answer text, text color, and position (2nd)
     question20CorrectAnswer = display.newText("RED-ORANGE", 0, 0, Arial, textSize)
     question20CorrectAnswer:setTextColor(1, 0, 0)
+    question20CorrectAnswer.x = answerPosition2X
+    question20CorrectAnswer.y = answerPosition2Y
 
     -- set the first wrong answer text, text color, and position
     question20Answer1 = display.newText("YELLOW-BLUE", 0, 0, Arial, textSize)
     question20Answer1:setTextColor(0, 1, 0)
+    question20Answer1.x = answerPosition1X
+    question20Answer1.y = answerPosition1Y
 
     -- set the second wrong answer text, text color, and position
     question20Answer2 = display.newText("RED-GREEN", 0, 0, Arial, textSize)
     question20Answer2:setTextColor(127/255, 0, 1)
+    question20Answer2.x = answerPosition3X
+    question20Answer2.y = answerPosition3Y
 
     -- set the third wrong answer text, text color, and position
     question20Answer3 = display.newText("YELLOW-PURPLE", 0, 0, Arial, textSize)
     question20Answer3:setTextColor(1, 51/255, 1)
+    question20Answer3.x = answerPosition4X
+    question20Answer3.y = answerPosition4Y
 
     -- insert the text objects into this scene
     sceneGroup:insert(question20Text)
