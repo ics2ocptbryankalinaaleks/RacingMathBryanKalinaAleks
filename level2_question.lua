@@ -1387,7 +1387,7 @@ end
 function AskQuestion(sceneGroup)
     print("AskQuestion(sceneGroup)")
     -- choose out of the possoble 20 questions
-    questionNumber = math.random(1, 7) -- only done up to #7
+    questionNumber = math.random(1, 20)
 
     -- based on the questionNumber, call the function that will create that question. They are seperate because there was too
     --many lines of code in a single function if theye ere all together - there was an error because of it
