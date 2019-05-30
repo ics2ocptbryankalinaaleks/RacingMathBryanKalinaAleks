@@ -1400,21 +1400,29 @@ local function AskQuestion19(sceneGroup)
     question19Text.x = textPositionX
     question19Text.y = textPositionY
 
-    -- set the correct answer text, text color, and position (d)
+    -- set the correct answer text, text color, and position (4th)
     question19CorrectAnswer = display.newText("6", 0, 0, Arial, textSize)
     question19CorrectAnswer:setTextColor(244/255, 244/255, 244/255)
+    question19CorrectAnswer.x = answerPosition4X
+    question19CorrectAnswer.y = answerPosition4Y
 
     -- set the first wrong answer text, text color, and position
     question19Answer1 = display.newText("3", 0, 0, Arial, textSize)
     question19Answer1:setTextColor(244/255, 244/255, 244/255)
+    question19Answer1.x = answerPosition1X
+    question19Answer1.y = answerPosition1Y
 
     -- set the second wrong answer text, text color, and position
     question19Answer2 = display.newText("4", 0, 0, Arial, textSize)
     question19Answer2:setTextColor(244/255, 244/255, 244/255)
+    question19Answer2.x = answerPosition2X
+    question19Answer2.y = answerPosition2Y
 
     -- set the third wrong answer text, text color, and position
     question19Answer3 = display.newText("5", 0, 0, Arial, textSize)
     question19Answer3:setTextColor(244/255, 244/255, 244/255)
+    question19Answer3.x = answerPosition3X
+    question19Answer3.y = answerPosition3Y
 
     -- insert the text objects into this scene
     sceneGroup:insert(question19Text)
