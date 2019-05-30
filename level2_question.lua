@@ -221,7 +221,7 @@ local answerPosition4Y
 -----------------------------------------------------------------------------------------
 
 --making transition to next scene
-function BackToLevel1() 
+function BackToLevel2() 
     composer.hideOverlay("crossFade", 400 )
   
     composer.gotoScene( "level2_screen" )
@@ -230,7 +230,7 @@ end
 -----------------------------------------------------------------------------------------
 --checking to see if the user pressed the right answer and bring them back to level 1
 local function TouchListenerAnswer(touch)
-    userAnswer = answerText.text
+    userAnswer = question1CorrectAnswer.text
     
     if (touch.phase == "ended") then
 
@@ -240,7 +240,7 @@ end
 
 --checking to see if the user pressed the right answer and bring them back to level 1
 local function TouchListenerWrongAnswer(touch)
-    userAnswer = wrongText1.text
+    userAnswer = question1Answer1.text
     
     if (touch.phase == "ended") then
         
@@ -250,7 +250,7 @@ end
 
 --checking to see if the user pressed the right answer and bring them back to level 1
 local function TouchListenerWrongAnswer2(touch)
-    userAnswer = wrongText2.text
+    userAnswer = question1Answer2.text
     
     if (touch.phase == "ended") then
 
@@ -260,7 +260,7 @@ local function TouchListenerWrongAnswer2(touch)
 end
 
 local function TouchListenerWrongAnswer3(touch)
-    userAnswer = wrongText3.text
+    userAnswer = question1Answer3.text
     
     if (touch.phase == "ended") then
 
@@ -271,21 +271,21 @@ end
 
 
 --adding the event listeners 
---[[local function AddTextListeners ( )
-    answerText:addEventListener( "touch", TouchListenerAnswer )
-    wrongText1:addEventListener( "touch", TouchListenerWrongAnswer)
-    wrongText2:addEventListener( "touch", TouchListenerWrongAnswer2)
-    wrongText3:addEventListener( "touch", TouchListenerWrongAnswer3)
+--[[]]local function AddTextListeners ( )
+    question1CorrectAnswer:addEventListener( "touch", TouchListenerAnswer )
+    question1Answer1:addEventListener( "touch", TouchListenerWrongAnswer)
+    question1Answer2:addEventListener( "touch", TouchListenerWrongAnswer2)
+    question1Answer3:addEventListener( "touch", TouchListenerWrongAnswer3)
 
 end
 
 --removing the event listeners
 local function RemoveTextListeners()
-    answerText:removeEventListener( "touch", TouchListenerAnswer )
-    wrongText1:removeEventListener( "touch", TouchListenerWrongAnswer)
-    wrongText2:removeEventListener( "touch", TouchListenerWrongAnswer2)
-    wrongText3:removeEventListener( "touch", TouchListenerWrongAnswer3)
-end]]--
+    question1CorrectAnswer:removeEventListener( "touch", TouchListenerAnswer )
+    question1Answer1:removeEventListener( "touch", TouchListenerWrongAnswer)
+    question1Answer2:removeEventListener( "touch", TouchListenerWrongAnswer2)
+    question1Answer3:removeEventListener( "touch", TouchListenerWrongAnswer3)
+end--]]
 
 -- first question 
 local function AskQuestion1(sceneGroup)
@@ -1137,7 +1137,7 @@ function scene:show( event )
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
         AskQuestion( sceneGroup )
-        --AddTextListeners()
+        AddTextListeners()
     end
 
 end --function scene:show( event )
