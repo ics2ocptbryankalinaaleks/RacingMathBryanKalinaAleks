@@ -205,11 +205,16 @@ local cover
 local userAnswer
 local textTouched = false
 
-local textPosition
-local answerPosition1
-local answerPosition2
-local answerPosition3
-local answerPosition4
+local textPositionX
+local textPositionY
+local answerPosition1X
+local answerPosition1Y
+local answerPosition2X
+local answerPosition2Y
+local answerPosition3X
+local answerPosition3Y
+local answerPosition4X
+local answerPosition4Y
 
 -----------------------------------------------------------------------------------------
 --LOCAL FUNCTIONS
