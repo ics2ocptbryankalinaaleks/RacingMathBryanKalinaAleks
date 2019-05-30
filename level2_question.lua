@@ -216,6 +216,11 @@ local answerPosition3Y
 local answerPosition4X
 local answerPosition4Y
 
+-- event listener variables
+local correctAnswer
+local wrongAnswer1
+local wrongAnswer2
+local wrongAnswer3
 -----------------------------------------------------------------------------------------
 --LOCAL FUNCTIONS
 -----------------------------------------------------------------------------------------
@@ -230,7 +235,7 @@ end
 -----------------------------------------------------------------------------------------
 --checking to see if the user pressed the right answer and bring them back to level 1
 local function TouchListenerAnswer(touch)
-    userAnswer = question1CorrectAnswer.text
+    userAnswer = correctAnswer.text
     
     if (touch.phase == "ended") then
 
@@ -240,7 +245,7 @@ end
 
 --checking to see if the user pressed the right answer and bring them back to level 1
 local function TouchListenerWrongAnswer(touch)
-    userAnswer = question1Answer1.text
+    userAnswer = wrongAnswer1.text
     
     if (touch.phase == "ended") then
         
@@ -250,7 +255,7 @@ end
 
 --checking to see if the user pressed the right answer and bring them back to level 1
 local function TouchListenerWrongAnswer2(touch)
-    userAnswer = question1Answer2.text
+    userAnswer = wrongAnswer2.text
     
     if (touch.phase == "ended") then
 
@@ -260,7 +265,7 @@ local function TouchListenerWrongAnswer2(touch)
 end
 
 local function TouchListenerWrongAnswer3(touch)
-    userAnswer = question1Answer3.text
+    userAnswer = wrongAnswer3.text
     
     if (touch.phase == "ended") then
 
@@ -271,21 +276,21 @@ end
 
 
 --adding the event listeners 
---[[]]local function AddTextListeners ( )
-    question1CorrectAnswer:addEventListener( "touch", TouchListenerAnswer )
-    question1Answer1:addEventListener( "touch", TouchListenerWrongAnswer)
-    question1Answer2:addEventListener( "touch", TouchListenerWrongAnswer2)
-    question1Answer3:addEventListener( "touch", TouchListenerWrongAnswer3)
+local function AddTextListeners ( )
+    correctAnswer:addEventListener( "touch", TouchListenerAnswer )
+    wrongAnswer1:addEventListener( "touch", TouchListenerWrongAnswer)
+    wrongAnswer2:addEventListener( "touch", TouchListenerWrongAnswer2)
+    wrongAnswer3:addEventListener( "touch", TouchListenerWrongAnswer3)
 
 end
 
 --removing the event listeners
 local function RemoveTextListeners()
-    question1CorrectAnswer:removeEventListener( "touch", TouchListenerAnswer )
-    question1Answer1:removeEventListener( "touch", TouchListenerWrongAnswer)
-    question1Answer2:removeEventListener( "touch", TouchListenerWrongAnswer2)
-    question1Answer3:removeEventListener( "touch", TouchListenerWrongAnswer3)
-end--]]
+    correctAnswer:removeEventListener( "touch", TouchListenerAnswer )
+    wrongAnswer1:removeEventListener( "touch", TouchListenerWrongAnswer)
+    wrongAnswer2:removeEventListener( "touch", TouchListenerWrongAnswer2)
+    wrongAnswer3:removeEventListener( "touch", TouchListenerWrongAnswer3)
+end
 
 -- first question 
 local function AskQuestion1(sceneGroup)
@@ -311,11 +316,17 @@ local function AskQuestion1(sceneGroup)
     question1Answer3 = display.newText("PINK", 0, 0, Arial, textSize)
     question1Answer3:setTextColor(1, 51/255, 1)
 
+    -- insert the text objects into this scene
     sceneGroup:insert(question1Text)
     sceneGroup:insert(question1CorrectAnswer)
     sceneGroup:insert(question1Answer1)
     sceneGroup:insert(question1Answer2)
     sceneGroup:insert(question1Answer3)
+
+    correctAnswer = question1CorrectAnswer
+    wrongAnswer1 = question1Answer1
+    wrongAnswer2 = question1Answer2
+    wrongAnswer3 = question1Answer3
 end
 
 local function AskQuestion2(sceneGroup)
@@ -358,6 +369,7 @@ local function AskQuestion2(sceneGroup)
     question2Answer3Second = display.newText("GREEN", 0, 0, Arial, textSize)
     question2Answer3Second:setTextColor(0, 1, 0)
 
+    -- insert the text objects into this scene
     sceneGroup:insert(question2CorrectAnswerFirst)
     sceneGroup:insert(question2CorrectAnswerPlus)
     sceneGroup:insert(question2CorrectAnswerSecond)
@@ -370,6 +382,11 @@ local function AskQuestion2(sceneGroup)
     sceneGroup:insert(question2Answer3First)
     sceneGroup:insert(question2Answer3Plus)
     sceneGroup:insert(question2Answer3Second)
+
+    correctAnswer = question2CorrectAnswer
+    wrongAnswer1 = question2Answer1
+    wrongAnswer2 = question2Answer2
+    wrongAnswer3 = question2Answer3
 end
 
 local function AskQuestion3(sceneGroup)
@@ -395,11 +412,17 @@ local function AskQuestion3(sceneGroup)
     question3Answer3 = display.newText("GREEN", 0, 0, Arial, textSize)
     question3Answer3:setTextColor(0, 1, 0)
 
+    -- insert the text objects into this scene
     sceneGroup:insert(question3Text)
     sceneGroup:insert(question3CorrectAnswer)
     sceneGroup:insert(question3Answer1)
     sceneGroup:insert(question3Answer2)
     sceneGroup:insert(question3Answer3)
+
+    correctAnswer = question3CorrectAnswer
+    wrongAnswer1 = question3Answer1
+    wrongAnswer2 = question3Answer2
+    wrongAnswer3 = question3Answer3
 end
 
 local function AskQuestion4(sceneGroup)
@@ -425,12 +448,17 @@ local function AskQuestion4(sceneGroup)
     question4Answer3 = display.newText("PINK", 0, 0, Arial, textSize)
     question4Answer3:setTextColor(1, 51/255, 1)
 
-
+    -- insert the text objects into this scene
     sceneGroup:insert(question4Text)
     sceneGroup:insert(question4CorrectAnswer)
     sceneGroup:insert(question4Answer1)
     sceneGroup:insert(question4Answer2)
     sceneGroup:insert(question4Answer3)
+
+    correctAnswer = question4CorrectAnswer
+    wrongAnswer1 = question4Answer1
+    wrongAnswer2 = question4Answer2
+    wrongAnswer3 = question4Answer3
 end
 
 local function AskQuestion5(sceneGroup)
@@ -472,6 +500,7 @@ local function AskQuestion5(sceneGroup)
     question5Answer3Second = display.newText("YELLOW", 0, 0, Arial, textSize)
     question5Answer3Second:setTextColor(1, 1, 0)
 
+    -- insert the text objects into this scene
     sceneGroup:insert(question5CorrectAnswerFirst)
     sceneGroup:insert(question5CorrectAnswerPlus)
     sceneGroup:insert(question5CorrectAnswerSecond)
@@ -484,6 +513,11 @@ local function AskQuestion5(sceneGroup)
     sceneGroup:insert(question5Answer3First)
     sceneGroup:insert(question5Answer3Plus)
     sceneGroup:insert(question5Answer3Second)
+
+    correctAnswer = question5CorrectAnswer
+    wrongAnswer1 = question5Answer1
+    wrongAnswer2 = question5Answer2
+    wrongAnswer3 = question5Answer3
 end
 
 local function AskQuestion6(sceneGroup)
@@ -525,6 +559,7 @@ local function AskQuestion6(sceneGroup)
     question6Answer3Second = display.newText("GREEN", 0, 0, Arial, textSize)
     question6Answer3Second:setTextColor(0, 1, 0)
 
+    -- insert the text objects into this scene
     sceneGroup:insert(question6Text)
     sceneGroup:insert(question6CorrectAnswerFirst)
     sceneGroup:insert(question6CorrectAnswerPlus)
@@ -538,6 +573,11 @@ local function AskQuestion6(sceneGroup)
     sceneGroup:insert(question6Answer3First)
     sceneGroup:insert(question6Answer3Plus)
     sceneGroup:insert(question6Answer3Second)
+
+    correctAnswer = question6CorrectAnswer
+    wrongAnswer1 = question6Answer1
+    wrongAnswer2 = question6Answer2
+    wrongAnswer3 = question6Answer3
 end
  
 local function AskQuestion7(sceneGroup)
@@ -579,6 +619,7 @@ local function AskQuestion7(sceneGroup)
     question7Answer3Second = display.newText("BLUE", 0, 0, Arial, textSize)
     question7Answer3Second:setTextColor(0, 1, 0)
 
+    -- insert the text objects into this scene
     sceneGroup:insert(question7Text)
     sceneGroup:insert(question7CorrectAnswerFirst)
     sceneGroup:insert(question7CorrectAnswerPlus)
@@ -592,6 +633,11 @@ local function AskQuestion7(sceneGroup)
     sceneGroup:insert(question7Answer3First)
     sceneGroup:insert(question7Answer3Plus)
     sceneGroup:insert(question7Answer3Second)
+
+    correctAnswer = question7CorrectAnswer
+    wrongAnswer1 = question7Answer1
+    wrongAnswer2 = question7Answer2
+    wrongAnswer3 = question7Answer3
 end
 
 local function AskQuestion8(sceneGroup)
@@ -617,11 +663,17 @@ local function AskQuestion8(sceneGroup)
     question8Answer3 = display.newText("RED", 0, 0, Arial, textSize)
     question8Answer3:setTextColor(1, 0, 0)
 
+    -- insert the text objects into this scene
     sceneGroup:insert(question8Text)
     sceneGroup:insert(question8CorrectAnswer)
     sceneGroup:insert(question8Answer1)
     sceneGroup:insert(question8Answer2)
     sceneGroup:insert(question18Answer3)
+
+    correctAnswer = question8CorrectAnswer
+    wrongAnswer1 = question8Answer1
+    wrongAnswer2 = question8Answer2
+    wrongAnswer3 = question8Answer3
 end
 
 local function AskQuestion9(sceneGroup)
@@ -647,11 +699,17 @@ local function AskQuestion9(sceneGroup)
     question9Answer3 = display.newText("RED", 0, 0, Arial, textSize)
     question9Answer3:setTextColor(1, 0, 0)
 
+    -- insert the text objects into this scene
     sceneGroup:insert(question9Text)
     sceneGroup:insert(question9CorrectAnswer)
     sceneGroup:insert(question9Answer1)
     sceneGroup:insert(question9Answer2)
     sceneGroup:insert(question9Answer3)
+
+    correctAnswer = question9CorrectAnswer
+    wrongAnswer1 = question9Answer1
+    wrongAnswer2 = question9Answer2
+    wrongAnswer3 = question9Answer3
 end
 
 local function AskQuestion10(sceneGroup)
@@ -677,11 +735,17 @@ local function AskQuestion10(sceneGroup)
     question10Answer3 = display.newText("YELLOW", 0, 0, Arial, textSize)
     question10Answer3:setTextColor(1, 1, 0)
 
+    -- insert the text objects into this scene
     sceneGroup:insert(question10Text)
     sceneGroup:insert(question10CorrectAnswer)
     sceneGroup:insert(question10Answer1)
     sceneGroup:insert(question10Answer2)
     sceneGroup:insert(question10Answer3)
+
+    correctAnswer = question10CorrectAnswer
+    wrongAnswer1 = question10Answer1
+    wrongAnswer2 = question10Answer2
+    wrongAnswer3 = question10Answer3
 end
 
 local function AskQuestion11(sceneGroup)
@@ -707,12 +771,17 @@ local function AskQuestion11(sceneGroup)
     question11Answer3 = display.newText("PINK", 0, 0, Arial, textSize)
     question11Answer3:setTextColor(1, 51/255, 1)
 
-
+    -- insert the text objects into this scene
     sceneGroup:insert(question11Text)
     sceneGroup:insert(question11CorrectAnswer)
     sceneGroup:insert(question11Answer1)
     sceneGroup:insert(question11Answer2)
     sceneGroup:insert(question11Answer3)
+
+    correctAnswer = question11CorrectAnswer
+    wrongAnswer1 = question11Answer1
+    wrongAnswer2 = question11Answer2
+    wrongAnswer3 = question11Answer3
 end
 
 local function AskQuestion12(sceneGroup)
@@ -738,11 +807,17 @@ local function AskQuestion12(sceneGroup)
     question12Answer3 = display.newText("BLACK", 0, 0, Arial, textSize)
     question12Answer3:setTextColor(0, 0, 0)
 
+    -- insert the text objects into this scene
     sceneGroup:insert(question12Text)
     sceneGroup:insert(question12CorrectAnswer)
     sceneGroup:insert(question12Answer1)
     sceneGroup:insert(question12Answer2)
     sceneGroup:insert(question12Answer3)
+
+    correctAnswer = question12CorrectAnswer
+    wrongAnswer1 = question12Answer1
+    wrongAnswer2 = question12Answer2
+    wrongAnswer3 = question12Answer3
 end
 
 local function AskQuestion13(sceneGroup)
@@ -768,12 +843,17 @@ local function AskQuestion13(sceneGroup)
     question13Answer3 = display.newText("PINK", 0, 0, Arial, textSize)
     question13Answer3:setTextColor(1, 51/255, 1)
 
-
+    -- insert the text objects into this scene
     sceneGroup:insert(question13Text)
     sceneGroup:insert(question13CorrectAnswer)
     sceneGroup:insert(question13Answer1)
     sceneGroup:insert(question13Answer2)
     sceneGroup:insert(question13Answer3)
+
+    correctAnswer = question13CorrectAnswer
+    wrongAnswer1 = question13Answer1
+    wrongAnswer2 = question13Answer2
+    wrongAnswer3 = question13Answer3
 end
 
 local function AskQuestion14(sceneGroup)
@@ -799,12 +879,17 @@ local function AskQuestion14(sceneGroup)
     question14Answer3 = display.newText("PINK", 0, 0, Arial, textSize)
     question14Answer3:setTextColor(1, 51/255, 1)
 
-
+    -- insert the text objects into this scene
     sceneGroup:insert(question14Text)
     sceneGroup:insert(question14CorrectAnswer)
     sceneGroup:insert(question14Answer1)
     sceneGroup:insert(question14Answer2)
     sceneGroup:insert(question14Answer3)
+
+    correctAnswer = question14CorrectAnswer
+    wrongAnswer1 = question14Answer1
+    wrongAnswer2 = question14Answer2
+    wrongAnswer3 = question14Answer3
 end
 
 local function AskQuestion15(sceneGroup)
@@ -830,12 +915,17 @@ local function AskQuestion15(sceneGroup)
     question15Answer3 = display.newText("PINK", 0, 0, Arial, textSize)
     question15Answer3:setTextColor(1, 51/255, 1)
 
-
+    -- insert the text objects into this scene
     sceneGroup:insert(question15Text)
     sceneGroup:insert(question15CorrectAnswer)
     sceneGroup:insert(question15Answer1)
     sceneGroup:insert(question15Answer2)
     sceneGroup:insert(question15Answer3)
+
+    correctAnswer = question15CorrectAnswer
+    wrongAnswer1 = question15Answer1
+    wrongAnswer2 = question15Answer2
+    wrongAnswer3 = question15Answer3
 end
 
 local function AskQuestion16(sceneGroup)
@@ -877,6 +967,7 @@ local function AskQuestion16(sceneGroup)
     question16Answer3Second = display.newText("PURPLE", 0, 0, Arial, textSize)
     question16Answer3Second:setTextColor(127/255, 0, 1)
 
+    -- insert the text objects into this scene
     sceneGroup:insert(question16CorrectAnswerFirst)
     sceneGroup:insert(question16CorrectAnswerPlus)
     sceneGroup:insert(question16CorrectAnswerSecond)
@@ -889,6 +980,11 @@ local function AskQuestion16(sceneGroup)
     sceneGroup:insert(question16Answer3First)
     sceneGroup:insert(question16Answer3Plus)
     sceneGroup:insert(question16Answer3Second)
+
+    correctAnswer = question16CorrectAnswer
+    wrongAnswer1 = question16Answer1
+    wrongAnswer2 = question16Answer2
+    wrongAnswer3 = question16Answer3
 end
 
 local function AskQuestion17(sceneGroup)
@@ -914,11 +1010,17 @@ local function AskQuestion17(sceneGroup)
     question17Answer3 = display.newText("5", 0, 0, Arial, textSize)
     question17Answer3:setTextColor(244/255, 244/255, 244/255)
 
+    -- insert the text objects into this scene
     sceneGroup:insert(question17Text)
     sceneGroup:insert(question17CorrectAnswer)
     sceneGroup:insert(question17Answer1)
     sceneGroup:insert(question17Answer2)
     sceneGroup:insert(question17Answer3)
+
+    correctAnswer = question17CorrectAnswer
+    wrongAnswer1 = question17Answer1
+    wrongAnswer2 = question17Answer2
+    wrongAnswer3 = question17Answer3
 end
 
 local function AskQuestion18(sceneGroup)
@@ -944,11 +1046,17 @@ local function AskQuestion18(sceneGroup)
     question18Answer3 = display.newText("5", 0, 0, Arial, textSize)
     question18Answer3:setTextColor(244/255, 244/255, 244/255)
 
+    -- insert the text objects into this scene
     sceneGroup:insert(question18Text)
     sceneGroup:insert(question18CorrectAnswer)
     sceneGroup:insert(question18Answer1)
     sceneGroup:insert(question18Answer2)
     sceneGroup:insert(question18Answer3)
+
+    correctAnswer = question18CorrectAnswer
+    wrongAnswer1 = question18Answer1
+    wrongAnswer2 = question18Answer2
+    wrongAnswer3 = question18Answer3
 end
 
 local function AskQuestion19(sceneGroup)
@@ -974,11 +1082,17 @@ local function AskQuestion19(sceneGroup)
     question19Answer3 = display.newText("5", 0, 0, Arial, textSize)
     question19Answer3:setTextColor(244/255, 244/255, 244/255)
 
+    -- insert the text objects into this scene
     sceneGroup:insert(question19Text)
     sceneGroup:insert(question19CorrectAnswer)
     sceneGroup:insert(question19Answer1)
     sceneGroup:insert(question19Answer2)
     sceneGroup:insert(question19Answer3)
+
+    correctAnswer = question19CorrectAnswer
+    wrongAnswer1 = question19Answer1
+    wrongAnswer2 = question19Answer2
+    wrongAnswer3 = question19Answer3
 end
 
 local function AskQuestion20(sceneGroup)
@@ -1004,11 +1118,17 @@ local function AskQuestion20(sceneGroup)
     question20Answer3 = display.newText("YELLOW-PURPLE", 0, 0, Arial, textSize)
     question20Answer3:setTextColor(1, 51/255, 1)
 
+    -- insert the text objects into this scene
     sceneGroup:insert(question20Text)
     sceneGroup:insert(question20CorrectAnswer)
     sceneGroup:insert(question20Answer1)
     sceneGroup:insert(question20Answer2)
     sceneGroup:insert(question20Answer3)
+
+    correctAnswer = question20CorrectAnswer
+    wrongAnswer1 = question20Answer1
+    wrongAnswer2 = question20Answer2
+    wrongAnswer3 = question20Answer3
 end
 
 -- ask a question
