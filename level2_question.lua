@@ -1044,18 +1044,26 @@ local function AskQuestion12(sceneGroup)
     -- set the correct answer text, text color, and position (1st)
     question12CorrectAnswer = display.newText("RED", 0, 0, Arial, textSize)
     question12CorrectAnswer:setTextColor(1, 0, 0)
+    question12CorrectAnswer.x = answerPosition1X
+    question12CorrectAnswer.y = answerPosition1Y
 
     -- set the first wrong answer text, text color, and position
     question12Answer1 = display.newText("GREEN", 0, 0, Arial, textSize)
     question12Answer1:setTextColor(0, 1, 0)
+    question12Answer1.x = answerPosition2X
+    question12Answer1.y = answerPosition2Y
 
     -- set the second wrong answer text, text color, and position
     question12Answer2 = display.newText("PURPLE", 0, 0, Arial, textSize)
     question12Answer2:setTextColor(127/255, 0, 1)
+    question12Answer2.x = answerPosition3X
+    question12Answer2.y = answerPosition3Y
 
     -- set the third wrong answer text, text color, and position
     question12Answer3 = display.newText("BLACK", 0, 0, Arial, textSize)
     question12Answer3:setTextColor(0, 0, 0)
+    question12Answer3.x = answerPosition4X
+    question12Answer3.y = answerPosition4Y
 
     -- insert the text objects into this scene
     sceneGroup:insert(question12Text)
