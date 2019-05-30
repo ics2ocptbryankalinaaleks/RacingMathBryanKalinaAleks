@@ -3,7 +3,7 @@
 -- Created by: Allison
 -- Date: May 16, 2017
 -- Description: This is the level 1 screen of the game. the charater can be dragged to move
---If character goes off a certain araea they go back to the start. When a user interactes
+--If character goes off a certain area they go back to the start. When a user interactes
 --with piant a trivia question will come up. they will have a limided time to click on the answer
 -----------------------------------------------------------------------------------------
 -- hide the status bar
@@ -1319,18 +1319,26 @@ local function AskQuestion18(sceneGroup)
     -- set the correct answer text, text color, and position (3rd)
     question18CorrectAnswer = display.newText("3", 0, 0, Arial, textSize)
     question18CorrectAnswer:setTextColor(244/255, 244/255, 244/255)
+    question18CorrectAnswer.x = answerPosition3X
+    question18CorrectAnswer.y = answerPosition3Y
 
     -- set the first wrong answer text, text color, and position
     question18Answer1 = display.newText("1", 0, 0, Arial, textSize)
     question18Answer1:setTextColor(244/255, 244/255, 244/255)
+    question18Answer1.x = answerPosition1X
+    question18Answer1.y = answerPosition1Y
 
     -- set the second wrong answer text, text color, and position
     question18Answer2 = display.newText("2", 0, 0, Arial, textSize)
     question18Answer2:setTextColor(244/255, 244/255, 244/255)
+    question18Answer2.x = answerPosition2X
+    question18Answer2.y = answerPosition2Y
 
     -- set the third wrong answer text, text color, and position
     question18Answer3 = display.newText("5", 0, 0, Arial, textSize)
     question18Answer3:setTextColor(244/255, 244/255, 244/255)
+    question18Answer3.x = answerPosition4X
+    question18Answer3.y = answerPosition4Y
 
     -- insert the text objects into this scene
     sceneGroup:insert(question18Text)
