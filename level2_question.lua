@@ -213,6 +213,7 @@ local question20WasAsked = false
 --LOCAL FUNCTIONS
 -----------------------------------------------------------------------------------------
 
+-- set the scroll speed of the cars
 local function StartCars()
 
     scrollSpeedLogo = scrollSpeedLogoNew
@@ -222,6 +223,7 @@ local function StartCars()
 
 end
 
+-- hide objects for question 1
 local function HideTextObjectsQuestion1()
     question1Text.isVisible = false
     question1CorrectAnswer.isVisible = false
@@ -230,6 +232,7 @@ local function HideTextObjectsQuestion1()
     question1Answer3.isVisible = false
 end
 
+-- hide objects for question 2
 local function HideTextObjectsQuestion2()
     question2Text.isVisible = false
     question2CorrectAnswer.isVisible = false
@@ -238,6 +241,7 @@ local function HideTextObjectsQuestion2()
     question2Answer3.isVisible = false
 end
 
+-- hide objects for question 3
 local function HideTextObjectsQuestion3()
     question3Text.isVisible = false
     question3CorrectAnswer.isVisible = false
@@ -246,6 +250,7 @@ local function HideTextObjectsQuestion3()
     question3Answer3.isVisible = false
 end
 
+-- hide objects for question 4
 local function HideTextObjectsQuestion4()
     question4Text.isVisible = false
     question4CorrectAnswer.isVisible = false
@@ -254,6 +259,7 @@ local function HideTextObjectsQuestion4()
     question4Answer3.isVisible = false
 end
 
+-- hide objects for question 5
 local function HideTextObjectsQuestion5()
     question5Text.isVisible = false
     question5CorrectAnswer.isVisible = false
@@ -262,6 +268,7 @@ local function HideTextObjectsQuestion5()
     question5Answer3.isVisible = false
 end
 
+-- hide objects for question 6
 local function HideTextObjectsQuestion6()
     question6Text.isVisible = false
     question6CorrectAnswer.isVisible = false
@@ -270,6 +277,7 @@ local function HideTextObjectsQuestion6()
     question6Answer3.isVisible = false
 end
 
+-- hide objects for question 7
 local function HideTextObjectsQuestion7()
     question7Text.isVisible = false
     question7CorrectAnswer.isVisible = false
@@ -278,6 +286,7 @@ local function HideTextObjectsQuestion7()
     question7Answer3.isVisible = false
 end
 
+-- hide objects for question 8
 local function HideTextObjectsQuestion8()
     question8Text.isVisible = false
     question8CorrectAnswer.isVisible = false
@@ -286,6 +295,7 @@ local function HideTextObjectsQuestion8()
     question8Answer3.isVisible = false
 end
 
+-- hide objects for question 9
 local function HideTextObjectsQuestion9()
     question9Text.isVisible = false
     question9CorrectAnswer.isVisible = false
@@ -294,6 +304,7 @@ local function HideTextObjectsQuestion9()
     question9Answer3.isVisible = false
 end
 
+-- hide objects for question 10
 local function HideTextObjectsQuestion10()
     question10Text.isVisible = false
     question10CorrectAnswer.isVisible = false
@@ -302,6 +313,7 @@ local function HideTextObjectsQuestion10()
     question10Answer3.isVisible = false
 end
 
+-- hide objects for question 11
 local function HideTextObjectsQuestion11()
     question11Text.isVisible = false
     question11CorrectAnswer.isVisible = false
@@ -310,6 +322,7 @@ local function HideTextObjectsQuestion11()
     question11Answer3.isVisible = false
 end
 
+-- hide objects for question 12
 local function HideTextObjectsQuestion12()
     question12Text.isVisible = false
     question12CorrectAnswer.isVisible = false
@@ -318,6 +331,7 @@ local function HideTextObjectsQuestion12()
     question12Answer3.isVisible = false
 end
 
+-- hide objects for question 13
 local function HideTextObjectsQuestion13()
     question13Text.isVisible = false
     question13CorrectAnswer.isVisible = false
@@ -326,6 +340,7 @@ local function HideTextObjectsQuestion13()
     question13Answer3.isVisible = false
 end
 
+-- hide objects for question 14
 local function HideTextObjectsQuestion14()
     question14Text.isVisible = false
     question14CorrectAnswer.isVisible = false
@@ -334,6 +349,7 @@ local function HideTextObjectsQuestion14()
     question14Answer3.isVisible = false
 end
 
+-- hide objects for question 15
 local function HideTextObjectsQuestion15()
     question15Text.isVisible = false
     question15CorrectAnswer.isVisible = false
@@ -342,6 +358,7 @@ local function HideTextObjectsQuestion15()
     question15Answer3.isVisible = false
 end
 
+-- hide objects for question 16
 local function HideTextObjectsQuestion16()
     question16Text.isVisible = false
     question16CorrectAnswer.isVisible = false
@@ -350,6 +367,7 @@ local function HideTextObjectsQuestion16()
     question16Answer3.isVisible = false
 end
 
+-- hide objects for question 17
 local function HideTextObjectsQuestion17()
     question17Text.isVisible = false
     question17CorrectAnswer.isVisible = false
@@ -358,6 +376,7 @@ local function HideTextObjectsQuestion17()
     question17Answer3.isVisible = false
 end
 
+-- hide objects for question 18
 local function HideTextObjectsQuestion18()
     question18Text.isVisible = false
     question18CorrectAnswer.isVisible = false
@@ -366,6 +385,7 @@ local function HideTextObjectsQuestion18()
     question18Answer3.isVisible = false
 end
 
+-- hide objects for question 19
 local function HideTextObjectsQuestion19()
     question19Text.isVisible = false
     question19CorrectAnswer.isVisible = false
@@ -374,6 +394,7 @@ local function HideTextObjectsQuestion19()
     question19Answer3.isVisible = false
 end
 
+-- hide objects for question 20
 local function HideTextObjectsQuestion20()
     question20Text.isVisible = false
     question20CorrectAnswer.isVisible = false
@@ -388,7 +409,7 @@ local function BackToLevel2()
 
     StartCars()
 
-    -- hide all of the text objects
+    -- hide all of the text objects, depending on which question was called
     if (question1WasAsked == true) then
         HideTextObjectsQuestion1()
 
