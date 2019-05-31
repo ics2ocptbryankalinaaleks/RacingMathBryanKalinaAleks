@@ -132,7 +132,7 @@ end
 -- GLOBAL SCENE FUNCTIONS
 -------------------------------------------------------------
   
-function ResumeLevel1()
+function ResumeLevel3()
     -- reset the speed
     scrollSpeed = 1.4
     scrollSpeed2 = -1.05

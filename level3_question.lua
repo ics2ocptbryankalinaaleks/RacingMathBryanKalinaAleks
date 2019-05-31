@@ -126,9 +126,9 @@ local function AskQuestion()
     randomQuestion = math.random(1,1)
 
     if (randomQuestion == 1) then
-        questionText.text = "What are the three main parts of a plant"
-        answerText.text = "roots, leaves, stem"
-        wrongText1.text = "roots, stem, branches"
+        questionText.text = "What are the three main parts\nof a plant?"
+        answerText.text = "roots, leaves,\n stem"
+        wrongText1.text = "roots, stem,\n branches"
         wrongText2.text = "?,?,?"
         wrongText3.text = "?,?,?"
 
@@ -357,7 +357,7 @@ function scene:create( event )
     cover:setFillColor(96/255, 96/255, 96/255)
 
     -- create the question text object
-    questionText = display.newText("", display.contentCenterX, display.contentCenterY*3/8, Arial, 45)
+    questionText = display.newText("", display.contentCenterX, display.contentCenterY*3/8, Arial, 50)
 
     -- create the answer text object & wrong answer text objects
     answerText = display.newText("", X1, Y2, Arial, 35)
