@@ -70,7 +70,7 @@ local bkgSoundChannel
 -----------------------------------------------------------------------------------------
 
 
-local function MoveLogoCar(event)
+local function MoveLogoCar()
     logoCar.x = logoCar.x + scrollSpeedLogo
     --print("logoCar.x" .. logoCar.x)
 
@@ -92,7 +92,7 @@ local function MoveLogoCar(event)
 end
 
 -- moves the first car
-local function MoveCar1(event)
+local function MoveCar1()
     if(carsAreMoving == 0) then
         Runtime:removeEventListener("enterFrame", MoveCar1)
     else 
@@ -102,7 +102,7 @@ local function MoveCar1(event)
 end
 
 -- moves the second car
-local function MoveCar2(event)
+local function MoveCar2()
     if(carsAreMoving == 0) then
         Runtime:removeEventListener("enterFrame", MoveCar2)
     else 
@@ -112,7 +112,7 @@ local function MoveCar2(event)
 end
 
 -- moves the third car
-local function MoveCar3(event)
+local function MoveCar3()
     if(carsAreMoving == 0) then
         Runtime:removeEventListener("enterFrame", MoveCar3)
     else 
@@ -130,34 +130,7 @@ local function MoveCars()
     Runtime:addEventListener("enterFrame", MoveCar3)
     carsAreMoving = 1
 end
--------------------------------------------------------------
---Objects
--------------------------------------------------------------
--- cars
 
---third car (logo car)
-    car3 = display.newImage("Images/OrangeCar.png", 0, 0)
-    car3.x = 900
-    car3.y = 270
-    car3:rotate(4)
-
--- second car (green car)
-    car2 = display.newImage("Images/GreenCar.png", 0, 0)
-    car2.x = display.contentWidth*-0.5/5
-    car2.y = display.contentHeight/1.74
-    car2:rotate(-33)
-
---first car (blue car)
-    car1 = display.newImage("Images/BlueCar.png", 0, 0)
-    car1.x = display.contentWidth/2
-    car1.y = display.contentHeight*4.3/8
-    car1:rotate(20)
-
--- logo car (user's car) (smallest car)
-    logoCar = display.newImage("Images/CompanyLogo.png", 0, 0)
-    logoCar.x = display.contentWidth*1/8
-    logoCar.y = display.contentHeight*5.9/8
-    logoCar:scale(0.1, 0.1)
 
 -----------------------------------------------------------------------------------------
 -- GLOBAL SCENE FUNCTIONS
@@ -180,6 +153,35 @@ function scene:create( event )
 
     -- Send the background image to the back layer so all other objects can be on top
     bkg_image:toBack()
+
+    -------------------------------------------------------------
+    --Objects
+    -------------------------------------------------------------
+    -- cars
+
+    --third car (logo car)
+    car3 = display.newImage("Images/OrangeCar.png", 0, 0)
+    car3.x = 900
+    car3.y = 270
+    car3:rotate(4)
+
+    -- second car (green car)
+    car2 = display.newImage("Images/GreenCar.png", 0, 0)
+    car2.x = display.contentWidth*-0.5/5
+    car2.y = display.contentHeight/1.74
+    car2:rotate(-33)
+
+    --first car (blue car)
+    car1 = display.newImage("Images/BlueCar.png", 0, 0)
+    car1.x = display.contentWidth/2
+    car1.y = display.contentHeight*4.3/8
+    car1:rotate(20)
+
+    -- logo car (user's car) (smallest car)
+    logoCar = display.newImage("Images/CompanyLogo.png", 0, 0)
+    logoCar.x = display.contentWidth*1/8
+    logoCar.y = display.contentHeight*5.9/8
+    logoCar:scale(0.1, 0.1)
 
         -- Insert background image into the scene group in order to ONLY be associated with this scene
     sceneGroup:insert( bkg_image )
