@@ -749,8 +749,6 @@ local function AskQuestion14(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    questionWasAsked = 14
 end
 
 -- fifteenth question
@@ -785,19 +783,10 @@ local function AskQuestion15(sceneGroup)
     answer3.x = answerPosition4X
     answer3.y = answerPosition4Y
 
-    -- insert the text objects into this scene
-    sceneGroup:insert(question15Text)
-    sceneGroup:insert(question15CorrectAnswer)
-    sceneGroup:insert(question15Answer1)
-    sceneGroup:insert(question15Answer2)
-    sceneGroup:insert(question15Answer3)
-
-    correctAnswer = question15CorrectAnswer
-    wrongAnswer1 = question15Answer1
-    wrongAnswer2 = question15Answer2
-    wrongAnswer3 = question15Answer3
-
-    questionWasAsked = 15
+    correctAnswer = questionCorrectAnswer
+    wrongAnswer1 = answer1
+    wrongAnswer2 = answer2
+    wrongAnswer3 = answer3
 end
 
 -- sixteenth question
@@ -831,12 +820,6 @@ local function AskQuestion16(sceneGroup)
     answer3:setTextColor(1, 1, 0)
     answer3.x = answerPosition3X
     answer3.y = answerPosition3Y
-
-    -- insert the text objects into this scene
-    sceneGroup:insert(question16CorrectAnswer)
-    sceneGroup:insert(question16Answer1)
-    sceneGroup:insert(question16Answer2)
-    sceneGroup:insert(question16Answer3)
 
     correctAnswer = question16CorrectAnswer
     wrongAnswer1 = question16Answer1
