@@ -41,6 +41,9 @@ local logoCar
 local car1
 local car2
 local car3
+
+-- moves the user's car
+local carsAreMoving = 0
 -----------------------------------------------------------------------------------------
 -- GLOBAL VARIABLES
 -----------------------------------------------------------------------------------------
@@ -61,11 +64,12 @@ questionsAnsweredLevel2 = 0
 -----------------------------------------------------------------------------------------
 local bkgSound = audio.loadStream("Sounds/bkgslevel2.mp3")
 local bkgSoundChannel
+
 -----------------------------------------------------------------------------------------
 -- LOCAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
--- moves the user's car
-local carsAreMoving = 0
+
+
 local function MoveLogoCar(event)
     logoCar.x = logoCar.x + scrollSpeedLogo
     --print("logoCar.x" .. logoCar.x)
