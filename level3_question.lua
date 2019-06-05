@@ -123,77 +123,77 @@ end
 
 
 local function AskQuestion()
-    randomQuestion = math.random(1,1)
+    randomQuestion = math.random(1,10)
 
     if (randomQuestion == 1) then
         questionText.text = "What are the three main parts\nof a plant?"
         answerText.text = "roots, leaves,\n stem"
         wrongText1.text = "roots, stem,\n branches"
-        wrongText2.text = "?,?,?"
-        wrongText3.text = "?,?,?"
+        wrongText2.text = "roots, trunk,\n leaves"
+        wrongText3.text = "roots, trunk,\n branches"
 
     elseif (randomQuestion == 2) then
-        questionText.text = "What do roots do"
+        questionText.text = "What do roots do?"
         answerText.text = "soak up food and water"
         wrongText1.text = "grow food"
-        wrongText2.text = "?,?,?"
-        wrongText3.text = "?,?,?"
+        wrongText2.text = "complete photosynthesis"
+        wrongText3.text = "Nothing"
 
     elseif (randomQuestion == 3) then
-        questionText.text = "What do plants do to help animals"
+        questionText.text = "What do plants do to help animals?"
         answerText.text = "provide food for certain animals"
         wrongText1.text = "release carbon dioxide animals need"
-        wrongText2.text = "?,?,?"
-        wrongText3.text = "?,?,?"
+        wrongText2.text = "release pollen for animals"
+        wrongText3.text = "all of the above"
 
     elseif (randomQuestion == 4) then
-        questionText.text = "Some plants grow bulbs, what do the bubls do"
+        questionText.text = "Some plants grow bulbs,\nwhat do the bubls do?"
         answerText.text = "turn into flowers"
         wrongText1.text = "turn into seeds"
         wrongText2.text = "turn into trees"
         wrongText3.text = "turn into grass"
 
     elseif (randomQuestion == 5) then
-        questionText.text = "how does the sun help plants"
+        questionText.text = "how does the sun help plants?"
         answerText.text = "turn the energy from the sun into food"
         wrongText1.text = "uses the enegy to create pollen"
         wrongText2.text = "?,?,?"
         wrongText3.text = "?,?,?" 
 
     elseif (randomQuestion == 6) then
-        questionText.text = "What structures are NOT natural"
+        questionText.text = "What structures are NOT natural?"
         answerText.text = "pyramid"
         wrongText1.text = "mountain"
         wrongText2.text = "tree"
-        wrongText3.text = "?,?,?"
+        wrongText3.text = "Nests"
 
     elseif (randomQuestion == 7) then
-        questionText.text = ""
-        answerText.text = ""
-        wrongText1.text = ""
-        wrongText2.text = "?,?,?"
-        wrongText3.text = "?,?,?"
+        questionText.text = "What are the two parts of stamens?"
+        answerText.text = "Anther, filament"
+        wrongText1.text = "Stigma, Anther"
+        wrongText2.text = "Style, filament"
+        wrongText3.text = "Stigma, style"
 
     elseif (randomQuestion == 8) then
-        questionText.text = ""
-        answerText.text = ""
-        wrongText1.text = ""
-        wrongText2.text = "?,?,?"
-        wrongText3.text = "?,?,?"
+        questionText.text = "What is the female\nreproductive part of a plant?"
+        answerText.text = "Pistil"
+        wrongText1.text = "Overy"
+        wrongText2.text = "Stem"
+        wrongText3.text = "leaves"
 
     elseif (randomQuestion == 9) then
-        questionText.text = ""
-        answerText.text = ""
-        wrongText1.text = ""
-        wrongText2.text = "?,?,?"
+        questionText.text = "Which one is a natural structure?"
+        answerText.text = "Cave"
+        wrongText1.text = "Totem pole"
+        wrongText2.text = "Moai"
         wrongText3.text = "?,?,?"
 
     elseif (randomQuestion == 10) then
-        questionText.text = ""
-        answerText.text = ""
-        wrongText1.text = ""
-        wrongText2.text = "?,?,?"
-        wrongText3.text = "?,?,?"
+        questionText.text = "How do animals help plants?"
+        answerText.text = "Animals distribute pollen for flowers"
+        wrongText1.text = "Animals eat weeds that take nutrients from other plants"
+        wrongText2.text = "Animals release carbon dioxide plants need"
+        wrongText3.text = "All of the above"
 
     elseif (randomQuestion == 11) then
         questionText.text = ""
