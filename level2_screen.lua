@@ -72,7 +72,6 @@ local bkgSoundChannel
 
 local function MoveLogoCar()
     logoCar.x = logoCar.x + scrollSpeedLogo
-    --print("logoCar.x" .. logoCar.x)
 
     if (logoCar.x == 200 
         or (logoCar.x >= 400 and logoCar.x <= 401)
@@ -97,7 +96,6 @@ local function MoveCar1()
         Runtime:removeEventListener("enterFrame", MoveCar1)
     else 
         car1.x = car1.x + scrollSpeedCar1
-        --print("car1.x" ..car1.x)
     end
 end
 
@@ -107,7 +105,6 @@ local function MoveCar2()
         Runtime:removeEventListener("enterFrame", MoveCar2)
     else 
         car2.x = car2.x + scrollSpeedCar2
-        --print("car2.x" .. car2.x)
     end
 end
 
@@ -117,13 +114,11 @@ local function MoveCar3()
         Runtime:removeEventListener("enterFrame", MoveCar3)
     else 
         car3.x = car3.x + scrollSpeedCar3
-        --print("car3.x" .. car3.x)
     end
 end
 
 -- start to move the cars
 local function MoveCars()
-    print("level2_screen :: MoveCars")
     Runtime:addEventListener("enterFrame", MoveLogoCar)
     Runtime:addEventListener("enterFrame", MoveCar1)
     Runtime:addEventListener("enterFrame", MoveCar2)
@@ -138,7 +133,6 @@ end
 
 -- The function called when the screen doesn't exist
 function scene:create( event )
-    print("level2_screen :: scene:create( event )")
     -- Creating a group that associates objects with the scene
     local sceneGroup = self.view
 
@@ -160,19 +154,19 @@ function scene:create( event )
     -- cars
 
     --third car (logo car)
-    car3 = display.newImage("Images/OrangeCar.png", 0, 0)
+    car3 = display.newImage("Images/Orange Car.png", 0, 0)
     car3.x = 900
     car3.y = 270
     car3:rotate(4)
 
     -- second car (green car)
-    car2 = display.newImage("Images/GreenCar.png", 0, 0)
+    car2 = display.newImage("Images/Green Car.png", 0, 0)
     car2.x = display.contentWidth*-0.5/5
     car2.y = display.contentHeight/1.74
     car2:rotate(-33)
 
     --first car (blue car)
-    car1 = display.newImage("Images/BlueCar.png", 0, 0)
+    car1 = display.newImage("Images/Blue Car.png", 0, 0)
     car1.x = display.contentWidth/2
     car1.y = display.contentHeight*4.3/8
     car1:rotate(20)
@@ -184,7 +178,7 @@ function scene:create( event )
     logoCar:scale(0.1, 0.1)
 
         -- Insert background image into the scene group in order to ONLY be associated with this scene
-    sceneGroup:insert( bkg_image )
+    sceneGroup:insert(bkg_image)
     sceneGroup:insert(car3)
     sceneGroup:insert(car2)
     sceneGroup:insert(car1)
@@ -196,7 +190,6 @@ end --function scene:create( event )
 
 -- The function called when the scene is issued to appear on screen
 function scene:show( event )
-    print("level2_screen :: scene:show( event )")
     -- Creating a group that associates objects with the scene
     local sceneGroup = self.view
     local phase = event.phase

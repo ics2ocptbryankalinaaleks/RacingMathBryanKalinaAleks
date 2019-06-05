@@ -86,7 +86,6 @@ local questionWasAsked = 0
 -----------------------------------------------------------------------------------------
 --LOCAL FUNCTIONS
 -----------------------------------------------------------------------------------------
-
 local function HideCorrect()
     correct.isVisible = false
 end
@@ -115,7 +114,6 @@ end
 
 --making transition to next scene
 local function BackToLevel2() 
-    print("level2_question :: BackToLevel2 : questionWasAsked = " .. questionWasAsked)
     StartCars()
 
     -- hide all of the text objects
@@ -195,7 +193,6 @@ end
 --adding the event listeners 
 local function AddTextListeners()
     correctAnswer:addEventListener( "touch", TouchListenerAnswer )
-    print("AddTextListeners()")
     wrongAnswer1:addEventListener( "touch", TouchListenerWrongAnswer)
     wrongAnswer2:addEventListener( "touch", TouchListenerWrongAnswer2)
     wrongAnswer3:addEventListener( "touch", TouchListenerWrongAnswer3)
@@ -402,7 +399,6 @@ end
 
 -- sixth question
 local function AskQuestion6(sceneGroup)
-    print("AskQuestion6(sceneGroup)")
     -- set the question text
     questionText = display.newText("Which mixture will create purple?", 0, 0, Arial, textSize)
     questionText:setTextColor(244/255, 244/255, 244/255)
@@ -1028,7 +1024,6 @@ sceneGroup:insert(questionAnswer3)
 function AskQuestion(sceneGroup)
     -- choose out of the possoble 20 questions
     questionNumber = math.random(1, 20)
-    print("AskQuestion(sceneGroup) :: questionnumber = " .. questionNumber)
 
     -- based on the questionNumber, call the function that will create that question. They are seperate because there was too
     --many lines of code in a single function if theye ere all together - there was an error because of it
@@ -1145,13 +1140,11 @@ function scene:show( event )
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
-    print("level2_question :: scene:show( event ) :: START")
         -- Called when the scene is now on screen.
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
         AskQuestion( sceneGroup )
         AddTextListeners()
-    print("level2_question :: scene:show( event ) :: END")
     end
 end --function scene:show( event )
 
@@ -1197,12 +1190,10 @@ end -- function scene:destroy( event )
 -----------------------------------------------------------------------------------------
 
 -- Adding Event Listeners
-print( "Adding Event Listeners...")
 scene:addEventListener( "create", scene )
 scene:addEventListener( "show", scene )
 scene:addEventListener( "hide", scene )
 scene:addEventListener( "destroy", scene )
-print( "Adding Event Listeners... done")
 
 -----------------------------------------------------------------------------------------
 
