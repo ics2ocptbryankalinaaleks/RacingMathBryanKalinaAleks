@@ -2,7 +2,7 @@
 -- level3_screen.lua
 -- Created by: Bryan R
 -- Date: Month Day, Year
--- Description: This is the level 3 screen of the game.
+-- Description: This is the level 3 screen
 -----------------------------------------------------------------------------------------
 -- hide the status bar
 display.setStatusBar(display.HiddenStatusBar)
@@ -74,12 +74,18 @@ local function MovelogocarRight(event)
     --print ("***MovelogocarRight: logocar.x = " .. logocar.x)
     logocar.x = logocar.x + scrollSpeed
 
+    if (logocar.x >= 500) then
+
+        Runtime:removeEventListener("enterFrame", Movelogocar)
+        print ("***Removed Movelogocar event listener")
+
+        -- Ask another question
+        AskQuestion()
+        Runtime:addEventListener("enterFrame", MovelogocarRight)        
+        print ("***Called MovelogocarDown event listener")
+    end
 
 end
-
-
-
-
 
 local function Movelogocar(event)
     --print ("***Movelogocar: logocar.x = " .. logocar.x)
@@ -87,16 +93,17 @@ local function Movelogocar(event)
 
 
     
-    if (logocar.x >= 657) then
+    if (logocar.x >= 300) then
 
         Runtime:removeEventListener("enterFrame", Movelogocar)
         print ("***Removed Movelogocar event listener")
 
         -- Ask another question
         AskQuestion()
+        Runtime:addEventListener("enterFrame", MovelogocarRight)        
         print ("***Called MovelogocarDown event listener")
 
-    end
+    end    
 end
 
 local function UpdateHearts()
@@ -141,10 +148,6 @@ function ResumeLevel3()
 
     UpdateHearts()
     
-    if (questionsAnswered == 2) then
-        -- after getting 2 questions right, go to the you win screen
-        composer.gotoScene( "level_select" )
-    end
 end
 
 -----------------------------------------------------------------------------------------
