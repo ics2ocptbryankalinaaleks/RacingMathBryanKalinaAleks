@@ -55,6 +55,7 @@ local heart3
 -- LOCAL & GLOBAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
 
+-- questions asked
 local function AskQuestion()
     -- set all scroll speeds to 0 to stop the car
     scrollSpeed = 0
@@ -69,6 +70,7 @@ local function AskQuestion()
     end
 end
 
+-- moving the car to the right
 local function MovelogocarRight(event)
     --print ("***MovelogocarRight: logocar.x = " .. logocar.x)
     logocar.x = logocar.x + scrollSpeed
@@ -76,6 +78,7 @@ local function MovelogocarRight(event)
 
 end
 
+-- moving the car down
 local function MovelogocarDown(event)
     --print ("***MovelogocarDown: logocar.x = " .. logocar.x)
     logocar.x = logocar.x - scrollSpeed3
@@ -97,7 +100,7 @@ local function MovelogocarDown(event)
 end
 
 
-
+-- function to move the car
 local function Movelogocar(event)
     --print ("***Movelogocar: logocar.x = " .. logocar.x)
     logocar.x = logocar.x + scrollSpeed
