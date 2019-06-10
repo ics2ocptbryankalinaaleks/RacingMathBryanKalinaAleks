@@ -970,6 +970,7 @@ local function AskQuestion19(sceneGroup)
     InsertTextObjects()
 end
 
+
 -- twentyth question
 local function AskQuestion20(sceneGroup)
     -- set the question text
