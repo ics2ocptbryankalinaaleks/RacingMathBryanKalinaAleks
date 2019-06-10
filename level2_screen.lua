@@ -169,7 +169,7 @@ function scene:create( event )
     car1 = display.newImage("Images/Blue Car.png", 0, 0)
     car1.x = display.contentWidth/2
     car1.y = display.contentHeight*4.3/8
-    car1:rotate(20)
+    --car1:rotate(20)
 
     -- logo car (user's car) (smallest car)
     logoCar = display.newImage("Images/CompanyLogo.png", 0, 0)

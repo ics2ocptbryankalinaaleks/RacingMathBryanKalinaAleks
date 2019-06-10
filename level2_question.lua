@@ -31,13 +31,6 @@ local scene = composer.newScene( sceneName )
 -- LOCAL VARIABLES
 -----------------------------------------------------------------------------------------
 
--- The local variables for this scene
-local questionText
-local questionCorrectAnswer
-local answer1
-local answer2
-local answer3 
-
 -- 
 local bkg
 local cover
@@ -46,6 +39,13 @@ local textSize = 50
 
 local userAnswer
 local textTouched = false
+
+-- The local variables for this scene
+local questionText = display.newText("", display.contentCenterX, display.contentCenterY*3/8, Arial, textSize)
+local questionCorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+local answer1 = display.newText("", 0, 0, Arial, textSize)
+local answer2 = display.newText("", 0, 0, Arial, textSize)
+local answer3 = display.newText("", 0, 0, Arial, textSize)
 
 local correct = display.newText("Correct!", 0, 0, Arial, textSize)
 correct.x = display.contentCenterX
@@ -80,9 +80,6 @@ local wrongAnswer1
 local wrongAnswer2
 local wrongAnswer3
 
--- 0 means no question has been asked yet
-local questionWasAsked = 0
-
 -----------------------------------------------------------------------------------------
 --LOCAL FUNCTIONS
 -----------------------------------------------------------------------------------------
@@ -96,7 +93,6 @@ end
 
 -- set the scroll speed of the cars
 local function StartCars()
-
     scrollSpeedLogo = scrollSpeedLogoNew
     scrollSpeedCar1 = 1.4
     scrollSpeedCar2 = 1.2
@@ -107,9 +103,9 @@ end
 local function HideTextObjectsQuestion()
     questionText.isVisible = false
     correctAnswer.isVisible = false
-    answer1.isVisible = false
-    answer2.isVisible = false
-    answer2.isVisible = false
+    wrongAnswer1.isVisible = false
+    wrongAnswer2.isVisible = false
+    wrongAnswer3.isVisible = false
 end
 
 --making transition to next scene
@@ -117,7 +113,7 @@ local function BackToLevel2()
     StartCars()
 
     -- hide all of the text objects
-        HideTextObjectsQuestion()
+    HideTextObjectsQuestion()
 
 
     composer.hideOverlay("crossFade", 400 )
@@ -192,18 +188,18 @@ end
 
 --adding the event listeners 
 local function AddTextListeners()
-    correctAnswer:addEventListener( "touch", TouchListenerAnswer )
-    wrongAnswer1:addEventListener( "touch", TouchListenerWrongAnswer)
-    wrongAnswer2:addEventListener( "touch", TouchListenerWrongAnswer2)
-    wrongAnswer3:addEventListener( "touch", TouchListenerWrongAnswer3)
+    correctAnswer:addEventListener("touch", TouchListenerAnswer)
+    wrongAnswer1:addEventListener("touch", TouchListenerWrongAnswer)
+    wrongAnswer2:addEventListener("touch", TouchListenerWrongAnswer2)
+    wrongAnswer3:addEventListener("touch", TouchListenerWrongAnswer3)
 end
 
 --removing the event listeners
 local function RemoveTextListeners()
-    correctAnswer:removeEventListener( "touch", TouchListenerAnswer )
-    wrongAnswer1:removeEventListener( "touch", TouchListenerWrongAnswer)
-    wrongAnswer2:removeEventListener( "touch", TouchListenerWrongAnswer2)
-    wrongAnswer3:removeEventListener( "touch", TouchListenerWrongAnswer3)
+    correctAnswer:removeEventListener("touch", TouchListenerAnswer)
+    wrongAnswer1:removeEventListener("touch", TouchListenerWrongAnswer)
+    wrongAnswer2:removeEventListener("touch", TouchListenerWrongAnswer2)
+    wrongAnswer3:removeEventListener("touch", TouchListenerWrongAnswer3)
 end
 
 -- first question 
@@ -952,78 +948,71 @@ local function AskQuestion19(sceneGroup)
     answer3.y = answerPosition3Y
 
     -- insert the text objects into this scene
-    sceneGroup:insert(question19Text)
-    sceneGroup:insert(question19CorrectAnswer)
-    sceneGroup:insert(question19Answer1)
-    sceneGroup:insert(question19Answer2)
-    sceneGroup:insert(question19Answer3)
+    sceneGroup:insert(questionText)
+    sceneGroup:insert(questionCorrectAnswer)
+    sceneGroup:insert(answer1)
+    sceneGroup:insert(answer2)
+    sceneGroup:insert(answer3)
 
-    correctAnswer = question19CorrectAnswer
-    wrongAnswer1 = question19Answer1
-    wrongAnswer2 = question19Answer2
-    wrongAnswer3 = question19Answer3
+    correctAnswer = questionCorrectAnswer
+    wrongAnswer1 = answer1
+    wrongAnswer2 = answer2
+    wrongAnswer3 = answer3
 
     questionWasAsked = 19
+
+    -- insert the text objects into this scene
+    sceneGroup:insert(questionText)
+    sceneGroup:insert(questionCorrectAnswer)
+    sceneGroup:insert(answer1)
+    sceneGroup:insert(answer2)
+    sceneGroup:insert(answer3)
+
 end
+
 
 -- twentyth question
 local function AskQuestion20(sceneGroup)
     -- set the question text
-    questionText = display.newText("Which color is a tertiary (third level) colour?", 0, 0, Arial, textSize)
+    questionText.text = "Which color is a tertiary (third level) colour?"
     questionText:setTextColor(244/255, 244/255, 244/255)
     questionText.x = textPositionX
     questionText.y = textPositionY
 
     -- set the correct answer text, text color, and position (2nd)
-    questionCorrectAnswer = display.newText("RED-ORANGE", 0, 0, Arial, textSize)
+    questionCorrectAnswer.text = "RED-ORANGE"
     questionCorrectAnswer:setTextColor(1, 0, 0)
     questionCorrectAnswer.x = answerPosition2X
     questionCorrectAnswer.y = answerPosition2Y
 
     -- set the first wrong answer text, text color, and position
-    answer1 = display.newText("YELLOW-BLUE", 0, 0, Arial, textSize)
+    answer1.text = "YELLOW-BLUE"
     answer1:setTextColor(0, 1, 0)
     answer1.x = answerPosition1X
     answer1.y = answerPosition1Y
 
     -- set the second wrong answer text, text color, and position
-    answer2 = display.newText("RED-GREEN", 0, 0, Arial, textSize)
+    answer2.text = "RED-GREEN"
     answer2:setTextColor(127/255, 0, 1)
     answer2.x = answerPosition3X
     answer2.y = answerPosition3Y
 
     -- set the third wrong answer text, text color, and position
-    answer3 = display.newText("YELLOW-PURPLE", 0, 0, Arial, textSize)
+    answer3.text = "YELLOW-PURPLE"
     answer3:setTextColor(1, 51/255, 1)
     answer3.x = answerPosition4X
     answer3.y = answerPosition4Y
 
-    -- insert the text objects into this scene
-    sceneGroup:insert(question20Text)
-    sceneGroup:insert(question20CorrectAnswer)
-    sceneGroup:insert(question20Answer1)
-    sceneGroup:insert(question20Answer2)
-    sceneGroup:insert(question20Answer3)
-
-    correctAnswer = question20CorrectAnswer
-    wrongAnswer1 = question20Answer1
-    wrongAnswer2 = question20Answer2
-    wrongAnswer3 = question20Answer3
-
-    questionWasAsked = 20
+    correctAnswer = questionCorrectAnswer
+    wrongAnswer1 = answer1
+    wrongAnswer2 = answer2
+    wrongAnswer3 = answer3
 end
-
--- insert the text objects into this scene
-sceneGroup:insert(questionText)
-sceneGroup:insert(questionCorrectAnswer)
-sceneGroup:insert(questionAnswer1)
-sceneGroup:insert(questionAnswer2)
-sceneGroup:insert(questionAnswer3)
 
 -- ask a question
 function AskQuestion(sceneGroup)
     -- choose out of the possoble 20 questions
-    questionNumber = math.random(1, 20)
+    questionNumber = 20--math.random(1, 20)
 
     -- based on the questionNumber, call the function that will create that question. They are seperate because there was too
     --many lines of code in a single function if theye ere all together - there was an error because of it
@@ -1111,17 +1100,13 @@ function scene:create( event )
     cover = display.newRoundedRect(display.contentCenterX, display.contentCenterY, display.contentWidth*0.8, display.contentHeight*0.95, 50 )
     --setting its colour
     cover:setFillColor(96/255, 96/255, 96/255)
-
-    -- create the question text object
-    questionText = display.newText("", display.contentCenterX, display.contentCenterY*3/8, Arial, 75)  
-
+ 
     -----------------------------------------------------------------------------------------
 
     -- insert all objects for this scene into the scene group
     sceneGroup:insert(bkg)
     sceneGroup:insert(cover)
     sceneGroup:insert(questionText)
-
 end --function scene:create( event )
 
 -----------------------------------------------------------------------------------------
