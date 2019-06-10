@@ -155,21 +155,18 @@ function scene:create( event )
 
     --third car (logo car)
     car3 = display.newImage("Images/Orange Car.png", 0, 0)
-    car3.x = 900
-    car3.y = 270
-    car3:rotate(4)
+    car3.x = 100
+    car3.y = 530
 
     -- second car (green car)
     car2 = display.newImage("Images/Green Car.png", 0, 0)
-    car2.x = display.contentWidth*-0.5/5
-    car2.y = display.contentHeight/1.74
-    car2:rotate(-33)
+    car2.x = 100
+    car2.y = 550
 
     --first car (blue car)
     car1 = display.newImage("Images/Blue Car.png", 0, 0)
-    car1.x = display.contentWidth/2
-    car1.y = display.contentHeight*4.3/8
-    --car1:rotate(20)
+    car1.x = 100
+    car1.y = 550
 
     -- logo car (user's car) (smallest car)
     logoCar = display.newImage("Images/CompanyLogo.png", 0, 0)

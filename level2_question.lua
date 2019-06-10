@@ -501,13 +501,6 @@ local function AskQuestion8(sceneGroup)
     answer3.x = answerPosition4X
     answer3.y = answerPosition4Y
 
-    -- insert the text objects into this scene
-    sceneGroup:insert(question8Text)
-    sceneGroup:insert(question8CorrectAnswer)
-    sceneGroup:insert(question8Answer1)
-    sceneGroup:insert(question8Answer2)
-    sceneGroup:insert(question8Answer3)
-
     correctAnswer = questionCorrectAnswer
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
@@ -813,12 +806,10 @@ local function AskQuestion16(sceneGroup)
     answer3.x = answerPosition3X
     answer3.y = answerPosition3Y
 
-    correctAnswer = question16CorrectAnswer
-    wrongAnswer1 = question16Answer1
-    wrongAnswer2 = question16Answer2
-    wrongAnswer3 = question16Answer3
-
-    questionWasAsked = 16
+    correctAnswer = questionCorrectAnswer
+    wrongAnswer1 = answer1
+    wrongAnswer2 = answer2
+    wrongAnswer3 = answer3
 end
 
 -- seventeenth question
@@ -853,19 +844,10 @@ local function AskQuestion17(sceneGroup)
     answer3.x = answerPosition4X
     answer3.y = answerPosition4Y
 
-    -- insert the text objects into this scene
-    sceneGroup:insert(question17Text)
-    sceneGroup:insert(question17CorrectAnswer)
-    sceneGroup:insert(question17Answer1)
-    sceneGroup:insert(question17Answer2)
-    sceneGroup:insert(question17Answer3)
-
-    correctAnswer = question17CorrectAnswer
-    wrongAnswer1 = question17Answer1
-    wrongAnswer2 = question17Answer2
-    wrongAnswer3 = question17Answer3
-
-    questionWasAsked = 17
+    correctAnswer = questionCorrectAnswer
+    wrongAnswer1 = answer1
+    wrongAnswer2 = answer2
+    wrongAnswer3 = answer3
 end
 
 -- eigtheenth question
@@ -900,19 +882,10 @@ local function AskQuestion18(sceneGroup)
     answer3.x = answerPosition4X
     answer3.y = answerPosition4Y
 
-    -- insert the text objects into this scene
-    sceneGroup:insert(question18Text)
-    sceneGroup:insert(question18CorrectAnswer)
-    sceneGroup:insert(question18Answer1)
-    sceneGroup:insert(question18Answer2)
-    sceneGroup:insert(question18Answer3)
-
-    correctAnswer = question18CorrectAnswer
-    wrongAnswer1 = question18Answer1
-    wrongAnswer2 = question18Answer2
-    wrongAnswer3 = question18Answer3
-
-    questionWasAsked = 18
+    correctAnswer = questionCorrectAnswer
+    wrongAnswer1 = answer1
+    wrongAnswer2 = answer2
+    wrongAnswer3 = answer3
 end
 
 -- nineteenth question
@@ -947,29 +920,11 @@ local function AskQuestion19(sceneGroup)
     answer3.x = answerPosition3X
     answer3.y = answerPosition3Y
 
-    -- insert the text objects into this scene
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
-
     correctAnswer = questionCorrectAnswer
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    questionWasAsked = 19
-
-    -- insert the text objects into this scene
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
-
 end
-
 
 -- twentyth question
 local function AskQuestion20(sceneGroup)
@@ -1012,7 +967,7 @@ end
 -- ask a question
 function AskQuestion(sceneGroup)
     -- choose out of the possoble 20 questions
-    questionNumber = 20--math.random(1, 20)
+    questionNumber = math.random(1, 20)
 
     -- based on the questionNumber, call the function that will create that question. They are seperate because there was too
     --many lines of code in a single function if theye ere all together - there was an error because of it
