@@ -165,7 +165,7 @@ function ResumeLevel1()
     
     if (questionsAnswered == 2) then
         -- after getting 2 questions right, go to the you win screen
-        composer.gotoScene( "level_select" )
+        composer.gotoScene( "you_win" )
     end
 end
 
