@@ -2,7 +2,7 @@
 --
 -- level1_screen.lua
 -- Created by: Bryan R
--- Date: May 16, 2017
+-- Date: 
 -- Description: this is the level three question
 -----------------------------------------------------------------------------------------
 

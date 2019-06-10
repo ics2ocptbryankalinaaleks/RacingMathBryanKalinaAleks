@@ -78,6 +78,8 @@ end
 local function Movelogocar(event)
     --print ("***Movelogocar: logocar.x = " .. logocar.x)
     logocar.x = logocar.x + scrollSpeed
+    print ("***logocar.x = " .. logocar.x)
+
     if (logocar.x >= 800) then
 
         Runtime:removeEventListener("enterFrame", Movelogocar)
@@ -157,9 +159,7 @@ function ResumeLevel3()
     else    
         Runtime:addEventListener("enterFrame", Movelogocar)
     end
-
-
-    
+ 
 end
 
 -----------------------------------------------------------------------------------------
