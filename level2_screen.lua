@@ -83,7 +83,13 @@ local function MoveLogoCar()
         Runtime:removeEventListener("enterFrame", MoveLogoCar)
 
         if (logoCar.x >= 900) then
-            composer.gotoScene("you_win")
+
+            if (car1.x >= 900 or car2.x >= 900 or car3.x >= 900) then
+                composer.gotoScene("you_lose")
+            else 
+                composer.gotoScene("you_win")
+            end
+
         else 
             composer.gotoScene("level2_question")
         end
