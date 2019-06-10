@@ -74,40 +74,66 @@ local function AskQuestion()
     
 end
 
+local function Movelogocar3(event)
+
+    logocar.x = logocar.x + scrollSpeed
+    print ("***logocar.x = " .. logocar.x)
+
+    if (logocar.x >= 800) then
+        scrollSpeed = 0
+        scrollSpeed2 = 0
+        scrollSpeed3 = 0
+        scrollSpeed4 = 0
+
+        Runtime:removeEventListener("enterFrame", Movelogocar3)
+        print ("***Removed Movelogocar event listener")
+
+        -- Ask another question
+        AskQuestion()
+
+    end    
+
+end
+
+
+local function Movelogocar2(event)
+
+    logocar.x = logocar.x + scrollSpeed
+    print ("***logocar.x = " .. logocar.x)
+
+    if (logocar.x >= 500) then
+        scrollSpeed = 0
+        scrollSpeed2 = 0
+        scrollSpeed3 = 0
+        scrollSpeed4 = 0
+
+        Runtime:removeEventListener("enterFrame", Movelogocar2)
+        print ("***Removed Movelogocar event listener")
+
+        -- Ask another question
+        AskQuestion()
+
+    end    
+
+end
+
 
 local function Movelogocar(event)
     --print ("***Movelogocar: logocar.x = " .. logocar.x)
     logocar.x = logocar.x + scrollSpeed
     print ("***logocar.x = " .. logocar.x)
 
-    if (logocar.x >= 800) then
+    if (logocar.x >= 300) then
+        scrollSpeed = 0
+        scrollSpeed2 = 0
+        scrollSpeed3 = 0
+        scrollSpeed4 = 0
 
         Runtime:removeEventListener("enterFrame", Movelogocar)
         print ("***Removed Movelogocar event listener")
 
         -- Ask another question
         AskQuestion()
-        --Runtime:addEventListener("enterFrame", Movelogocar)        
-        --print ("***Called Movelogocar event listener")        
-
-    elseif (logocar.x >= 500) then
-
-        Runtime:removeEventListener("enterFrame", Movelogocar)
-        print ("***Removed Movelogocar event listener")
-
-        -- Ask another question
-        AskQuestion()
-        --Runtime:addEventListener("enterFrame", Movelogocar)        
-        --print ("***Called Movelogocar event listener")
-    elseif (logocar.x >= 300) then
-
-        Runtime:removeEventListener("enterFrame", Movelogocar)
-        print ("***Removed Movelogocar event listener")
-
-        -- Ask another question
-        AskQuestion()
-        --Runtime:addEventListener("enterFrame", Movelogocar)        
-        --print ("***Called Movelogocar event listener")
 
     end    
 end
@@ -146,6 +172,9 @@ end
 -------------------------------------------------------------
   
 function ResumeLevel3()
+
+    print ("***Inside ResumeLevel3")
+    print ("***questionsAnswered = " .. questionsAnswered)
     -- reset the speed
     scrollSpeed = 1.4
     scrollSpeed2 = -1.05
@@ -154,10 +183,19 @@ function ResumeLevel3()
 
     UpdateHearts()
     questionsAnswered = questionsAnswered + 1
-    if (questionsAnswered == 3) then
-        YouWinTransition()
-    else    
-        Runtime:addEventListener("enterFrame", Movelogocar)
+
+    print ("***questionsAnswered = " .. questionsAnswered)
+
+    if (questionsAnswered == 1) then
+        Runtime:removeEventListener("enterFrame", Movelogocar)
+        Runtime:addEventListener("enterFrame", Movelogocar2)
+        print ("***Called Movelogocar2")
+    elseif (questionsAnswered == 2) then
+        Runtime:removeEventListener("enterFrame", Movelogocar2)
+        Runtime:addEventListener("enterFrame", Movelogocar3)
+    elseif (questionsAnswered == 3) then
+        Runtime:removeEventListener("enterFrame", Movelogocar3)
+        YouWinTransition()   
     end
  
 end
@@ -266,12 +304,8 @@ function scene:hide( event )
     elseif ( phase == "did" ) then
         -- Called immediately after scene goes off screen.
         Runtime:removeEventListener("enterFrame", Movelogocar)
-        print ("***Hide: Removed Movelogocar event listener")
-
-        --Runtime:removeEventListener("enterFrame", MovelogocarDown)
-        --print ("***Hide: Removed MovelogocarDown event listener")
-        --Runtime:removeEventListener("enterFrame", MovelogocarRight)
-        --print ("***Hide: Removed MovelogocarRight event listener")
+        Runtime:removeEventListener("enterFrame", Movelogocar2)
+        Runtime:removeEventListener("enterFrame", Movelogocar3)
     end
 
 end --function scene:hide( event )
