@@ -32,11 +32,11 @@ local scene = composer.newScene( sceneName )
 -----------------------------------------------------------------------------------------
 
 -- The local variables for this scene
-local questionText
-local questionCorrectAnswer
-local answer1
-local answer2
-local answer3 
+local questionText = display.newText("", 0, 0, Arial, textSize)
+local questionCorrectAnswer = display.newText("", 0, 0, Arial, textSize)
+local answer1 = display.newText("", 0, 0, Arial, textSize)
+local answer2 = display.newText("", 0, 0, Arial, textSize)
+local answer3 = display.newText("", 0, 0, Arial, textSize)
 
 -- 
 local bkg
@@ -104,12 +104,12 @@ local function StartCars()
 end
 
 -- hide objects for question 1
-local function HideTextObjectsQuestion()
+local function HideTextObjects()
     questionText.isVisible = false
     correctAnswer.isVisible = false
     answer1.isVisible = false
     answer2.isVisible = false
-    answer2.isVisible = false
+    answer3.isVisible = false
 end
 
 --making transition to next scene
@@ -117,7 +117,7 @@ local function BackToLevel2()
     StartCars()
 
     -- hide all of the text objects
-        HideTextObjectsQuestion()
+        HideTextObjects()
 
 
     composer.hideOverlay("crossFade", 400 )
@@ -243,13 +243,6 @@ local function AskQuestion1(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- second question
@@ -288,13 +281,6 @@ local function AskQuestion2(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- third question
@@ -333,13 +319,6 @@ local function AskQuestion3(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- fourth question
@@ -378,13 +357,6 @@ local function AskQuestion4(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- fifth question
@@ -423,13 +395,6 @@ local function AskQuestion5(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- sixth question
@@ -468,13 +433,6 @@ local function AskQuestion6(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- seventh question
@@ -513,13 +471,6 @@ local function AskQuestion7(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- eigth question
@@ -554,24 +505,10 @@ local function AskQuestion8(sceneGroup)
     answer3.x = answerPosition4X
     answer3.y = answerPosition4Y
 
-    -- insert the text objects into this scene
-    sceneGroup:insert(question8Text)
-    sceneGroup:insert(question8CorrectAnswer)
-    sceneGroup:insert(question8Answer1)
-    sceneGroup:insert(question8Answer2)
-    sceneGroup:insert(question8Answer3)
-
     correctAnswer = questionCorrectAnswer
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- ninth question
@@ -610,13 +547,6 @@ local function AskQuestion9(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- tenth question
@@ -655,13 +585,6 @@ local function AskQuestion10(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- eleventh question
@@ -700,13 +623,6 @@ local function AskQuestion11(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- twelveth question
@@ -745,13 +661,6 @@ local function AskQuestion12(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- thirteenth question
@@ -790,13 +699,6 @@ local function AskQuestion13(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- fourteenth question
@@ -835,13 +737,6 @@ local function AskQuestion14(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- fifteenth question
@@ -880,13 +775,6 @@ local function AskQuestion15(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- sixteenth question
@@ -921,19 +809,10 @@ local function AskQuestion16(sceneGroup)
     answer3.x = answerPosition3X
     answer3.y = answerPosition3Y
 
-
     correctAnswer = questionCorrectAnswer
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- seventeenth question
@@ -968,18 +847,10 @@ local function AskQuestion17(sceneGroup)
     answer3.x = answerPosition4X
     answer3.y = answerPosition4Y
 
-
     correctAnswer = questionCorrectAnswer
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- eigtheenth question
@@ -1014,18 +885,10 @@ local function AskQuestion18(sceneGroup)
     answer3.x = answerPosition4X
     answer3.y = answerPosition4Y
 
-
     correctAnswer = questionCorrectAnswer
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- nineteenth question
@@ -1060,18 +923,10 @@ local function AskQuestion19(sceneGroup)
     answer3.x = answerPosition3X
     answer3.y = answerPosition3Y
 
-
     correctAnswer = questionCorrectAnswer
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
 
 -- twentyth question
@@ -1111,26 +966,12 @@ local function AskQuestion20(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
-
-    -- insert text objects
-    sceneGroup:insert(questionText)
-    sceneGroup:insert(questionCorrectAnswer)
-    sceneGroup:insert(answer1)
-    sceneGroup:insert(answer2)
-    sceneGroup:insert(answer3)
 end
-
--- insert the text objects into this scene
-sceneGroup:insert(questionText)
-sceneGroup:insert(questionCorrectAnswer)
-sceneGroup:insert(questionAnswer1)
-sceneGroup:insert(questionAnswer2)
-sceneGroup:insert(questionAnswer3)
 
 -- ask a question
 function AskQuestion(sceneGroup)
     -- choose out of the possoble 20 questions
-    questionNumber = 20--math.random(1, 20)
+    questionNumber = math.random(1, 20)
 
     --[[    based on the questionNumber, call the function that will create that question. They are seperate because there was too
     many lines of code in a single function if they are all together - there was an error because of it    ]]--
