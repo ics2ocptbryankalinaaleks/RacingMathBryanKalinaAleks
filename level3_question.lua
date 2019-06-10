@@ -64,7 +64,7 @@ local function BackToLevel3()
 end 
 
 -----------------------------------------------------------------------------------------
---checking to see if the user pressed the right answer and bring them back to level 1
+--checking to see if the user pressed the right answer and bring them back to level 3
 local function TouchListenerAnswerText(touch)
     
     if (touch.phase == "ended") then
@@ -73,19 +73,21 @@ local function TouchListenerAnswerText(touch)
     end 
 end
 
---checking to see if the user pressed the right answer and bring them back to level 1
+--checking to see if the user pressed the right answer and bring them back to level 3
 local function TouchListenerWrongText1(touch)
     
     if (touch.phase == "ended") then
-        
+        lives = lives - 1
+
         BackToLevel3()  
     end 
 end
 
---checking to see if the user pressed the right answer and bring them back to level 1
+--checking to see if the user pressed the right answer and bring them back to level 3
 local function TouchListenerWrongText2(touch)
     
     if (touch.phase == "ended") then
+        lives = lives - 1
 
         BackToLevel3()
         
@@ -95,6 +97,7 @@ end
 local function TouchListenerWrongText3(touch)
     
     if (touch.phase == "ended") then
+        lives = lives - 1
 
         BackToLevel3()
         
@@ -103,8 +106,8 @@ end
 
 
 --adding the event listeners 
-local function AddTextListeners ( )
-    answerText:addEventListener( "touch", TouchListenerAnswerText )
+local function AddTextListeners()
+    answerText:addEventListener( "touch", TouchListenerAnswerText)
     wrongText1:addEventListener( "touch", TouchListenerWrongText1)
     wrongText2:addEventListener( "touch", TouchListenerWrongText2)
     wrongText3:addEventListener( "touch", TouchListenerWrongText3)
@@ -113,7 +116,7 @@ end
 
 --removing the event listeners
 local function RemoveTextListeners()
-    answerText:removeEventListener( "touch", TouchListenerAnswerText )
+    answerText:removeEventListener( "touch", TouchListenerAnswerText)
     wrongText1:removeEventListener( "touch", TouchListenerWrongText1)
     wrongText2:removeEventListener( "touch", TouchListenerWrongText2)
     wrongText3:removeEventListener( "touch", TouchListenerWrongText3)
@@ -153,8 +156,8 @@ local function AskQuestion()
 
     elseif (randomQuestion == 5) then
         questionText.text = "how does the sun help plants?"
-        answerText.text = "turn the energy from the sun into food"
-        wrongText1.text = "uses the enegy to create pollen"
+        answerText.text = "turn the energy\nfrom the sun into food"
+        wrongText1.text = "uses the enegy\nto create pollen"
         wrongText2.text = "?,?,?"
         wrongText3.text = "?,?,?" 
 
@@ -189,9 +192,9 @@ local function AskQuestion()
     elseif (randomQuestion == 10) then
         questionText.text = "How do animals help plants?"
         answerText.text = "Animals distribute pollen for flowers"
-        wrongText1.text = "Animals eat weeds that take nutrients from other plants"
+        wrongText1.text = "Animals eat weeds that take\nnutrients from other plants"
         wrongText2.text = "Animals release carbon dioxide plants need"
-        wrongText3.text = "All of the above"
+        wrongText3.text = "All of them"
 
     elseif (randomQuestion == 11) then
         questionText.text = ""
@@ -331,6 +334,7 @@ local function PositionAnswers()
             
     end
 end
+
 
 -----------------------------------------------------------------------------------------
 -- GLOBAL SCENE FUNCTIONS
