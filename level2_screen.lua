@@ -174,11 +174,7 @@ function scene:create( event )
     car1.x = display.contentWidth*1/8
     car1.y = display.contentHeight*5.9/8.3
 
-    -- logo car (user's car) (smallest car)
-    logoCar = display.newImage("Images/CompanyLogo.png", 0, 0)
-    logoCar.x = display.contentWidth*1/8
-    logoCar.y = display.contentHeight*5.9/8
-    logoCar:scale(0.1, 0.1)
+
 
         -- Insert background image into the scene group in order to ONLY be associated with this scene
     sceneGroup:insert(bkg_image)
@@ -200,7 +196,11 @@ function scene:show( event )
     -----------------------------------------------------------------------------------------
 
     if ( phase == "will" ) then
-
+    -- logo car (user's car) (smallest car)
+    logoCar = display.newImage("Images/CompanyLogo.png", 0, 0)
+    logoCar.x = display.contentWidth*1/8
+    logoCar.y = display.contentHeight*5.9/8
+    logoCar:scale(0.1, 0.1)
         -- Called when the scene is still off screen (but is about to come on screen).
         --[[logoCar.x = display.contentWidth*1/8
         logoCar.y = display.contentHeight*5.9/8

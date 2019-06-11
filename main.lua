@@ -13,6 +13,4 @@ local composer = require( "composer" )
 
 -- Go to the intro screen
 
-composer.gotoScene( "main_menu" )
-
-lives = 3
+composer.gotoScene( "splash_screen" )
