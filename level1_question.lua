@@ -73,6 +73,7 @@ local function BackToLevel1()
     composer.hideOverlay("crossFade", 400 )
   
     ResumeLevel1()
+
 end 
 
 -----------------------------------------------------------------------------------------
