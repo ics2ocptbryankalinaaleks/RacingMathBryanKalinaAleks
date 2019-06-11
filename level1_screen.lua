@@ -64,7 +64,7 @@ local function AskQuestion()
     scrollSpeed4 = 0
     composer.showOverlay( "level1_question", { isModal = true, effect = "fade", time = 100})
     questionsAnswered = questionsAnswered + 1
-    
+
     if (useranswer ~= answer) then
         lives = lives - 1
     end
@@ -75,7 +75,6 @@ local function MovelogocarRight(event)
     --print ("***MovelogocarRight: logocar.x = " .. logocar.x)
     logocar.x = logocar.x + scrollSpeed
     logocar:rotate(10)
-
 end
 
 -- moving the car down
@@ -95,7 +94,6 @@ local function MovelogocarDown(event)
         AskQuestion()
         Runtime:addEventListener("enterFrame", MovelogocarRight)
         print ("***Called MovelogocarRight event listener")
-
     end
 end
 
@@ -122,27 +120,27 @@ local function Movelogocar(event)
 end
 
 local function UpdateHearts()
-    if (numLives == 3) then
+    if (lives == 3) then
         -- update hearts
         heart1.isVisible = true
         heart2.isVisible = true   
         heart3.isVisible = true
         timer.performWithDelay(200, ReplaceCharacter) 
 
-    elseif (numLives == 2) then
+    elseif (lives == 2) then
         -- update hearts
         heart1.isVisible = true
         heart2.isVisible = true
         heart3.isVisible = false
         timer.performWithDelay(200, YouLoseTransition)
-    elseif (numLives == 1) then
+    elseif (lives == 1) then
         -- update hearts
         heart1.isVisible = true
         heart2.isVisible = false
         heart3.isVisible = false
         timer.performWithDelay(200, ReplaceCharacter) 
 
-    elseif (numLives == 0) then
+    elseif (lives == 0) then
         -- update hearts
         heart1.isVisible = false
         heart2.isVisible = false
@@ -162,7 +160,8 @@ function ResumeLevel1()
     scrollSpeed4 = -1.1
 
     UpdateHearts()
-    
+
+
     if (questionsAnswered == 2) then
         -- after getting 2 questions right, go to the you win screen
         composer.gotoScene( "you_win" )
