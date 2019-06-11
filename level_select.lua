@@ -48,15 +48,15 @@ local function BackTransition( )
 end
 
 local function Level1Transition( )       
-    composer.gotoScene( "level1_screen", {effect = "zoomInOut", time = 500})
+    composer.gotoScene( "level1_transfer_screen", {effect = "zoomInOut", time = 500})
 end 
 
 local function Level2Transition( )       
-    composer.gotoScene( "level2_screen", {effect = "zoomInOut", time = 500})
+    composer.gotoScene( "level2_transfer_screen", {effect = "zoomInOut", time = 500})
 end 
 
 local function Level3Transition( )       
-    composer.gotoScene( "level3_screen", {effect = "zoomInOut", time = 500})
+    composer.gotoScene( "level3_transfer_screen", {effect = "zoomInOut", time = 500})
 end 
 
 -------------------------------------------------------------
