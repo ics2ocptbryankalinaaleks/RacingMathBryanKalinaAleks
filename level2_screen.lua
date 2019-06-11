@@ -83,7 +83,13 @@ local function MoveLogoCar()
         Runtime:removeEventListener("enterFrame", MoveLogoCar)
 
         if (logoCar.x >= 900) then
-            composer.gotoScene("you_win")
+
+            if (car1.x >= 900 or car2.x >= 900 or car3.x >= 900) then
+                composer.gotoScene("you_lose")
+            else 
+                composer.gotoScene("you_win")
+            end
+
         else 
             composer.gotoScene("level2_question")
         end
@@ -155,18 +161,18 @@ function scene:create( event )
 
     --third car (logo car)
     car3 = display.newImage("Images/Orange Car.png", 0, 0)
-    car3.x = 100
-    car3.y = 530
+    car3.x = display.contentWidth*1/8
+    car3.y = display.contentHeight*5.9/8.6
 
     -- second car (green car)
     car2 = display.newImage("Images/Green Car.png", 0, 0)
-    car2.x = 100
-    car2.y = 550
+    car2.x = display.contentWidth*1/8
+    car2.y = display.contentHeight*5.9/8.3
 
     --first car (blue car)
     car1 = display.newImage("Images/Blue Car.png", 0, 0)
-    car1.x = 100
-    car1.y = 550
+    car1.x = display.contentWidth*1/8
+    car1.y = display.contentHeight*5.9/8.3
 
 
 

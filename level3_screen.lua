@@ -56,6 +56,14 @@ local heart3
 -- LOCAL & GLOBAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
 
+local function YouLoseTransition()
+    composer.gotoScene( "you_lose" )
+end
+
+local function YouWinTransition()
+    composer.gotoScene( "you_win" )
+end
+
 local function AskQuestion()
     -- set all scroll speeds to 0 to stop the car
     scrollSpeed = 0
@@ -63,45 +71,69 @@ local function AskQuestion()
     scrollSpeed3 = 0
     scrollSpeed4 = 0
     composer.showOverlay( "level3_question", { isModal = true, effect = "fade", time = 100})
-    questionsAnswered = questionsAnswered + 1
     
-    if (useranswer ~= answer) then
-        lives = lives - 1
-    end
 end
 
-local function MovelogocarRight(event)
-    --print ("***MovelogocarRight: logocar.x = " .. logocar.x)
+local function Movelogocar3(event)
+
     logocar.x = logocar.x + scrollSpeed
+    print ("***logocar.x = " .. logocar.x)
 
-    if (logocar.x >= 500) then
+    if (logocar.x >= 800) then
+        scrollSpeed = 0
+        scrollSpeed2 = 0
+        scrollSpeed3 = 0
+        scrollSpeed4 = 0
 
-        Runtime:removeEventListener("enterFrame", Movelogocar)
+        Runtime:removeEventListener("enterFrame", Movelogocar3)
         print ("***Removed Movelogocar event listener")
 
         -- Ask another question
         AskQuestion()
-        Runtime:addEventListener("enterFrame", MovelogocarRight)        
-        print ("***Called MovelogocarDown event listener")
-    end
+
+    end    
 
 end
+
+
+local function Movelogocar2(event)
+
+    logocar.x = logocar.x + scrollSpeed
+    print ("***logocar.x = " .. logocar.x)
+
+    if (logocar.x >= 500) then
+        scrollSpeed = 0
+        scrollSpeed2 = 0
+        scrollSpeed3 = 0
+        scrollSpeed4 = 0
+
+        Runtime:removeEventListener("enterFrame", Movelogocar2)
+        print ("***Removed Movelogocar event listener")
+
+        -- Ask another question
+        AskQuestion()
+
+    end    
+
+end
+
 
 local function Movelogocar(event)
     --print ("***Movelogocar: logocar.x = " .. logocar.x)
     logocar.x = logocar.x + scrollSpeed
+    print ("***logocar.x = " .. logocar.x)
 
-
-    
     if (logocar.x >= 300) then
+        scrollSpeed = 0
+        scrollSpeed2 = 0
+        scrollSpeed3 = 0
+        scrollSpeed4 = 0
 
         Runtime:removeEventListener("enterFrame", Movelogocar)
         print ("***Removed Movelogocar event listener")
 
         -- Ask another question
         AskQuestion()
-        Runtime:addEventListener("enterFrame", MovelogocarRight)        
-        print ("***Called MovelogocarDown event listener")
 
     end    
 end
@@ -140,6 +172,9 @@ end
 -------------------------------------------------------------
   
 function ResumeLevel3()
+
+    print ("***Inside ResumeLevel3")
+    print ("***questionsAnswered = " .. questionsAnswered)
     -- reset the speed
     scrollSpeed = 1.4
     scrollSpeed2 = -1.05
@@ -147,7 +182,22 @@ function ResumeLevel3()
     scrollSpeed4 = -1.1
 
     UpdateHearts()
-    
+    questionsAnswered = questionsAnswered + 1
+
+    print ("***questionsAnswered = " .. questionsAnswered)
+
+    if (questionsAnswered == 1) then
+        Runtime:removeEventListener("enterFrame", Movelogocar)
+        Runtime:addEventListener("enterFrame", Movelogocar2)
+        print ("***Called Movelogocar2")
+    elseif (questionsAnswered == 2) then
+        Runtime:removeEventListener("enterFrame", Movelogocar2)
+        Runtime:addEventListener("enterFrame", Movelogocar3)
+    elseif (questionsAnswered == 3) then
+        Runtime:removeEventListener("enterFrame", Movelogocar3)
+        YouWinTransition()   
+    end
+ 
 end
 
 -----------------------------------------------------------------------------------------
@@ -170,8 +220,8 @@ function scene:create( event )
     bkg_image.height = display.contentHeight
 
     logocar = display.newImage("Images/CompanyLogo.png", 0, 0)        
-    logocar.x = display.contentWidth*1/8
-    logocar.y = display.contentHeight*5.5/8
+    logocar.x = 100
+    logocar.y = 680
     logocar:scale(0.1, 0.1)
 
     heart1 = display.newImageRect("Images/heart.png", 80, 80)
@@ -212,7 +262,8 @@ function scene:show( event )
     if ( phase == "will" ) then
 
         -- Called when the scene is still off screen (but is about to come on screen).
-
+        logocar.x = display.contentWidth*1/8
+        logocar.y = 700
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
@@ -220,11 +271,11 @@ function scene:show( event )
         -- Called when the scene is now on screen.
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
-        logocar.x = display.contentWidth*1/8
-        logocar.y = 700
+
 
         -- reset the questions answered
         questionsAnswered = 0
+        lives=3
         
         -- Ask a question
         UpdateHearts()
@@ -253,12 +304,8 @@ function scene:hide( event )
     elseif ( phase == "did" ) then
         -- Called immediately after scene goes off screen.
         Runtime:removeEventListener("enterFrame", Movelogocar)
-        print ("***Hide: Removed Movelogocar event listener")
-
-        Runtime:removeEventListener("enterFrame", MovelogocarDown)
-        print ("***Hide: Removed MovelogocarDown event listener")
-        Runtime:removeEventListener("enterFrame", MovelogocarRight)
-        print ("***Hide: Removed MovelogocarRight event listener")
+        Runtime:removeEventListener("enterFrame", Movelogocar2)
+        Runtime:removeEventListener("enterFrame", Movelogocar3)
     end
 
 end --function scene:hide( event )
