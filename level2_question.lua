@@ -119,6 +119,8 @@ local function BackToLevel2()
     -- hide all of the text objects
         HideTextObjects()
 
+    -- update the lives (function in level2_screen)
+    UpdateLives()
 
     composer.hideOverlay("crossFade", 400 )
   
@@ -157,6 +159,9 @@ local function TouchListenerWrongAnswer(touch)
         -- make incorrect visible, then hide it after 2 seconds
         incorrect.isVisible = true
         timer.performWithDelay(2000, HideIncorrect)
+
+        -- subtract a life
+        level2Lives = level2Lives - 1
         
         BackToLevel2()  
     end 
@@ -171,6 +176,9 @@ local function TouchListenerWrongAnswer2(touch)
         incorrect.isVisible = true
         timer.performWithDelay(2000, HideIncorrect)
 
+        -- subtract a life
+        level2Lives = level2Lives - 1
+
         BackToLevel2()
         
     end 
@@ -184,6 +192,9 @@ local function TouchListenerWrongAnswer3(touch)
         -- make incorrect visible, then hide it after 2 seconds
         incorrect.isVisible = true
         timer.performWithDelay(2000, HideIncorrect)
+
+        -- subtract a life
+        level2Lives = level2Lives - 1
 
         BackToLevel2()
         
