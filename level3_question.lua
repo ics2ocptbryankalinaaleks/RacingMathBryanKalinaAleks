@@ -135,16 +135,16 @@ local function AskQuestion()
 
     elseif (randomQuestion == 2) then
         questionText.text = "What do roots do?"
-        answerText.text = "soak up food and water"
+        answerText.text = "soak up food\nand water"
         wrongText1.text = "grow food"
-        wrongText2.text = "complete photosynthesis"
+        wrongText2.text = "complete\nphotosynthesis"
         wrongText3.text = "Nothing"
 
     elseif (randomQuestion == 3) then
         questionText.text = "What do plants do to help animals?"
-        answerText.text = "provide food for certain animals"
-        wrongText1.text = "release carbon dioxide animals need"
-        wrongText2.text = "release pollen for animals"
+        answerText.text = "provide food for\ncertain animals"
+        wrongText1.text = "release carbon\ndioxide animals need"
+        wrongText2.text = "release pollen\nfor animals"
         wrongText3.text = "all of the above"
 
     elseif (randomQuestion == 4) then
@@ -191,9 +191,9 @@ local function AskQuestion()
 
     elseif (randomQuestion == 10) then
         questionText.text = "How do animals help plants?"
-        answerText.text = "Animals distribute pollen for flowers"
-        wrongText1.text = "Animals eat weeds that take\nnutrients from other plants"
-        wrongText2.text = "Animals release carbon dioxide plants need"
+        answerText.text = "Animals distribute\npollen for flowers"
+        wrongText1.text = "Animals eat weeds\nthat take\nnutrients from\nother plants"
+        wrongText2.text = "Animals release\ncarbon dioxide\nplants need"
         wrongText3.text = "All of them"
 
     elseif (randomQuestion == 11) then
