@@ -47,18 +47,25 @@ local carsAreMoving = 0
 -----------------------------------------------------------------------------------------
 -- GLOBAL VARIABLES
 -----------------------------------------------------------------------------------------
--- scrollspeeds
+-- hearts (they need to be global variables so that the function that hides the hearts (which is in
+-- level2_question) can be called without an error)
+heart1 = display.newImageRect("Images/heart.png", 80, 80)
+heart2 = display.newImageRect("Images/heart.png", 80, 80)
+heart3 = display.newImageRect("Images/heart.png", 80, 80)
 
+-- scrollspeeds
 scrollSpeedLogo = 1
-scrollSpeedCar1 = 1.2
-scrollSpeedCar2 = 1.1
-scrollSpeedCar3 = 1
+scrollSpeedCar1 = 1.3
+scrollSpeedCar2 = 1.2
+scrollSpeedCar3 = 1.1
 scrollSpeedLogoAfterQuestion1 = 1.3
 scrollSpeedLogoAfterQuestion2 = 1.6
 scrollSpeedLogoAfterQuestion3 = 1.9
 scrollSpeedLogoNew = scrollSpeedLogo
 questionsAnsweredLevel2 = 0
 
+-- lives for level 2
+level2Lives = 3
 -----------------------------------------------------------------------------------------
 --LOCAL SOUNDS
 -----------------------------------------------------------------------------------------
@@ -136,6 +143,40 @@ end
 -- GLOBAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
 
+function UpdateLives()
+    if (level2Lives == 3) then
+
+        -- update lives
+        heart1.isVisible = true
+        heart2.isVisible = true   
+        heart3.isVisible = true
+
+    elseif (level2Lives == 2) then
+
+        -- update lives
+        heart1.isVisible = true
+        heart2.isVisible = true
+        heart3.isVisible = false
+
+    elseif (level2Lives == 1) then
+
+        -- update lives
+        heart1.isVisible = true
+        heart2.isVisible = false
+        heart3.isVisible = false
+
+    elseif (level2Lives == 0) then
+
+        -- update lives
+        heart1.isVisible = false
+        heart2.isVisible = false
+        heart3.isVisible = false
+
+        -- go to the losing screen
+        composer.gotoScene("you_lose")
+    end
+end
+
 -- The function called when the screen doesn't exist
 function scene:create( event )
     -- Creating a group that associates objects with the scene
@@ -175,12 +216,27 @@ function scene:create( event )
     logoCar.y = display.contentHeight*5.9/8
     logoCar:scale(0.1, 0.1)
 
+    heart1.x = 976
+    heart1.y = 50
+    heart1.isVisible = true
+    
+    heart2.x = 896
+    heart2.y = 50
+    heart2.isVisible = true
+    
+    heart3.x = 816
+    heart3.y = 50
+    heart3.isVisible = true
+
     -- Insert background image into the scene group in order to ONLY be associated with this scene
     sceneGroup:insert(bkg_image)
     sceneGroup:insert(car3)
     sceneGroup:insert(car2)
     sceneGroup:insert(car1)
     sceneGroup:insert(logoCar)
+    sceneGroup:insert(heart1)
+    sceneGroup:insert(heart2)
+    sceneGroup:insert(heart3)
 
 end --function scene:create( event )
 
@@ -204,7 +260,7 @@ function scene:show( event )
         -- Example: start timers, begin animation, play audio, etc.
 
         bkgSoundChannel = audio.play( bkgSound, {channel=1, loops=-1})
-        
+
         -- start the cars
         MoveCars()
 
