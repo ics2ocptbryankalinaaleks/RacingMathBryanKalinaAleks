@@ -29,7 +29,7 @@ local scene = composer.newScene( sceneName )
 -- GLOBAL VARIABLES
 -----------------------------------------------------------------------------------------
 
-lives = 3
+
 
 -----------------------------------------------------------------------------------------
 -- LOCAL VARIABLES
@@ -139,27 +139,27 @@ local function Movelogocar(event)
 end
 
 local function UpdateHearts()
-    if (numLives == 3) then
+    if (lives == 3) then
         -- update hearts
         heart1.isVisible = true
         heart2.isVisible = true   
         heart3.isVisible = true
         timer.performWithDelay(200, ReplaceCharacter) 
 
-    elseif (numLives == 2) then
+    elseif (lives == 2) then
         -- update hearts
         heart1.isVisible = true
         heart2.isVisible = true
         heart3.isVisible = false
-        timer.performWithDelay(200, YouLoseTransition)
-    elseif (numLives == 1) then
+        timer.performWithDelay(200, ReplaceCharacter)
+    elseif (lives == 1) then
         -- update hearts
         heart1.isVisible = true
         heart2.isVisible = false
         heart3.isVisible = false
         timer.performWithDelay(200, ReplaceCharacter) 
 
-    elseif (numLives == 0) then
+    elseif (lives == 0) then
         -- update hearts
         heart1.isVisible = false
         heart2.isVisible = false
@@ -275,7 +275,7 @@ function scene:show( event )
 
         -- reset the questions answered
         questionsAnswered = 0
-        lives=3
+        
         
         -- Ask a question
         UpdateHearts()
