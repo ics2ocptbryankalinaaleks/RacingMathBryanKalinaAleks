@@ -51,6 +51,13 @@ local heart1
 local heart2
 local heart3
 
+-----------------------------------------------------------------------------------------
+-- SOUNDS
+-----------------------------------------------------------------------------------------
+
+local bkgSound = audio.loadStream("Sounds/Off Limits.wav")
+local bkgSoundChannel
+
 
 -----------------------------------------------------------------------------------------
 -- LOCAL & GLOBAL SCENE FUNCTIONS
@@ -272,6 +279,7 @@ function scene:show( event )
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
 
+        bkgSoundChannel = audio.play( bkgSound, {channel=1, loops=-1})
 
         -- reset the questions answered
         questionsAnswered = 0
@@ -306,6 +314,7 @@ function scene:hide( event )
         Runtime:removeEventListener("enterFrame", Movelogocar)
         Runtime:removeEventListener("enterFrame", Movelogocar2)
         Runtime:removeEventListener("enterFrame", Movelogocar3)
+        audio.stop(bkgSoundChannel)        
     end
 
 end --function scene:hide( event )
