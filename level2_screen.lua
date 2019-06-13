@@ -263,10 +263,6 @@ function scene:show( event )
 
         -- start the cars
         MoveCars()
-
-
-        -- Ask a question
-
     end
 end 
 -----------------------------------------------------------------------------------------
@@ -287,9 +283,17 @@ function scene:hide( event )
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
+
+        -- stop the sound/music
         audio.stop(bkgSoundChannel)
-        -- Called immediately after scene goes off screen.
-        Runtime:removeEventListener("enterFrame", MovelogoCar)
+
+        -- remove event listeners
+        Runtime:removeEventListener("enterFrame", MoveLogoCar)
+        Runtime:removeEventListener("enterFrame", MoveCar1)
+        Runtime:removeEventListener("enterFrame", MoveCar2)
+        Runtime:removeEventListener("enterFrame", MoveCar3)
+
+
     end
 
 end --function scene:hide( event )
