@@ -1,6 +1,6 @@
 -----------------------------------------------------------------------------------------
 --
--- level1_screen.lua
+-- level3_screen.lua
 -- Created by: Bryan R
 -- Date: 
 -- Description: this is the level three question
@@ -187,14 +187,14 @@ local function AskQuestion()
         answerText.text = "Cave"
         wrongText1.text = "Totem pole"
         wrongText2.text = "Moai"
-        wrongText3.text = "?,?,?"
+        wrongText3.text = "building"
 
     elseif (randomQuestion == 10) then
         questionText.text = "How do animals help plants?"
-        answerText.text = "Animals distribute\npollen for flowers"
+        answerText.text = "all of them"
         wrongText1.text = "Animals eat weeds\nthat take\nnutrients from\nother plants"
         wrongText2.text = "Animals release\ncarbon dioxide\nplants need"
-        wrongText3.text = "All of them"
+        wrongText3.text = "Animals distribute\npollen for flowers"
 
     elseif (randomQuestion == 11) then
         questionText.text = ""

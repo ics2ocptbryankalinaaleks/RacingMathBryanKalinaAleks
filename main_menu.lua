@@ -32,6 +32,8 @@ local scene = composer.newScene( sceneName )
 --GLOBAL VARIABLES
 -----------------------------------------------------------------------------------------
 soundOn = true
+
+lives = 3
 -----------------------------------------------------------------------------------------
 -- LOCAL VARIABLES
 -----------------------------------------------------------------------------------------
@@ -83,7 +85,7 @@ function scene:create( event )
     -----------------------------------------------------------------------------------------
 
     -- Insert the background image and set it to the center of the screen
-    bkg_image = display.newImage("Images/main_menu..jpg")
+    bkg_image = display.newImage("Images/MainMenuKalinaD@2x.png")
     bkg_image.x = display.contentCenterX
     bkg_image.y = display.contentCenterY
     bkg_image.width = display.contentWidth
