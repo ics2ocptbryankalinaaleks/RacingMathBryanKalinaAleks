@@ -87,6 +87,28 @@ local wrongAnswer3
 -- 0 means no question has been asked yet
 local questionWasAsked = 0
 
+-- if the question had been asked, it;s variable will be set to true in order for the question 
+--to not be repeated
+local question1WasAsked = false
+local question2WasAsked = false
+local question3WasAsked = false
+local question4WasAsked = false
+local question5WasAsked = false
+local question6WasAsked = false
+local question7WasAsked = false
+local question8WasAsked = false
+local question9WasAsked = false
+local question10WasAsked = false
+local question11WasAsked = false
+local question12WasAsked = false
+local question13WasAsked = false
+local question14WasAsked = false
+local question15WasAsked = false
+local question16WasAsked = false
+local question17WasAsked = false
+local question18WasAsked = false
+local question19WasAsked = false
+local question20WasAsked = false
 -----------------------------------------------------------------------------------------
 --LOCAL FUNCTIONS
 -----------------------------------------------------------------------------------------
@@ -320,6 +342,8 @@ local function AskQuestion1(sceneGroup)
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
 
+    question1WasAsked = true
+
     PositionAnswers()
 end
 
@@ -359,6 +383,8 @@ local function AskQuestion2(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    question2WasAsked = true
 
     PositionAnswers()
 end
@@ -400,6 +426,8 @@ local function AskQuestion3(sceneGroup)
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
 
+    question3WasAsked = true
+
     PositionAnswers()
 end
 
@@ -439,6 +467,8 @@ local function AskQuestion4(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    question4WasAsked = true
 
     PositionAnswers()
 end
@@ -480,6 +510,8 @@ local function AskQuestion5(sceneGroup)
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
 
+    question5WasAsked = true
+
     PositionAnswers()
 end
 
@@ -519,6 +551,8 @@ local function AskQuestion6(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    question6WasAsked = true
 
     PositionAnswers()
 end
@@ -560,6 +594,8 @@ local function AskQuestion7(sceneGroup)
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
 
+    question7WasAsked = true
+
     PositionAnswers()
 end
 
@@ -599,6 +635,8 @@ local function AskQuestion8(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    question8WasAsked = true
 
     PositionAnswers()
 end
@@ -640,6 +678,8 @@ local function AskQuestion9(sceneGroup)
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
 
+    question9WasAsked = true
+
     PositionAnswers()
 end
 
@@ -679,6 +719,8 @@ local function AskQuestion10(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    question10WasAsked = true
 
     PositionAnswers()
 end
@@ -720,6 +762,8 @@ local function AskQuestion11(sceneGroup)
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
 
+    question11WasAsked = true
+
     PositionAnswers()
 end
 
@@ -759,6 +803,8 @@ local function AskQuestion12(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    question12WasAsked = true
 
     PositionAnswers()
 end
@@ -800,6 +846,8 @@ local function AskQuestion13(sceneGroup)
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
 
+    question13WasAsked = true
+
     PositionAnswers()
 end
 
@@ -839,6 +887,8 @@ local function AskQuestion14(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    question14WasAsked = true
 
     PositionAnswers()
 end
@@ -880,6 +930,8 @@ local function AskQuestion15(sceneGroup)
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
 
+    question15WasAsked = true
+
     PositionAnswers()
 end
 
@@ -919,6 +971,8 @@ local function AskQuestion16(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    question16WasAsked = true
 
     PositionAnswers()
 end
@@ -960,6 +1014,8 @@ local function AskQuestion17(sceneGroup)
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
 
+    question17WasAsked = true
+
     PositionAnswers()
 end
 
@@ -999,6 +1055,8 @@ local function AskQuestion18(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    question18WasAsked = true
 
     PositionAnswers()
 end
@@ -1040,6 +1098,8 @@ local function AskQuestion19(sceneGroup)
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
 
+    question19WasAsked = true
+
     PositionAnswers()
 end
 
@@ -1080,6 +1140,8 @@ local function AskQuestion20(sceneGroup)
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
 
+    question20WasAsked = true
+
     PositionAnswers()
 end
 
@@ -1091,64 +1153,184 @@ function AskQuestion(sceneGroup)
     --[[    based on the questionNumber, call the function that will create that question. They are seperate because there was too
     many lines of code in a single function if they are all together - there was an error because of it    ]]--
     if (questionNumber == 1) then
-        AskQuestion1(sceneGroup)
+
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question1WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion1(sceneGroup)
+        end
 
     elseif (questionNumber == 2) then
-        AskQuestion2(sceneGroup)
+
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question2WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion2(sceneGroup)
+        end
 
     elseif (questionNumber == 3) then
-        AskQuestion3(sceneGroup)
+
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question3WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion3(sceneGroup)
+        end
 
     elseif (questionNumber == 4) then
-        AskQuestion4(sceneGroup)
+        
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question4WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion4(sceneGroup)
+        end
 
     elseif (questionNumber == 5) then
-        AskQuestion5(sceneGroup)
+        
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question5WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion5(sceneGroup)
+        end
 
     elseif (questionNumber == 6) then
-        AskQuestion6(sceneGroup)
+        
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question6WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion6(sceneGroup)
+        end
 
     elseif (questionNumber == 7) then
-        AskQuestion7(sceneGroup)
+        
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question7WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion7(sceneGroup)
+        end
 
     elseif (questionNumber == 8) then
-        AskQuestion8(sceneGroup)
+        
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question8WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion8(sceneGroup)
+        end
 
     elseif (questionNumber == 9) then
-        AskQuestion9(sceneGroup)
+        
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question9WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion9(sceneGroup)
+        end
 
     elseif (questionNumber == 10) then
-        AskQuestion10(sceneGroup)
+        
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question10WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion10(sceneGroup)
+        end
 
     elseif (questionNumber == 11) then
-        AskQuestion11(sceneGroup)
+        
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question11WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion11(sceneGroup)
+        end
 
     elseif (questionNumber == 12) then
-        AskQuestion12(sceneGroup)
+        
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question12WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion12(sceneGroup)
+        end
 
     elseif (questionNumber == 13) then
-        AskQuestion13(sceneGroup)
+        
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question13WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion13(sceneGroup)
+        end
 
     elseif (questionNumber == 14) then
-        AskQuestion14(sceneGroup)
+        
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question14WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion14(sceneGroup)
+        end
 
     elseif (questionNumber == 15) then
-        AskQuestion15(sceneGroup)
+        
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question15WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion15(sceneGroup)
+        end
 
     elseif (questionNumber == 16) then
-        AskQuestion16(sceneGroup)
+        
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question16WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion16(sceneGroup)
+        end
 
     elseif (questionNumber == 17) then
-        AskQuestion17(sceneGroup)
+        
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question17WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion17(sceneGroup)
+        end
 
     elseif (questionNumber == 18) then
-        AskQuestion18(sceneGroup)
+        
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question18WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion18(sceneGroup)
+        end
 
     elseif (questionNumber == 19) then
-        AskQuestion19(sceneGroup)
+        
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question19WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion19(sceneGroup)
+        end
 
     elseif (questionNumber == 20) then
-        AskQuestion20(sceneGroup)
+        
+        -- make sure this question hasn't been asked before. If it has, re-call the function, if not, ask the question
+        if (question20WasAsked == true) then
+            AskQuestion(sceneGroup)
+        else
+            AskQuestion20(sceneGroup)
+        end
 
     end
 end
