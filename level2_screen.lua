@@ -65,7 +65,6 @@ local bkgSoundChannel
 -- LOCAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
 
-
 local function MoveLogoCar()
     logoCar.x = logoCar.x + scrollSpeedLogo
 
