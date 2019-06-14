@@ -14,7 +14,6 @@ display.setStatusBar(display.HiddenStatusBar)
 local composer = require( "composer" )
 local widget = require( "widget" )
 
-
 -----------------------------------------------------------------------------------------
 
 -- Naming Scene
@@ -47,25 +46,18 @@ local carsAreMoving = 0
 -----------------------------------------------------------------------------------------
 -- GLOBAL VARIABLES
 -----------------------------------------------------------------------------------------
--- hearts (they need to be global variables so that the function that hides the hearts (which is in
--- level2_question) can be called without an error)
-heart1 = display.newImageRect("Images/heart.png", 80, 80)
-heart2 = display.newImageRect("Images/heart.png", 80, 80)
-heart3 = display.newImageRect("Images/heart.png", 80, 80)
-
 -- scrollspeeds
+
 scrollSpeedLogo = 1
-scrollSpeedCar1 = 1.3
-scrollSpeedCar2 = 1.2
-scrollSpeedCar3 = 1.1
+scrollSpeedCar1 = 1.2
+scrollSpeedCar2 = 1.1
+scrollSpeedCar3 = 1
 scrollSpeedLogoAfterQuestion1 = 1.3
 scrollSpeedLogoAfterQuestion2 = 1.6
 scrollSpeedLogoAfterQuestion3 = 1.9
 scrollSpeedLogoNew = scrollSpeedLogo
 questionsAnsweredLevel2 = 0
 
--- lives for level 2
-level2Lives = 3
 -----------------------------------------------------------------------------------------
 --LOCAL SOUNDS
 -----------------------------------------------------------------------------------------
@@ -75,6 +67,7 @@ local bkgSoundChannel
 -----------------------------------------------------------------------------------------
 -- LOCAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
+
 
 local function MoveLogoCar()
     logoCar.x = logoCar.x + scrollSpeedLogo
@@ -143,40 +136,6 @@ end
 -- GLOBAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
 
-function UpdateLives()
-    if (level2Lives == 3) then
-
-        -- update lives
-        heart1.isVisible = true
-        heart2.isVisible = true   
-        heart3.isVisible = true
-
-    elseif (level2Lives == 2) then
-
-        -- update lives
-        heart1.isVisible = true
-        heart2.isVisible = true
-        heart3.isVisible = false
-
-    elseif (level2Lives == 1) then
-
-        -- update lives
-        heart1.isVisible = true
-        heart2.isVisible = false
-        heart3.isVisible = false
-
-    elseif (level2Lives == 0) then
-
-        -- update lives
-        heart1.isVisible = false
-        heart2.isVisible = false
-        heart3.isVisible = false
-
-        -- go to the losing screen
-        composer.gotoScene("you_lose")
-    end
-end
-
 -- The function called when the screen doesn't exist
 function scene:create( event )
     -- Creating a group that associates objects with the scene
@@ -190,6 +149,9 @@ function scene:create( event )
     bkg_image.y = display.contentCenterY
     bkg_image.width = display.contentWidth
     bkg_image.height = display.contentHeight
+
+    -- Send the background image to the back layer so all other objects can be on top
+    bkg_image:toBack()
 
     -------------------------------------------------------------
     --Objects
@@ -211,32 +173,18 @@ function scene:create( event )
     car1.x = display.contentWidth*1/8
     car1.y = display.contentHeight*5.9/8.3
 
+    -- logo car (user's car) (smallest car)
     logoCar = display.newImage("Images/CompanyLogo.png", 0, 0)
     logoCar.x = display.contentWidth*1/8
     logoCar.y = display.contentHeight*5.9/8
     logoCar:scale(0.1, 0.1)
 
-    heart1.x = 976
-    heart1.y = 50
-    heart1.isVisible = true
-    
-    heart2.x = 896
-    heart2.y = 50
-    heart2.isVisible = true
-    
-    heart3.x = 816
-    heart3.y = 50
-    heart3.isVisible = true
-
-    -- Insert background image into the scene group in order to ONLY be associated with this scene
+        -- Insert background image into the scene group in order to ONLY be associated with this scene
     sceneGroup:insert(bkg_image)
     sceneGroup:insert(car3)
     sceneGroup:insert(car2)
     sceneGroup:insert(car1)
     sceneGroup:insert(logoCar)
-    sceneGroup:insert(heart1)
-    sceneGroup:insert(heart2)
-    sceneGroup:insert(heart3)
 
 end --function scene:create( event )
 
@@ -252,17 +200,24 @@ function scene:show( event )
 
     if ( phase == "will" ) then
 
+        -- Called when the scene is still off screen (but is about to come on screen).
+        --[[logoCar.x = display.contentWidth*1/8
+        logoCar.y = display.contentHeight*5.9/8
+        logoCar:scale(0.1, 0.1)]]--
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
+        bkgSoundChannel = audio.play( bkgSound, {channel=1, loops=-1})
         -- Called when the scene is now on screen.
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
 
-        bkgSoundChannel = audio.play( bkgSound, {channel=1, loops=-1})
-
         -- start the cars
         MoveCars()
+
+
+        -- Ask a question
+
     end
 end 
 -----------------------------------------------------------------------------------------
@@ -283,17 +238,9 @@ function scene:hide( event )
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
-
-        -- stop the sound/music
         audio.stop(bkgSoundChannel)
-
-        -- remove event listeners
-        Runtime:removeEventListener("enterFrame", MoveLogoCar)
-        Runtime:removeEventListener("enterFrame", MoveCar1)
-        Runtime:removeEventListener("enterFrame", MoveCar2)
-        Runtime:removeEventListener("enterFrame", MoveCar3)
-
-
+        -- Called immediately after scene goes off screen.
+        Runtime:removeEventListener("enterFrame", MovelogoCar)
     end
 
 end --function scene:hide( event )
