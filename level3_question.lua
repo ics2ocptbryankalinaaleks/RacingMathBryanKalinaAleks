@@ -124,7 +124,7 @@ end
 
 
 local function AskQuestion()
-    randomQuestion = math.random(1,10)
+    randomQuestion = math.random(1,20)
 
     if (randomQuestion == 1) then
         questionText.text = "What are the three main parts\nof a plant?"

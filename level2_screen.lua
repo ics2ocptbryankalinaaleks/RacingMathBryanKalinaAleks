@@ -97,21 +97,18 @@ function UpdateLives()
         heart1.isVisible = true
         heart2.isVisible = true   
         heart3.isVisible = true
-        --timer.performWithDelay(200, ReplaceCharacter) 
 
     elseif (level2Lives == 2) then
         -- update hearts
         heart1.isVisible = true
         heart2.isVisible = true
         heart3.isVisible = false
-        --timer.performWithDelay(200, ReplaceCharacter)
 
     elseif (level2Lives == 1) then
         -- update hearts
         heart1.isVisible = true
         heart2.isVisible = false
         heart3.isVisible = false
-        --timer.performWithDelay(200, ReplaceCharacter) 
 
     elseif (level2Lives == 0) then
         -- update hearts

@@ -151,20 +151,17 @@ local function UpdateHearts()
         heart1.isVisible = true
         heart2.isVisible = true   
         heart3.isVisible = true
-        timer.performWithDelay(200, ReplaceCharacter) 
 
     elseif (lives == 2) then
         -- update hearts
         heart1.isVisible = true
         heart2.isVisible = true
         heart3.isVisible = false
-        timer.performWithDelay(200, ReplaceCharacter)
     elseif (lives == 1) then
         -- update hearts
         heart1.isVisible = true
         heart2.isVisible = false
-        heart3.isVisible = false
-        timer.performWithDelay(200, ReplaceCharacter) 
+        heart3.isVisible = false 
 
     elseif (ives == 0) then
         -- update hearts
