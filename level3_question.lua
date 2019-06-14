@@ -148,7 +148,7 @@ local function AskQuestion()
         wrongText3.text = "all of the above"
 
     elseif (randomQuestion == 4) then
-        questionText.text = "Some plants grow bulbs,\nwhat do the bubls do?"
+        questionText.text = "Some plants grow bulbs,\nwhat do the bulbs do?"
         answerText.text = "Grow into flowers"
         wrongText1.text = "Grow into seeds"
         wrongText2.text = "Grow into trees"
