@@ -158,36 +158,36 @@ local function AskQuestion()
         questionText.text = "How does the sun help plants?"
         answerText.text = "Turn the energy\nfrom the sun into food"
         wrongText1.text = "Uses the enegy\nto create pollen"
-        wrongText2.text = "?,?,?"
-        wrongText3.text = "?,?,?" 
+        wrongText2.text = "Uses the energy\nfrom the sun to make water"
+        wrongText3.text = "It doesn't" 
 
     elseif (randomQuestion == 6) then
         questionText.text = "What structures are NOT natural?"
-        answerText.text = "pyramid"
-        wrongText1.text = "mountain"
-        wrongText2.text = "tree"
+        answerText.text = "Pyramid"
+        wrongText1.text = "Mountain"
+        wrongText2.text = "Tree"
         wrongText3.text = "Nests"
 
     elseif (randomQuestion == 7) then
-        questionText.text = "What are the two parts of stamens?"
-        answerText.text = "Anther, filament"
-        wrongText1.text = "Stigma, Anther"
-        wrongText2.text = "Style, filament"
-        wrongText3.text = "Stigma, style"
+        questionText.text = "What do roses have on the stem?"
+        answerText.text = "Thorns"
+        wrongText1.text = "Roots"
+        wrongText2.text = "Petals"
+        wrongText3.text = "Flower head"
 
     elseif (randomQuestion == 8) then
         questionText.text = "What is the female\nreproductive part of a plant?"
         answerText.text = "Pistil"
         wrongText1.text = "Overy"
         wrongText2.text = "Stem"
-        wrongText3.text = "leaves"
+        wrongText3.text = "Leaves"
 
     elseif (randomQuestion == 9) then
         questionText.text = "Which one is a natural structure?"
         answerText.text = "Cave"
         wrongText1.text = "Totem pole"
         wrongText2.text = "Moai"
-        wrongText3.text = "building"
+        wrongText3.text = "Building"
 
     elseif (randomQuestion == 10) then
         questionText.text = "How do animals help plants?"
@@ -197,74 +197,74 @@ local function AskQuestion()
         wrongText3.text = "Animals distribute\npollen for flowers"
 
     elseif (randomQuestion == 11) then
-        questionText.text = ""
-        answerText.text = ""
-        wrongText1.text = ""
-        wrongText2.text = "?,?,?"
-        wrongText3.text = "?,?,?"  
+        questionText.text = "What is the process called that\nconverts light energy\ninto chemical energy?"
+        answerText.text = "Photosynthesis"
+        wrongText1.text = "Chemical change"
+        wrongText2.text = "Light change"
+        wrongText3.text = "Conversion"  
 
     elseif (randomQuestion == 12) then
-        questionText.text = ""
-        answerText.text = ""
-        wrongText1.text = ""
-        wrongText2.text = "?,?,?"
-        wrongText3.text = "?,?,?"
+        questionText.text = "What is the yellow\ncenter of a daisy called?"
+        answerText.text = "Flower head"
+        wrongText1.text = "Flower center"
+        wrongText2.text = "Center head"
+        wrongText3.text = "Center flower "
 
     elseif (randomQuestion == 13) then
-        questionText.text = ""
-        answerText.text = ""
-        wrongText1.text = ""
-        wrongText2.text = "?,?,?"
-        wrongText3.text = "?,?,?"
+        questionText.text = "What is the most common amount\nof leaves four leaf clovers have?"
+        answerText.text = "3"
+        wrongText1.text = "4"
+        wrongText2.text = "5"
+        wrongText3.text = "6"
 
     elseif (randomQuestion == 14) then
-        questionText.text = ""
-        answerText.text = ""
-        wrongText1.text = ""
-        wrongText2.text = "?,?,?"
-        wrongText3.text = "?,?,?"
+        questionText.text = "What is the process called\nwhen pollen is moved from one plant to another?"
+        answerText.text = "Pollination "
+        wrongText1.text = "Pollen moving"
+        wrongText2.text = "Plantation"
+        wrongText3.text = "Pollening"
 
     elseif (randomQuestion == 15) then
-        questionText.text = ""
-        answerText.text = ""
-        wrongText1.text = ""
-        wrongText2.text = "?,?,?"
-        wrongText3.text = "?,?,?"
+        questionText.text = "Which structure is made by animals?"
+        answerText.text = "Dam"
+        wrongText1.text = "Bridge "
+        wrongText2.text = "CN tower"
+        wrongText3.text = "Tree"
 
     elseif (randomQuestion == 16) then
-        questionText.text = ""
-        answerText.text = ""
-        wrongText1.text = ""
-        wrongText2.text = "?,?,?"
-        wrongText3.text = "?,?,?"
+        questionText.text = "Which structure is NOT made by animals?"
+        answerText.text = "Pond"
+        wrongText1.text = "Beehive"
+        wrongText2.text = "Nests"
+        wrongText3.text = "Webs"
 
     elseif (randomQuestion == 17) then
-        questionText.text = ""
-        answerText.text = ""
-        wrongText1.text = ""
-        wrongText2.text = "?,?,?"
-        wrongText3.text = "?,?,?"
+        questionText.text = "What plant doesn't grow from a seed?"
+        answerText.text = "Fern"
+        wrongText1.text = "Sunflower"
+        wrongText2.text = "Cucumber"
+        wrongText3.text = "Pumpkin"
 
     elseif (randomQuestion == 18) then
-        questionText.text = ""
-        answerText.text = ""
-        wrongText1.text = ""
-        wrongText2.text = "?,?,?"
-        wrongText3.text = "?,?,?"
+        questionText.text = "What plant doesn't grows from bulbs?"
+        answerText.text = "Tulips"
+        wrongText1.text = "Lillies "
+        wrongText2.text = "Onion"
+        wrongText3.text = "Orange "
 
     elseif (randomQuestion == 19) then
-        questionText.text = ""
-        answerText.text = ""
-        wrongText1.text = ""
-        wrongText2.text = "?,?,?"
-        wrongText3.text = "?,?,?"
+        questionText.text = " What plant grows from bulbs?"
+        answerText.text = "Shallots "
+        wrongText1.text = "Apples"
+        wrongText2.text = "Carrots"
+        wrongText3.text = "Lettuce"
 
     elseif (randomQuestion == 20) then
-        questionText.text = ""
-        answerText.text = ""
-        wrongText1.text = ""
-        wrongText2.text = "?,?,?"
-        wrongText3.text = "?,?,?"
+        questionText.text = " What plant grows from seeds?"
+        answerText.text = "Carrots"
+        wrongText1.text = "Rose"
+        wrongText2.text = "Onion"
+        wrongText3.text = "Potato"
     end
 
 end
