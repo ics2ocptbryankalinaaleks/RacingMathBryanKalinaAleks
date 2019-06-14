@@ -120,6 +120,28 @@ local function HideIncorrect()
     incorrect.isVisible = false
 end
 
+local function ResetAll()
+    question1WasAsked = false
+    question2WasAsked = false
+    question3WasAsked = false
+    question4WasAsked = false
+    question5WasAsked = false
+    question6WasAsked = false
+    question7WasAsked = false
+    question8WasAsked = false
+    question9WasAsked = false
+    question10WasAsked = false
+    question11WasAsked = false
+    question12WasAsked = false
+    question13WasAsked = false
+    question14WasAsked = false
+    question15WasAsked = false
+    question16WasAsked = false
+    question17WasAsked = false
+    question18WasAsked = false
+    question19WasAsked = false
+    question20WasAsked = false
+end
 
 -- set the scroll speed of the cars
 local function StartCars()
@@ -144,11 +166,12 @@ local function BackToLevel2()
     StartCars()
 
     -- hide all of the text objects
-        HideTextObjects()
+    print( "HideTextObjects 1")
+    HideTextObjects()
 
     -- update the lives (function in level2_screen)
     UpdateLives()
-
+print( "174")
     composer.hideOverlay("crossFade", 400 )
   
     composer.gotoScene( "level2_screen" )
@@ -345,6 +368,7 @@ local function AskQuestion1(sceneGroup)
     question1WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- second question
@@ -387,6 +411,7 @@ local function AskQuestion2(sceneGroup)
     question2WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- third question
@@ -429,6 +454,7 @@ local function AskQuestion3(sceneGroup)
     question3WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- fourth question
@@ -471,6 +497,7 @@ local function AskQuestion4(sceneGroup)
     question4WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- fifth question
@@ -513,6 +540,7 @@ local function AskQuestion5(sceneGroup)
     question5WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- sixth question
@@ -555,6 +583,7 @@ local function AskQuestion6(sceneGroup)
     question6WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- seventh question
@@ -597,6 +626,7 @@ local function AskQuestion7(sceneGroup)
     question7WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- eigth question
@@ -639,6 +669,7 @@ local function AskQuestion8(sceneGroup)
     question8WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- ninth question
@@ -681,6 +712,7 @@ local function AskQuestion9(sceneGroup)
     question9WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- tenth question
@@ -723,6 +755,7 @@ local function AskQuestion10(sceneGroup)
     question10WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- eleventh question
@@ -765,6 +798,7 @@ local function AskQuestion11(sceneGroup)
     question11WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- twelveth question
@@ -807,12 +841,13 @@ local function AskQuestion12(sceneGroup)
     question12WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- thirteenth question
 local function AskQuestion13(sceneGroup)
     -- set the question text
-    questionText = display.newText("Which colour is the opposite colour of red?", 0, 0, Arial, textSize)
+    questionText = display.newText("Which colour is the opposite\ncolour of red?", 0, 0, Arial, textSize)
     questionText:setTextColor(244/255, 244/255, 244/255)
     questionText.x = textPositionX
     questionText.y = textPositionY
@@ -849,12 +884,13 @@ local function AskQuestion13(sceneGroup)
     question13WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- fourteenth question
 local function AskQuestion14(sceneGroup)
     -- set the question text
-    questionText = display.newText("Which colour is the opposite colour of blue?", 0, 0, Arial, textSize)
+    questionText = display.newText("Which colour is the opposite\ncolour of blue?", 0, 0, Arial, textSize)
     questionText:setTextColor(244/255, 244/255, 244/255)
     questionText.x = textPositionX
     questionText.y = textPositionY
@@ -883,7 +919,7 @@ local function AskQuestion14(sceneGroup)
     answer3.x = answerPosition1X
     answer3.y = answerPosition1Y
 
-    correctAnswer = questionaCorrectAnswer
+    correctAnswer = questionCorrectAnswer
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
@@ -891,12 +927,13 @@ local function AskQuestion14(sceneGroup)
     question14WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- fifteenth question
 local function AskQuestion15(sceneGroup)
     -- set the question text
-    questionText = display.newText("Which colour is the opposite colour of green?", 0, 0, Arial, textSize)
+    questionText = display.newText("Which colour is the opposite\ncolour of green?", 0, 0, Arial, textSize)
     questionText:setTextColor(244/255, 244/255, 244/255)
     questionText.x = textPositionX
     questionText.y = textPositionY
@@ -933,6 +970,7 @@ local function AskQuestion15(sceneGroup)
     question15WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- sixteenth question
@@ -975,6 +1013,7 @@ local function AskQuestion16(sceneGroup)
     question16WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- seventeenth question
@@ -1017,12 +1056,13 @@ local function AskQuestion17(sceneGroup)
     question17WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- eigtheenth question
 local function AskQuestion18(sceneGroup)
     -- set the question text
-    questionText = display.newText("How many secondary colours are there?", 0, 0, Arial, textSize)
+    questionText = display.newText("How many secondary colours\nare there?", 0, 0, Arial, textSize)
     questionText:setTextColor(244/255, 244/255, 244/255)
     questionText.x = textPositionX
     questionText.y = textPositionY
@@ -1059,12 +1099,13 @@ local function AskQuestion18(sceneGroup)
     question18WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- nineteenth question
 local function AskQuestion19(sceneGroup)
     -- set the question text
-    questionText = display.newText("How many tertiary (third level) colours are there?", 0, 0, Arial, textSize)
+    questionText = display.newText("How many tertiary (third level)\ncolours are there?", 0, 0, Arial, textSize)
     questionText:setTextColor(244/255, 244/255, 244/255)
     questionText.x = textPositionX
     questionText.y = textPositionY
@@ -1101,12 +1142,13 @@ local function AskQuestion19(sceneGroup)
     question19WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- twentyth question
 local function AskQuestion20(sceneGroup)
     -- set the question text
-    questionText = display.newText("Which color is a tertiary (third level) colour?", 0, 0, Arial, textSize)
+    questionText = display.newText("Which color is a tertiary\n(third level) colour?", 0, 0, Arial, textSize)
     questionText:setTextColor(244/255, 244/255, 244/255)
     questionText.x = textPositionX
     questionText.y = textPositionY
@@ -1143,12 +1185,13 @@ local function AskQuestion20(sceneGroup)
     question20WasAsked = true
 
     PositionAnswers()
+    AddTextListeners()
 end
 
 -- ask a question
 function AskQuestion(sceneGroup)
     -- choose out of the possoble 20 questions
-    questionNumber = math.random(1, 20)
+    questionNumber = math.random(13, 15)
 
     --[[    based on the questionNumber, call the function that will create that question. They are seperate because there was too
     many lines of code in a single function if they are all together - there was an error because of it    ]]--
@@ -1389,7 +1432,6 @@ function scene:show( event )
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
         AskQuestion( sceneGroup )
-        AddTextListeners()
     end
 end --function scene:show( event )
 
@@ -1413,6 +1455,7 @@ function scene:hide( event )
     elseif ( phase == "did" ) then
         -- Called immediately after scene goes off screen.
         RemoveTextListeners()
+        ResetAll()
     end
 end --function scene:hide( event )
 

@@ -48,12 +48,14 @@ scrollSpeedLogo = 1
 scrollSpeedCar1 = 1.2
 scrollSpeedCar2 = 1.1
 scrollSpeedCar3 = 1
+scrollSpeedLogoOriginal = 1
 scrollSpeedLogoAfterQuestion1 = 1.3
 scrollSpeedLogoAfterQuestion2 = 1.6
 scrollSpeedLogoAfterQuestion3 = 1.9
-scrollSpeedLogoNew = scrollSpeedLogo
+scrollSpeedLogoNew = scrollSpeedLogoOriginal
 questionsAnsweredLevel2 = 0
 
+LEVEL2LIVESORIGINAL = 3
 level2Lives = 3
 
 -----------------------------------------------------------------------------------------
@@ -65,6 +67,28 @@ local bkgSoundChannel
 -----------------------------------------------------------------------------------------
 -- LOCAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
+
+local function ResetAll()
+    print( "ResetAll" )
+    heart1.isVisible = false
+    heart2.isVisible = false
+    heart3.isVisible = false
+    
+    -- reset the cars, and the logoCar's scrollSpeed
+    car1.x = display.contentWidth*1/8
+    car2.x = display.contentWidth*1/8
+    car3.x = display.contentWidth*1/8
+    logoCar.x = display.contentWidth*1/8
+    scrollSpeedLogo = 1
+    level2Lives = LEVEL2LIVESORIGINAL
+    questionsAnsweredLevel2 = 0
+    carsAreMoving = 0
+
+    Runtime:removeEventListener("enterFrame", MoveLogoCar)
+    Runtime:removeEventListener("enterFrame", MoveCar1)
+    Runtime:removeEventListener("enterFrame", MoveCar2)
+    Runtime:removeEventListener("enterFrame", MoveCar3)
+end
 
 function UpdateLives()
     if (level2Lives == 3) then
@@ -92,14 +116,19 @@ function UpdateLives()
         heart1.isVisible = false
         heart2.isVisible = false
         heart3.isVisible = false
+ 
+print("120")
+        ResetAll()
 
         -- go to you lose screen
         composer.gotoScene("you_lose")
+
     end
 end
 
 local function MoveLogoCar()
     logoCar.x = logoCar.x + scrollSpeedLogo
+    print( "logoCar.x = " .. logoCar.x)
 
     if (logoCar.x == 200 
         or (logoCar.x >= 400 and logoCar.x <= 401)
@@ -111,10 +140,11 @@ local function MoveLogoCar()
         Runtime:removeEventListener("enterFrame", MoveLogoCar)
 
         if (logoCar.x >= 900) then
-
             if (car1.x >= 900 or car2.x >= 900 or car3.x >= 900) then
+                ResetAll()
                 composer.gotoScene("you_lose")
             else 
+                ResetAll()
                 composer.gotoScene("you_win")
             end
 
@@ -260,6 +290,7 @@ function scene:show( event )
         -- Example: start timers, begin animation, play audio, etc.
 
         -- start the cars
+        print( "(show) scrollSpeedLogo = " .. scrollSpeedLogo )
         MoveCars()
 
         -- Ask a question
