@@ -29,7 +29,7 @@ local scene = composer.newScene( sceneName )
 -- GLOBAL VARIABLES
 -----------------------------------------------------------------------------------------
 
-
+lives = 3
 
 -----------------------------------------------------------------------------------------
 -- LOCAL VARIABLES
@@ -50,6 +50,13 @@ local wrongAnswers = 0
 local heart1
 local heart2
 local heart3
+
+-----------------------------------------------------------------------------------------
+-- SOUNDS
+-----------------------------------------------------------------------------------------
+
+local bkgSound = audio.loadStream("Sounds/Off Limits.wav")
+local bkgSoundChannel
 
 
 -----------------------------------------------------------------------------------------
@@ -159,7 +166,7 @@ local function UpdateHearts()
         heart3.isVisible = false
         timer.performWithDelay(200, ReplaceCharacter) 
 
-    elseif (lives == 0) then
+    elseif (ives == 0) then
         -- update hearts
         heart1.isVisible = false
         heart2.isVisible = false
@@ -272,10 +279,11 @@ function scene:show( event )
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
 
+        bkgSoundChannel = audio.play( bkgSound, {channel=1, loops=-1})
 
         -- reset the questions answered
         questionsAnswered = 0
-        
+        lives=3
         
         -- Ask a question
         UpdateHearts()
@@ -306,6 +314,7 @@ function scene:hide( event )
         Runtime:removeEventListener("enterFrame", Movelogocar)
         Runtime:removeEventListener("enterFrame", Movelogocar2)
         Runtime:removeEventListener("enterFrame", Movelogocar3)
+        audio.stop(bkgSoundChannel)        
     end
 
 end --function scene:hide( event )

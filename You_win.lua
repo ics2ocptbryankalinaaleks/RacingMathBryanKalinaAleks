@@ -87,8 +87,8 @@ function scene:show( event )
     -----------------------------------------------------------------------------------------
 
     elseif ( phase == "did" ) then
-        -- after five seconds of the screen being shown, go to the main menu
-        timer.performWithDelay(5000, GoToLevelSelect)
+        -- after three seconds of the screen being shown, go to the main menu
+        timer.performWithDelay(3000, GoToLevelSelect)
 
 
 
