@@ -128,16 +128,16 @@ local function AskQuestion()
 
     if (randomQuestion == 1) then
         questionText.text = "What are the three main parts\nof a plant?"
-        answerText.text = "roots, leaves,\n stem"
-        wrongText1.text = "roots, stem,\n branches"
-        wrongText2.text = "roots, trunk,\n leaves"
-        wrongText3.text = "roots, trunk,\n branches"
+        answerText.text = "Roots, leaves,\n stem"
+        wrongText1.text = "Roots, stem,\n branches"
+        wrongText2.text = "Roots, trunk,\n leaves"
+        wrongText3.text = "Roots, trunk,\n branches"
 
     elseif (randomQuestion == 2) then
         questionText.text = "What do roots do?"
-        answerText.text = "soak up food\nand water"
-        wrongText1.text = "grow food"
-        wrongText2.text = "complete\nphotosynthesis"
+        answerText.text = "Soak up food\nand water"
+        wrongText1.text = "Grow food"
+        wrongText2.text = "Complete\nphotosynthesis"
         wrongText3.text = "Nothing"
 
     elseif (randomQuestion == 3) then
@@ -149,15 +149,15 @@ local function AskQuestion()
 
     elseif (randomQuestion == 4) then
         questionText.text = "Some plants grow bulbs,\nwhat do the bubls do?"
-        answerText.text = "turn into flowers"
-        wrongText1.text = "turn into seeds"
-        wrongText2.text = "turn into trees"
-        wrongText3.text = "turn into grass"
+        answerText.text = "Grow into flowers"
+        wrongText1.text = "Grow into seeds"
+        wrongText2.text = "Grow into trees"
+        wrongText3.text = "Grow into grass"
 
     elseif (randomQuestion == 5) then
-        questionText.text = "how does the sun help plants?"
-        answerText.text = "turn the energy\nfrom the sun into food"
-        wrongText1.text = "uses the enegy\nto create pollen"
+        questionText.text = "How does the sun help plants?"
+        answerText.text = "Turn the energy\nfrom the sun into food"
+        wrongText1.text = "Uses the enegy\nto create pollen"
         wrongText2.text = "?,?,?"
         wrongText3.text = "?,?,?" 
 
@@ -334,8 +334,6 @@ local function PositionAnswers()
             
     end
 end
-
-
 -----------------------------------------------------------------------------------------
 -- GLOBAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
