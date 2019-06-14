@@ -80,6 +80,7 @@ local function ResetAll()
     car3.x = display.contentWidth*1/8
     logoCar.x = display.contentWidth*1/8
     scrollSpeedLogo = 1
+    print( "(ResetAll) scrollSpeedLogo = " .. scrollSpeedLogo )
     level2Lives = LEVEL2LIVESORIGINAL
     questionsAnsweredLevel2 = 0
     carsAreMoving = 0
@@ -96,20 +97,21 @@ function UpdateLives()
         heart1.isVisible = true
         heart2.isVisible = true   
         heart3.isVisible = true
-        timer.performWithDelay(200, ReplaceCharacter) 
+        --timer.performWithDelay(200, ReplaceCharacter) 
 
     elseif (level2Lives == 2) then
         -- update hearts
         heart1.isVisible = true
         heart2.isVisible = true
         heart3.isVisible = false
-        timer.performWithDelay(200, ReplaceCharacter)
+        --timer.performWithDelay(200, ReplaceCharacter)
+
     elseif (level2Lives == 1) then
         -- update hearts
         heart1.isVisible = true
         heart2.isVisible = false
         heart3.isVisible = false
-        timer.performWithDelay(200, ReplaceCharacter) 
+        --timer.performWithDelay(200, ReplaceCharacter) 
 
     elseif (level2Lives == 0) then
         -- update hearts
@@ -117,7 +119,6 @@ function UpdateLives()
         heart2.isVisible = false
         heart3.isVisible = false
  
-print("120")
         ResetAll()
 
         -- go to you lose screen
@@ -128,7 +129,6 @@ end
 
 local function MoveLogoCar()
     logoCar.x = logoCar.x + scrollSpeedLogo
-    print( "logoCar.x = " .. logoCar.x)
 
     if (logoCar.x == 200 
         or (logoCar.x >= 400 and logoCar.x <= 401)

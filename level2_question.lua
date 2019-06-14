@@ -163,6 +163,7 @@ end
 
 --making transition to next scene
 local function BackToLevel2() 
+    print( "(BackToLevel2) scrollSpeedLogo = " .. scrollSpeedLogo )
     StartCars()
 
     -- hide all of the text objects
@@ -244,6 +245,7 @@ local function TouchListenerAnswer(touch)
     
     if (touch.phase == "ended") then
         questionsAnsweredLevel2 = questionsAnsweredLevel2 + 1
+        print( "questionsAnsweredLevel2 = " .. questionsAnsweredLevel2)
         
         -- make correct visible, then hide it after 2 seconds
         correct.isVisible = true
@@ -1191,7 +1193,7 @@ end
 -- ask a question
 function AskQuestion(sceneGroup)
     -- choose out of the possoble 20 questions
-    questionNumber = math.random(13, 15)
+    questionNumber = math.random(1, 20)
 
     --[[    based on the questionNumber, call the function that will create that question. They are seperate because there was too
     many lines of code in a single function if they are all together - there was an error because of it    ]]--
