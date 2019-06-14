@@ -38,6 +38,10 @@ local answer1 = display.newText("", 0, 0, Arial, textSize)
 local answer2 = display.newText("", 0, 0, Arial, textSize)
 local answer3 = display.newText("", 0, 0, Arial, textSize)
 
+local questionNumber
+
+-- question position variable
+local answerPositionLevel2
 -- 
 local bkg
 local cover
@@ -94,6 +98,7 @@ local function HideIncorrect()
     incorrect.isVisible = false
 end
 
+
 -- set the scroll speed of the cars
 local function StartCars()
 
@@ -128,6 +133,66 @@ local function BackToLevel2()
 end 
 
 -----------------------------------------------------------------------------------------
+
+-- position the answers
+local function PositionAnswers()
+
+    answerPositionLevel2 = math.random(1, 4)
+
+    if (answerPositionLevel2 == 1) then
+        questionCorrectAnswer.x = answerPosition1X
+        questionCorrectAnswer.y = answerPosition1Y
+
+        answer1.x = answerPosition2X
+        answer1.y = answerPosition2Y
+
+        answer2.x = answerPosition3X
+        answer2.y = answerPosition3Y
+
+        answer3.x = answerPosition4X
+        answer3.y = answerPosition4Y
+
+    elseif (answerPositionLevel2 == 2) then
+        questionCorrectAnswer.x = answerPosition2X
+        questionCorrectAnswer.y = answerPosition2Y
+
+        answer1.x = answerPosition1X
+        answer1.y = answerPosition1Y
+
+        answer2.x = answerPosition3X
+        answer2.y = answerPosition3Y
+
+        answer3.x = answerPosition4X
+        answer3.y = answerPosition4Y
+
+    elseif (answerPositionLevel2 == 3) then
+        questionCorrectAnswer.x = answerPosition3X
+        questionCorrectAnswer.y = answerPosition3Y
+
+        answer1.x = answerPosition1X
+        answer1.y = answerPosition1Y
+
+        answer2.x = answerPosition2X
+        answer2.y = answerPosition2Y
+
+        answer3.x = answerPosition4X
+        answer3.y = answerPosition4Y
+
+    elseif (answerPositionLevel2 == 4) then
+        questionCorrectAnswer.x = answerPosition4X
+        questionCorrectAnswer.y = answerPosition4Y
+
+        answer1.x = answerPosition1X
+        answer1.y = answerPosition1Y
+
+        answer2.x = answerPosition2X
+        answer2.y = answerPosition2Y
+
+        answer3.x = answerPosition3X
+        answer3.y = answerPosition3Y
+    end
+end
+
 --checking to see if the user pressed the right answer and bring them back to level 1, added to the scroll speed
 local function TouchListenerAnswer(touch)
     userAnswer = correctAnswer.text
@@ -254,6 +319,8 @@ local function AskQuestion1(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- second question
@@ -292,6 +359,8 @@ local function AskQuestion2(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- third question
@@ -330,6 +399,8 @@ local function AskQuestion3(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- fourth question
@@ -368,6 +439,8 @@ local function AskQuestion4(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- fifth question
@@ -406,6 +479,8 @@ local function AskQuestion5(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- sixth question
@@ -444,6 +519,8 @@ local function AskQuestion6(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- seventh question
@@ -482,6 +559,8 @@ local function AskQuestion7(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- eigth question
@@ -520,6 +599,8 @@ local function AskQuestion8(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- ninth question
@@ -558,6 +639,8 @@ local function AskQuestion9(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- tenth question
@@ -596,6 +679,8 @@ local function AskQuestion10(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- eleventh question
@@ -634,6 +719,8 @@ local function AskQuestion11(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- twelveth question
@@ -672,6 +759,8 @@ local function AskQuestion12(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- thirteenth question
@@ -710,6 +799,8 @@ local function AskQuestion13(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- fourteenth question
@@ -748,6 +839,8 @@ local function AskQuestion14(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- fifteenth question
@@ -786,6 +879,8 @@ local function AskQuestion15(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- sixteenth question
@@ -824,6 +919,8 @@ local function AskQuestion16(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- seventeenth question
@@ -862,6 +959,8 @@ local function AskQuestion17(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- eigtheenth question
@@ -900,6 +999,8 @@ local function AskQuestion18(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- nineteenth question
@@ -938,6 +1039,8 @@ local function AskQuestion19(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- twentyth question
@@ -976,6 +1079,8 @@ local function AskQuestion20(sceneGroup)
     wrongAnswer1 = answer1
     wrongAnswer2 = answer2
     wrongAnswer3 = answer3
+
+    PositionAnswers()
 end
 
 -- ask a question

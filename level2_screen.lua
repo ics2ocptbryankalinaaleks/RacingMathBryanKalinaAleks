@@ -29,7 +29,6 @@ local scene = composer.newScene( sceneName )
 
 -- The local variables for this scene
 local bkg_image
-local questionNumber
 local textSize = 50
 
 -- cars
@@ -55,6 +54,8 @@ scrollSpeedLogoAfterQuestion3 = 1.9
 scrollSpeedLogoNew = scrollSpeedLogo
 questionsAnsweredLevel2 = 0
 
+level2Lives = 3
+
 -----------------------------------------------------------------------------------------
 --LOCAL SOUNDS
 -----------------------------------------------------------------------------------------
@@ -64,6 +65,38 @@ local bkgSoundChannel
 -----------------------------------------------------------------------------------------
 -- LOCAL SCENE FUNCTIONS
 -----------------------------------------------------------------------------------------
+
+function UpdateLives()
+    if (level2Lives == 3) then
+        -- update hearts
+        heart1.isVisible = true
+        heart2.isVisible = true   
+        heart3.isVisible = true
+        timer.performWithDelay(200, ReplaceCharacter) 
+
+    elseif (level2Lives == 2) then
+        -- update hearts
+        heart1.isVisible = true
+        heart2.isVisible = true
+        heart3.isVisible = false
+        timer.performWithDelay(200, ReplaceCharacter)
+    elseif (level2Lives == 1) then
+        -- update hearts
+        heart1.isVisible = true
+        heart2.isVisible = false
+        heart3.isVisible = false
+        timer.performWithDelay(200, ReplaceCharacter) 
+
+    elseif (level2Lives == 0) then
+        -- update hearts
+        heart1.isVisible = false
+        heart2.isVisible = false
+        heart3.isVisible = false
+
+        -- go to you lose screen
+        composer.gotoScene("you_lose")
+    end
+end
 
 local function MoveLogoCar()
     logoCar.x = logoCar.x + scrollSpeedLogo
@@ -174,12 +207,31 @@ function scene:create( event )
     logoCar.y = display.contentHeight*5.9/8
     logoCar:scale(0.1, 0.1)
 
-        -- Insert background image into the scene group in order to ONLY be associated with this scene
+    -- the hearts (x3 for lives)
+    heart1 = display.newImageRect("Images/heart.png", 80, 80)
+    heart1.x = 976
+    heart1.y = 50
+    heart1.isVisible = true
+    
+    heart2 = display.newImageRect("Images/heart.png", 80, 80)
+    heart2.x = 896
+    heart2.y = 50
+    heart2.isVisible = true
+    
+    heart3 = display.newImageRect("Images/heart.png", 80, 80)
+    heart3.x = 816
+    heart3.y = 50
+    heart3.isVisible = true
+
+    -- Insert background image into the scene group in order to ONLY be associated with this scene
     sceneGroup:insert(bkg_image)
     sceneGroup:insert(car3)
     sceneGroup:insert(car2)
     sceneGroup:insert(car1)
     sceneGroup:insert(logoCar)
+    sceneGroup:insert(heart3)
+    sceneGroup:insert(heart2)
+    sceneGroup:insert(heart1)
 
 end --function scene:create( event )
 
