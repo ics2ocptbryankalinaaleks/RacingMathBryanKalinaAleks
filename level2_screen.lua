@@ -212,7 +212,6 @@ function scene:show( event )
         -- start the cars
         MoveCars()
 
-
         -- Ask a question
 
     end
